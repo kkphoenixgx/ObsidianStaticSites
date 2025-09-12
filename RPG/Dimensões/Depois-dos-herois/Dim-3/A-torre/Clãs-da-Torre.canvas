@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{
+			"id":"38f87ded40098eb0",
+			"type":"text",
+			"text":"Jhouli",
+			"styleAttributes":{"textAlign":"center","shape":"circle"},
+			"x":-72,
+			"y":-159,
+			"width":136,
+			"height":119
+		},
+		{
+			"id":"4571c1024afb01cb",
+			"type":"text",
+			"text":"Winter",
+			"styleAttributes":{"textAlign":"center","shape":"circle"},
+			"x":-300,
+			"y":-159,
+			"width":136,
+			"height":119
+		}
+	],
+	"edges":[],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
