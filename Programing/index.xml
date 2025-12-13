@@ -6,65 +6,65 @@
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>randomStuff.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/randomStuff.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/randomStuff.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠ Excalidraw Data Text Elements. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:39:03 GMT</pubDate>
+    <title>Console app commands</title>
+    <link>https://quartz.jzhao.xyz/Linux/Console-app-commands</link>
+    <guid>https://quartz.jzhao.xyz/Linux/Console-app-commands</guid>
+    <description><![CDATA[ Console app commands 2025-12-13 tags: 💻 indexLinux ngrock → port forward para http You have to be logged in the site, it is really good, free plan is really ok. ]]></description>
+    <pubDate>Sat, 13 Dec 2025 20:59:09 GMT</pubDate>
   </item><item>
-    <title>project-alg-em-grafos.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/project-alg-em-grafos.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/project-alg-em-grafos.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:38:58 GMT</pubDate>
+    <title>HumanToAgent</title>
+    <link>https://quartz.jzhao.xyz/Project-notes/HumanToAgent</link>
+    <guid>https://quartz.jzhao.xyz/Project-notes/HumanToAgent</guid>
+    <description><![CDATA[ Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**. ]]></description>
+    <pubDate>Tue, 09 Dec 2025 23:34:35 GMT</pubDate>
   </item><item>
-    <title>ProgramaPersianaYas.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/ProgramaPersianaYas.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/ProgramaPersianaYas.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:38:53 GMT</pubDate>
+    <title>README</title>
+    <link>https://quartz.jzhao.xyz/Project-notes/temp/README</link>
+    <guid>https://quartz.jzhao.xyz/Project-notes/temp/README</guid>
+    <description><![CDATA[ AI Gateway para ContextNet Este projeto é um servidor Java construído com Spring Boot que atua na gerencia múltiplas conexões WebSocket, traduzindo comandos de usuários em linguagem natural para comandos KQML que podem ser executados por um determinado agente na ContextNet. ]]></description>
+    <pubDate>Mon, 08 Dec 2025 18:33:11 GMT</pubDate>
   </item><item>
-    <title>my-personal-website-arquitetura.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/my-personal-website-arquitetura.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/my-personal-website-arquitetura.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:38:48 GMT</pubDate>
+    <title>update</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/%5Bold%5D-v16/update</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/%5Bold%5D-v16/update</guid>
+    <description><![CDATA[ Servicos-e-Injecao-de-Dependencia.md: Reforce o conceito de Injeção de Dependência. ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:42:59 GMT</pubDate>
   </item><item>
-    <title>mannagingContainers1.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Docker/img/mannagingContainers1.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Docker/img/mannagingContainers1.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:38:29 GMT</pubDate>
+    <title>Exercícios</title>
+    <link>https://quartz.jzhao.xyz/C/exercicios/Exerc%C3%ADcios</link>
+    <guid>https://quartz.jzhao.xyz/C/exercicios/Exerc%C3%ADcios</guid>
+    <description><![CDATA[ 🦖 index C #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; struct ObjetoNoCartesiano{ float x; float y; }; void calcularDistanciaMedia( struct ObjetoNoCartesiano a, struct ObjetoNoCartesiano b, struct ObjetoNoCartesiano *d){ printf(&quot;Valores do array A: [%f, %f] \n&quot;, a.x, a.y); printf(&q... ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item><item>
-    <title>Inicianção de projetos.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Bootcamps/Escola/Inician%C3%A7%C3%A3o-de-projetos.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Bootcamps/Escola/Inician%C3%A7%C3%A3o-de-projetos.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:38:13 GMT</pubDate>
+    <title>CLI</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/CLI</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/CLI</guid>
+    <description><![CDATA[ CLI 2024-08-19 tags: index Angular instalando o Angular [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 3/Aula1.md ] Npm básico de cria; npm install -g @angular/cli ← Baixar o cli do Angular] ng new folder-app → Seleciona y para o routing → Seleciona scss se q... ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item><item>
-    <title>importaçãoDoConfigureTestingModule.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/img/importa%C3%A7%C3%A3oDoConfigureTestingModule.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/img/importa%C3%A7%C3%A3oDoConfigureTestingModule.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:37:41 GMT</pubDate>
+    <title>Componentes</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Componentes</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Componentes</guid>
+    <description><![CDATA[ Componentes 2024-08-19 tags: index Angular como dar build no angular e como gerar componentes [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 3/Aula2.md ] // Arquivo: app.component.ts // Importando a API de componente do Angular import { Component } from &#039... ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item><item>
-    <title>Entregas Arquitetura_Proj_Em_Grafos.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/Entregas-Arquitetura_Proj_Em_Grafos.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/Entregas-Arquitetura_Proj_Em_Grafos.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:37:31 GMT</pubDate>
+    <title>ComunicacaoEntreComponentes</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/ComunicacaoEntreComponentes</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/ComunicacaoEntreComponentes</guid>
+    <description><![CDATA[ Comunicação entre Componentes 2025-11-23 tags: index Angular Introdução a comunicação entre componentes [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 7/Aula13.md ] É bem simples como funciona a comunicação de pai para filho, deve-se criar um input. ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item><item>
-    <title>AuthLogIn-Architeture.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/v16/section16/AuthLogIn-Architeture.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/v16/section16/AuthLogIn-Architeture.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:37:07 GMT</pubDate>
+    <title>DataBinding</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/DataBinding</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/DataBinding</guid>
+    <description><![CDATA[ Data Binding 2025-11-23 tags: index Angular Data bindigs e two-way binding [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 4/Aula5.md ] O data binding nada mais é que uma forma de tratar dados. ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item><item>
-    <title>ArquiteturaHotellChallange.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/ArquiteturaHotellChallange.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/ArquiteturaHotellChallange.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 22:37:01 GMT</pubDate>
+    <title>Diretivas</title>
+    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Diretivas</link>
+    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Diretivas</guid>
+    <description><![CDATA[ Diretivas 2025-11-23 tags: index Angular Diretivas e ngIf [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 5/Aula7.md ] As diretivas säo classes que adicionam comportamentos adicionais aos elementos em aplicativos Angular. ]]></description>
+    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
   </item>
     </channel>
   </rss>

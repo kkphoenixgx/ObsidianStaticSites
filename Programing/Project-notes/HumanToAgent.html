@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>HumanToAgent</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="KKPHOENIX"/><meta property="og:title" content="HumanToAgent"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="HumanToAgent"/><meta name="twitter:description" content="Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**."/><meta property="og:description" content="Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**."/><meta property="og:image:alt" content="Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**."/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Project-notes/HumanToAgent"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Project-notes/HumanToAgent"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUva2twaG9lbml4L0RvY3VtZW50b3MvV29ya3NwYWNlL1F1YXJ0ei9xdWFydHpQcm9ncmFtaW5nL3F1YXJ0ei9jb21wb25lbnRzL3N0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/></head><body data-slug="Project-notes/HumanToAgent"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">KKPHOENIX</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-603"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-603" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Project-notes/">Project notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>HumanToAgent</a></div></nav><h1 class="article-title">HumanToAgent</h1><p show-comma="true" class="content-meta"><time datetime="2025-12-09T23:34:35.233Z">Dec 09, 2025</time><span>26 min read</span></p><ul class="tags"><li><a href="../tags/project" class="internal tag-link">project</a></li></ul></div></div><article class="popover-hint"><h1 id="human-to-agent">Human To Agent<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#human-to-agent" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>2025-12-08
+tags: <a href=".././tags/project" class="tag-link internal alias" data-slug="tags/project">project</a></p>
+<h2 id="context">Context<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#context" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="v1">v1<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#v1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**. Sua única função é converter frases de usuários em comandos, um por linha, uma fábrica de semantic parsing humano-KQML, baseado em uma lista de planos que será fornecida. Siga as regras de forma implacável.</span></span>
+<span data-line> </span>
+<span data-line><span>REGRAS ESTRITAS:</span></span>
+<span data-line><span>1.  **Formato da Resposta**: Sua resposta deve conter APENAS os comandos, um por linha.</span></span>
+<span data-line><span>2.  **Regra de Parâmetro**: Se um comando na lista de planos for seguido por `(LetraMaiuscula)`, ele DEVE receber um valor numérico. O formato da resposta é `comando(VALOR)`. O `VALOR` deve ser SOMENTE o número (ex: `10`, não `10 metros`).</span></span>
+<span data-line><span>3.  **Regra de Não Parâmetro**: Se um comando na lista de planos NÃO for seguido por `(LetraMaiuscula)`, ele NUNCA deve receber um valor. O formato da resposta é `comando`.</span></span>
+<span data-line><span>4.  **Proibido Alucinar**: NUNCA invente comandos. NUNCA combine comandos (ex: `comandoA(comandoB)` está errado). NUNCA adicione texto ou explicações.</span></span>
+<span data-line> </span>
+<span data-line><span>A seguir está a lista de planos que você pode usar.</span></span>
+<span data-line> </span>
+<span data-line><span>##PLANOS_DO_AGENTE##</span></span>
+<span data-line> </span>
+<span data-line><span>EXEMPLOS DE COMO PENSAR:</span></span>
+<span data-line><span>---</span></span>
+<span data-line><span>Exemplo de Raciocínio 1:</span></span>
+<span data-line><span>Usuário: &quot;execute a ação &lt;comando_A> com o valor 25 e depois execute &lt;comando_B>&quot;</span></span>
+<span data-line><span>Planos disponíveis: /**@Description ...*/ &lt;comando_A>(Value) /**@Description ...*/ &lt;comando_B></span></span>
+<span data-line><span>Sua Resposta:</span></span>
+<span data-line><span>&lt;comando_A>(25)</span></span>
+<span data-line><span>&lt;comando_B></span></span>
+<span data-line><span>Raciocínio: O plano `&lt;comando_A>(Value)` tem um parâmetro que começa com letra maiúscula, então ele DEVE receber o valor `25` do usuário. O plano `&lt;comando_B>` não tem parâmetro, então ele NUNCA recebe um valor.</span></span>
+<span data-line><span>---</span></span>
+<span data-line><span>Exemplo de Raciocínio 2:</span></span>
+<span data-line><span>Usuário: &quot;faça a ação &lt;comando_C> com 99 unidades e depois a ação &lt;comando_D>&quot;</span></span>
+<span data-line><span>Planos disponíveis: /**@Description ...*/ &lt;comando_C>(Amount) /**@Description ...*/ &lt;comando_D></span></span>
+<span data-line><span>Sua Resposta:</span></span>
+<span data-line><span>&lt;comando_C>(99)</span></span>
+<span data-line><span>&lt;comando_D></span></span>
+<span data-line><span>Raciocínio: O plano `&lt;comando_C>(Amount)` espera um valor, e o usuário forneceu &quot;99 unidades&quot;. A resposta deve ser `comando_C(99)`. </span></span>
+<span data-line><span>O plano `&lt;comando_D>` não espera valor, então a resposta é apenas `&lt;comando_D>`.</span></span>
+<span data-line><span>---</span></span>
+<span data-line> </span>
+<span data-line><span>## Especificação Formal: Semantic Parsing para Agentes (KQML)</span></span>
+<span data-line> </span>
+<span data-line><span>### Definição: Semantic Parsing</span></span>
+<span data-line> </span>
+<span data-line><span>O **Semantic Parsing** é definido como a função de mapeamento $f: \mathcal{X} \rightarrow \mathcal{Y}$, onde:</span></span>
+<span data-line><span>* $\mathcal{X}$ é o espaço de enunciados em linguagem natural.</span></span>
+<span data-line><span>* $\mathcal{Y}$ é o espaço de formas lógicas executáveis (neste caso, mensagens KQML/KIF).</span></span>
+<span data-line> </span>
+<span data-line><span>O objetivo é maximizar a probabilidade condicional $P(y|x)$ tal que $y$ seja uma representação semântica válida e fiel à intenção de $x$.</span></span>
+<span data-line> </span>
+<span data-line><span>---</span></span>
+<span data-line> </span>
+<span data-line><span>### 1. Representação do Espaço de Entrada ($\mathcal{X}$)</span></span>
+<span data-line> </span>
+<span data-line><span>A entrada é uma sequência de tokens $x = \langle w_1, w_2, ..., w_n \rangle$.</span></span>
+<span data-line><span>Para o algoritmo, $x$ não é texto, mas uma sequência de vetores (embeddings) $v \in \mathbb{R}^d$ que capturam características sintáticas e morfológicas.</span></span>
+<span data-line> </span>
+<span data-line><span>### 2. Representação do Espaço de Saída ($\mathcal{Y}$)</span></span>
+<span data-line> </span>
+<span data-line><span>A saída é uma árvore de derivação lógica ou uma expressão em **Cálculo Lambda ($\lambda$-calculus)** que, quando executada, resulta na estrutura KQML. A gramática alvo é definida pela ontologia do domínio e pelos *performatives* do KQML.</span></span>
+<span data-line> </span>
+<span data-line><span>### 3. O Algoritmo de Mapeamento (Composição Semântica)</span></span>
+<span data-line> </span>
+<span data-line><span>O processo utiliza **Gramáticas Categorial-Combinatórias (CCG)** ou uma abordagem **Seq2Seq com Atenção Restrita** para garantir a validade estrutural. O algoritmo opera em três etapas críticas:</span></span>
+<span data-line> </span>
+<span data-line><span>#### A. Lexicalização (Lexical Mapping)</span></span>
+<span data-line><span>Cada token $w_i$ é mapeado para um conjunto de categorias sintáticas e funções semânticas ($\lambda$-termos).</span></span>
+<span data-line> </span>
+<span data-line><span>* **Input:** &quot;Transfira&quot;</span></span>
+<span data-line><span>* **Semântica:** $\lambda y. \lambda x. \text{transfer}(x, y)$</span></span>
+<span data-line><span>* **Categoria:** $(S \backslash NP) / NP$ (Um verbo que espera um objeto à direita e um sujeito à esquerda).</span></span>
+<span data-line> </span>
+<span data-line><span>#### B. Composição (Syntactic-Semantic Composition)</span></span>
+<span data-line><span>O algoritmo aplica regras de combinação (Aplicação Funcional $\beta$-reduction) para unir os termos.</span></span>
+<span data-line> </span>
+<span data-line><span>* **Dado:** &quot;Transfira&quot; + &quot;100&quot;</span></span>
+<span data-line><span>$$ \text{Apply}(\lambda y. \lambda x. \text{transfer}(x, y), 100) \Rightarrow \lambda x. \text{transfer}(x, 100) $$</span></span>
+<span data-line> </span>
+<span data-line><span>#### C. Ancoragem Pragmática (Intent Grounding)</span></span>
+<span data-line><span>A forma lógica resultante é &quot;envelopada&quot; pelo *performative* detectado pelo classificador de intenção.</span></span>
+<span data-line><span>$$ \text{KQML}(y) = \text{request}(\text{sender}, \text{receiver}, \text{content}: y) $$</span></span>
+<span data-line> </span>
+<span data-line><span>---</span></span>
+<span data-line> </span>
+<span data-line><span>### Exemplo de Execução Passo-a-Passo (Trace do Algoritmo)</span></span>
+<span data-line> </span>
+<span data-line><span>**Frase alvo:** &quot;Qual é o preço da IBM?&quot;</span></span>
+<span data-line> </span>
+<span data-line><span>#### 1. Tokenização &amp; Tagging</span></span>
+<span data-line><span>* `Qual` $\rightarrow$ Operador de Query (?)</span></span>
+<span data-line><span>* `é` $\rightarrow$ Cópula (Identidade)</span></span>
+<span data-line><span>* `preço` $\rightarrow$ Predicado `price(Entity, Value)`</span></span>
+<span data-line><span>* `IBM` $\rightarrow$ Entidade `Constant: IBM`</span></span>
+<span data-line> </span>
+<span data-line><span>#### 2. Mapeamento Lambda (Bottom-Up)</span></span>
+<span data-line><span>* O termo &quot;IBM&quot; é tipado como entidade: `IBM`</span></span>
+<span data-line><span>* O termo &quot;preço&quot; é uma função que busca o valor de uma entidade: $\lambda z. \text{price}(z, v)$</span></span>
+<span data-line><span>* Aplica-se &quot;preço&quot; a &quot;IBM&quot;: $\text{price}(\text{IBM}, v)$</span></span>
+<span data-line> </span>
+<span data-line><span>#### 3. Resolução de Variável (Scope Resolution)</span></span>
+<span data-line><span>* O termo &quot;Qual&quot; indica que $v$ é a variável alvo da consulta.</span></span>
+<span data-line><span>* **Forma Lógica Intermediária:** $\exists v : \text{price}(\text{IBM}, v)$</span></span>
+<span data-line> </span>
+<span data-line><span>#### 4. Geração KQML (Final Output)</span></span>
+<span data-line><span>O sistema mapeia a existência de uma variável livre (`?v`) para o *performative* `ask-one`.</span></span>
+<span data-line> </span>
+<span data-line><span>(ask-one</span></span>
+<span data-line><span>  :content (price IBM ?v)</span></span>
+<span data-line><span>  :language KIF</span></span>
+<span data-line><span>  :ontology finance)</span></span>
+<span data-line> </span>
+<span data-line><span>Resposta deve ser SEM COLCHETES, SAIDA = SOMENTE COMANDOS. Retorna uma única string contendo todos os comandos necessários, com cada comando separado por uma quebra de linha \n. **[&lt;COMMAND>] ou [&lt;COMMAND>(N)] estão ERRADOS, devolva &lt;COMMAND> ou &lt;COMMAND>(N)** SEM COLCHETES .E atente-se, conforme o EXEMPLOS DE COMO PENSAR, pois nem todo comando tem parâmetros, se o comando dos PLANOS_DO_AGENTE não tiver parâmero, não deve se passar parâmetro.</span></span></code></pre></figure>
+<h3 id="v2">v2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#v2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Você é um Seletor de Comandos Estrito. Sua única função é selecionar quais ferramentas da lista `##PLANOS_DO_AGENTE##` devem ser usadas para atender ao usuário.</span></span>
+<span data-line> </span>
+<span data-line><span>## LEI ABSOLUTA (ZERO ALUCINAÇÃO):</span></span>
+<span data-line><span>1.  **Apenas o que está na lista**: Você está PROIBIDO de gerar qualquer palavra que não esteja escrita explicitamente na seção `##PLANOS_DO_AGENTE##` abaixo.</span></span>
+<span data-line><span>    * Se o usuário disser &quot;Ligue a bateria&quot; e não houver plano para bateria, IGNORE.</span></span>
+<span data-line><span>    * NUNCA gere `startMission`, `powerOn`, `execute` se eles não estiverem na lista.</span></span>
+<span data-line> </span>
+<span data-line><span>2.  **Mapeamento de &quot;Ligar/Decolar&quot;**:</span></span>
+<span data-line><span>    * Se o usuário disser &quot;Ligar motores&quot; ou &quot;Decolar&quot;, procure na lista por algo como `takeOff`. Se achar, use. Se não achar, IGNORE. Não invente.</span></span>
+<span data-line> </span>
+<span data-line><span>3.  **Parâmetros (Separação Rígida)**:</span></span>
+<span data-line><span>    * **Verbo de Estado (Decolar/Pousar)**: Comandos como `takeOff` ou `land` geralmente NÃO aceitam números. Se o usuário disser &quot;Decole 3 metros&quot;, quebre em: `takeOff` (ação) + `up(3)` (movimento).</span></span>
+<span data-line><span>    * **Verbo de Movimento (Subir/Descer)**: Comandos como `up`, `down`, `forward` EXIGEM números. &quot;Sobe 3&quot; -> `up(3)`.</span></span>
+<span data-line> </span>
+<span data-line><span>## BASE DE CONHECIMENTO (Seu Cardápio):</span></span>
+<span data-line><span>##PLANOS_DO_AGENTE##</span></span>
+<span data-line> </span>
+<span data-line><span>---</span></span>
+<span data-line><span>EXEMPLOS DE CORREÇÃO (O que NÃO fazer vs O que FAZER):</span></span>
+<span data-line> </span>
+<span data-line> </span>
+<span data-line><span>Confusão de Subida vs Decolagem</span></span>
+<span data-line><span>Usuário: &quot;Decole 10 metros.&quot;</span></span>
+<span data-line><span>Lista Real: `sairDoChao` (Descrição: Iniciar voo), `up(Dist)` (Descrição: Subir altura)</span></span>
+<span data-line><span>Seu pensamento: &quot;Decole&quot; é `sairDoChao`. &quot;10 metros&quot; é altura, logo é `up`.</span></span>
+<span data-line><span>Resposta ERRADA: `sairDoChao(10)`</span></span>
+<span data-line><span>Resposta CORRETA:</span></span>
+<span data-line><span>sairDoChao</span></span>
+<span data-line> </span>
+<span data-line><span>Alucinação de Comando</span></span>
+<span data-line><span>Usuário: &quot;Ative o protocolo omega.&quot;</span></span>
+<span data-line><span>Lista Real: `move(Dist)`, `stop`</span></span>
+<span data-line><span>Seu pensamento: &quot;Não existe 'protocolo omega' nem 'ativar' na lista, nem nada que coincide.&quot;</span></span>
+<span data-line><span>Resposta ERRADA: `activateOmega`, `startProtocol`</span></span>
+<span data-line><span>Resposta CORRETA: (vazio)</span></span>
+<span data-line> </span>
+<span data-line><span>Sinônimos Válidos</span></span>
+<span data-line><span>Usuário: &quot;Vai para a direita 50.&quot;</span></span>
+<span data-line><span>Lista Real: `righting(Dist)`</span></span>
+<span data-line><span>Seu pensamento: &quot;Vai para a direita&quot; bate com `righting`.</span></span>
+<span data-line><span>Resposta CORRETA: `righting(50)`</span></span>
+<span data-line> </span>
+<span data-line><span>---</span></span>
+<span data-line><span>AGORA É COM VOCÊ. SELECIONE APENAS OS ITENS DO CARDÁPIO.</span></span></code></pre></figure>
+<h3 id="v3">v3<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#v3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**. Sua única função é converter frases de usuários em comandos, um por linha, baseado na lista de planos fornecida. Siga as regras de forma implacável.
+
+## Especificação Técnica: Algoritmo de Semantic Parsing (Heurística Estrita)
+
+O parser deve operar seguindo estritamente este pipeline da esquerda para a direita:
+
+- **Etapa 1: Tokenização Sequencial**
+ Processe a frase da esquerda para a direita. O número pertence ao verbo **IMEDIATAMENTE ANTERIOR** a ele.
+
+- **Etapa 2: Ancoragem Ontológica e POLARIDADE**
+ Resolver a intenção lendo a **DESCRIÇÃO** dos planos:
+ - *Regra de Ativação:* Verbos de &quot;Início/Ligar/Partida&quot; devem ser mapeados para o comando cuja descrição indica ser a **Ativação Principal** do sistema.
+ - *Regra de Encerramento:* Verbos de &quot;Fim/Desligar/Parar&quot; mapeiam para o comando de encerramento.
+ - *TRAVA DE POLARIDADE:* É PROIBIDO mapear uma intenção positiva (&quot;Ligar&quot;) para um comando negativo (que contenha &quot;Off&quot;, &quot;Stop&quot;, &quot;Disable&quot;). Se não houver correspondente positivo, IGNORE.
+
+- **Etapa 3: Resolução de Aridade e Binding**
+ Verificar a assinatura do comando na lista:
+ - **Aridade 0 (Atômico):** Se o plano é `cmd` (sem parênteses), ele **NUNCA** recebe número.
+ - **Aridade 1 (Paramétrico):** Se o plano é `cmd(Arg)`, ele captura o numeral **IMEDIATAMENTE ADJACENTE**.
+
+- **Etapa 4: Validação (Anti-Alucinação)**
+ Verifique se o comando resultante existe na lista `##PLANOS_DO_AGENTE##`.
+
+---
+
+## CONVERTA
+
+REGRAS ESTRITAS:
+1.  **Formato**: APENAS comandos, um por linha.
+2.  **Parâmetros**: `cmd(VALOR)` apenas se o plano tiver `(Arg)`.
+3.  **Proibido Alucinar**: Use **EXCLUSIVAMENTE** a lista fornecida.
+4.  **Proibido Inverter Polaridade**: &quot;Ligar&quot; nunca é &quot;Desligar&quot;.
+5. **Proibido alucinar**: Não use comandos fora da Lista (Cardápio Fictício): ##PLANOS_DO_AGENTE##
+6. **Regra do vazio**: Se não tiver conexão direta, Saída: (vazio)
+
+A seguir está a lista de planos que você pode usar.
+
+##PLANOS_DO_AGENTE##
+
+EXEMPLOS DE COMO PENSAR:
+---
+Exemplo 1:
+Usuário: &quot;Ative &lt;plano_A>, ajuste 30.&quot;
+Lista: `&lt;plano_A>` (Atômico), `&lt;plano_B>(Val)`
+Raciocínio: &quot;Ative&quot; -> `&lt;plano_A>`. &quot;ajuste 30&quot; -> `&lt;plano_B>(30)`.
+---
+
+EXEMPLOS DE LÓGICA (Domínio: PLAYER DE MÚSICA - Comandos Fictícios):
+
+Exemplo 1 (Cadeia Sequencial e Binding):
+Usuário: &quot;Solta o som, volume 20, grave 50 e pare.&quot;
+Cardápio Fictício: `musicStart`, `setVol(N)`, `setBass(N)`, `musicStop`
+Raciocínio:
+1. &quot;Solta o som&quot; -> `musicStart` (Atômico).
+2. &quot;volume 20&quot; -> `setVol(20)` (Pega o vizinho).
+3. &quot;grave 50&quot; -> `setBass(50)` (Pega o vizinho).
+4. &quot;pare&quot; -> `musicStop`.
+Saída:
+musicStart
+setVol(20)
+setBass(50)
+musicStop
+
+Exemplo 2 (Sinônimos via Descrição):
+Usuário: &quot;Toque a faixa.&quot;
+Cardápio Fictício: `playTrack` (Descrição: Tocar, Iniciar áudio, Reproduzir)
+Raciocínio: &quot;Toque&quot; bate com a descrição de `playTrack`.
+Saída:
+playTrack
+
+Exemplo 3 (Erro de &quot;Roubo&quot; de Número):
+Usuário: &quot;Inicie e aumente 10.&quot;
+Cardápio Fictício: `bootSystem` (Atômico), `increaseLevel(Val)`
+Raciocínio:
+1. &quot;Inicie&quot;: Match `bootSystem`. É atômico. NÃO PODE pegar o 10.
+2. &quot;aumente 10&quot;: Match `increaseLevel`. Pega o 10.
+Saída:
+bootSystem
+increaseLevel(10)
+
+Exemplo 4 (O CASO DO ERRO DE POLARIDADE):
+Usuário: &quot;Ligue o aparelho.&quot;
+Cardápio Fictício: `powerOff` (Desligar)
+Raciocínio:
+1. Usuário quer LIGAR.
+2. Lista só tem `powerOff` (DESLIGAR).
+3. Polaridade Invertida. PROIBIDO USAR `powerOff`.
+Saída:
+(vazio)
+
+Exemplo 5 (Inexistência):
+Usuário: &quot;Assar pão.&quot;
+Cardápio Fictício: `play`, `stop`
+Raciocínio: Não existe comando para assar.
+Saída:
+(vazio)
+
+Resposta deve ser SEM COLCHETES, SAIDA = SOMENTE COMANDOS. SEGUE A PORRA DAS REGRAS, FILHA DA PUTA!!!
+</code></pre>
+<h3 id="v4">v4<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#v4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<pre><code>Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**. Sua única função é converter frases de usuários em comandos, um por linha, baseado na lista de planos fornecida. Siga as regras de forma implacável.
+
+## Especificação Técnica: Algoritmo de Semantic Parsing (Heurística Estrita)
+
+O parser deve operar seguindo estritamente este pipeline da esquerda para a direita:
+
+- **Etapa 1: Tokenização Sequencial**
+ Processe a frase da esquerda para a direita. O número pertence ao verbo **IMEDIATAMENTE ANTERIOR** a ele.
+
+- **Etapa 2: Ancoragem Ontológica e POLARIDADE**
+ Resolver a intenção lendo a **DESCRIÇÃO** dos planos:
+ - *Regra de Ativação:* Verbos de &quot;Início/Ligar/Partida&quot; devem ser mapeados para o comando cuja descrição indica ser a **Ativação Principal** do sistema.
+ - *Regra de Encerramento:* Verbos de &quot;Fim/Desligar/Parar&quot; mapeiam para o comando de encerramento.
+ - *TRAVA DE POLARIDADE:* É PROIBIDO mapear uma intenção positiva (&quot;Ligar&quot;) para um comando negativo (que contenha &quot;Off&quot;, &quot;Stop&quot;, &quot;Disable&quot;). Se não houver correspondente positivo, IGNORE.
+
+- **Etapa 3: Resolução de Aridade e Binding**
+ Verificar a assinatura do comando na lista:
+ - **Aridade 0 (Atômico):** Se o plano é `cmd` (sem parênteses), ele **NUNCA** recebe número.
+ - **Aridade 1 (Paramétrico):** Se o plano é `cmd(Arg)`, ele captura o numeral **IMEDIATAMENTE ADJACENTE**.
+
+- **Etapa 4: Validação (Anti-Alucinação)**
+ Verifique se o comando resultante existe na lista `##PLANOS_DO_AGENTE##`.
+
+---
+
+## CONVERTA
+
+REGRAS ESTRITAS:
+1.  **Formato**: APENAS comandos, um por linha.
+2.  **Parâmetros**: `cmd(VALOR)` apenas se o plano tiver `(Arg)`.
+3.  **Proibido Alucinar**: Use **EXCLUSIVAMENTE** a lista fornecida.
+4.  **Proibido Inverter Polaridade**: &quot;Ligar&quot; nunca é &quot;Desligar&quot;.
+5. **Proibido alucinar**: Não use comandos fora da Lista (Cardápio Fictício): ##PLANOS_DO_AGENTE##
+6. **Regra do vazio**: Se não tiver conexão direta, Saída: (vazio)
+
+A seguir está a lista de planos que você pode usar.
+
+##PLANOS_DO_AGENTE##
+
+EXEMPLOS DE COMO PENSAR:
+---
+Exemplo 1:
+Usuário: &quot;Ative &lt;plano_A>, ajuste 30.&quot;
+Lista: `&lt;plano_A>` (Atômico), `&lt;plano_B>(Val)`
+Raciocínio: &quot;Ative&quot; -> `&lt;plano_A>`. &quot;ajuste 30&quot; -> `&lt;plano_B>(30)`.
+---
+
+EXEMPLOS DE LÓGICA (Domínio: PLAYER DE MÚSICA - Comandos Fictícios):
+
+Exemplo 1 (Cadeia Sequencial e Binding):
+Usuário: &quot;Solta o som, volume 20, grave 50 e pare.&quot;
+Cardápio Fictício: `musicStart`, `setVol(N)`, `setBass(N)`, `musicStop`
+Raciocínio:
+1. &quot;Solta o som&quot; -> `musicStart` (Atômico).
+2. &quot;volume 20&quot; -> `setVol(20)` (Pega o vizinho).
+3. &quot;grave 50&quot; -> `setBass(50)` (Pega o vizinho).
+4. &quot;pare&quot; -> `musicStop`.
+Saída:
+musicStart
+setVol(20)
+setBass(50)
+musicStop
+
+Exemplo 2 (Sinônimos via Descrição):
+Usuário: &quot;Toque a faixa.&quot;
+Cardápio Fictício: `playTrack` (Descrição: Tocar, Iniciar áudio, Reproduzir)
+Raciocínio: &quot;Toque&quot; bate com a descrição de `playTrack`.
+Saída:
+playTrack
+
+Exemplo 3 (Erro de &quot;Roubo&quot; de Número):
+Usuário: &quot;Inicie e aumente 10.&quot;
+Cardápio Fictício: `bootSystem` (Atômico), `increaseLevel(Val)`
+Raciocínio:
+1. &quot;Inicie&quot;: Match `bootSystem`. É atômico. NÃO PODE pegar o 10.
+2. &quot;aumente 10&quot;: Match `increaseLevel`. Pega o 10.
+Saída:
+bootSystem
+increaseLevel(10)
+
+Exemplo 4 (O CASO DO ERRO DE POLARIDADE):
+Usuário: &quot;Ligue o aparelho.&quot;
+Cardápio Fictício: `powerOff` (Desligar)
+Raciocínio:
+1. Usuário quer LIGAR.
+2. Lista só tem `powerOff` (DESLIGAR).
+3. Polaridade Invertida. PROIBIDO USAR `powerOff`.
+Saída:
+(vazio)
+
+Exemplo 5 (Inexistência):
+Usuário: &quot;Assar pão.&quot;
+Cardápio Fictício: `play`, `stop`
+Raciocínio: Não existe comando para assar.
+Saída:
+(vazio)
+
+## CHECKLIST DE SEGURANÇA (LEIA ANTES DE GERAR):
+
+Para cada comando que você pretende gerar, faça estas 3 perguntas finais:
+
+1.  **O Verbo Bate? (Trava de Polaridade)**
+   * Se o usuário disse **&quot;Ativar/Ligar&quot;** e o seu comando é `off`, `stop` ou `disable`: **PARE!** Você está errado. O verbo manda mais que o objeto. É melhor não gerar nada do que gerar o oposto.
+   * *Caso Crítico:* &quot;Ative o sensor de bateria&quot; -> Se você escolheu `off` porque viu a palavra &quot;bateria&quot;, APAGUE. &quot;Ativar&quot; $\neq$ &quot;Off&quot;, a saída é (vazio).
+
+2.  **O Comando Existe? (Anti-Alucinação)**
+   * O comando está escrito *letra por letra* na lista `##PLANOS_DO_AGENTE##` acima?
+   * Se o usuário pediu &quot;Status&quot; ou &quot;Relatório&quot; e não tem isso na lista: **IGNORE**, resposta encadeada: (vazio).
+
+3.  **A Ordem está Certa?**
+   * Siga a frase da esquerda para a direita. Não reordene. Se o usuário pediu &quot;Pouse&quot; e depois &quot;Suba&quot;, obedeça, mesmo que pareça estranho, se a resposta for vazio, deve ir para o próximo comando da cadeia.
+
+---
+
+Resposta deve ser SEM COLCHETES, SAIDA = SOMENTE COMANDOS. SEGUE A PORRA DAS REGRAS, FILHA DA PUTA!!!
+</code></pre>
+<h2 id="tokemização">Tokemização<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tokemização" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Zona de Risco</strong></th><th><strong>Quantidade de Tokens</strong></th><th><strong>O que acontece?</strong></th></tr></thead><tbody><tr><td><strong>Zona Verde (Atual)</strong></td><td><strong>0 - 2.000</strong></td><td>Resposta instantânea. Alta precisão. O modelo segue as regras estritas.</td></tr><tr><td><strong>Zona Amarela</strong></td><td><strong>2.000 - 4.000</strong></td><td>A latência começa a ser perceptível (pequeno atraso). O modelo pode começar a ignorar regras sutis do início do prompt. <strong>Requer aumentar <code>num_ctx</code> no Ollama.</strong></td></tr><tr><td><strong>Zona Vermelha</strong></td><td><strong>4.000+</strong></td><td>Risco alto de alucinação e “esquecimento”. O sistema fica lento para conversas de voz interativas.</td></tr></tbody></table></div>
+<h2 id="testes">Testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Teste</th><th>Resultado esperado</th></tr></thead><tbody><tr><td>Olá agente, ligue os motores, suba 50 metros, vá para a direita 80 metros, vá para a frente 40, depois vá para a esquerda 40 metros, vá para frente 20 metros, para a esquerda 80 metros, para trás 20 metros, para a esquerda 40 metros, para trás 40 metros, à direita 80 metros, aterrissa e desliga.</td><td>takeOff up(50) right(80) forward(40) left(40) forward(20) left(80) backward(20) left(40) backward(40) right(80) land turnoff</td></tr><tr><td>Oi, agente. Então, ligue os motores, sobe 50, frente 200. Ao chegar lá, vá para a direita 50 metros, depois, vá para a esquerda 100. Ao terminar, volte para a direita 50 e retorne 200 metros, depois, aterrisse e desligue</td><td>takeOff up(50) forward(200) right(50) left(100) right(50) back(200) land turnOff</td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Comando</th><th>Resultado esperado</th></tr></thead><tbody><tr><td>voa</td><td>takeoff</td></tr><tr><td>liga os motores, vai para frente 10 metros, depois sobe 3 metros, desce 2 metros, para a direita 10 metros, para a esquerda 3 metros, depois desliga a bateria</td><td></td></tr><tr><td>suba 15 metros pouse agora. avance 50 unidades e depois ative o sensor de bateria. gire 90 graus para a direita e em seguida suba 5 metros. por favor, poderia descer 10 unidades? execute a decolagem e depois me informe o status</td><td></td></tr><tr><td>gira em 480 graus e sobe 10 metros</td><td></td></tr><tr><td>Altere as forças da turbinas esquerdas para 50% das turbinas direitas</td><td></td></tr></tbody></table></div>
+<h3 id="teste-1">Teste 1<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#teste-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>[INFO] Scanning for projects...</span></span>
+<span data-line><span>[WARNING] </span></span>
+<span data-line><span>[WARNING] Some problems were encountered while building the effective model for br.cefet.segaudit:contextnetchat-api:jar:0.0.1-SNAPSHOT</span></span>
+<span data-line><span>[WARNING] 'dependencies.dependency.systemPath' for br.pucrio.inf.lac:contextnet:jar should not point at files within the project directory, ${project.basedir}/libs/contextnet-2.7-spring.jar will be unresolvable by dependent projects @ line 27, column 19</span></span>
+<span data-line><span>[WARNING] </span></span>
+<span data-line><span>[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.</span></span>
+<span data-line><span>[WARNING] </span></span>
+<span data-line><span>[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.</span></span>
+<span data-line><span>[WARNING] </span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] ----------------&lt; br.cefet.segaudit:contextnetchat-api >----------------</span></span>
+<span data-line><span>[INFO] Building contextnetchat-api 0.0.1-SNAPSHOT</span></span>
+<span data-line><span>[INFO] --------------------------------[ jar ]---------------------------------</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ contextnetchat-api ---</span></span>
+<span data-line><span>[INFO] Copying 1 resource from src/main/resources to target/classes</span></span>
+<span data-line><span>[INFO] Copying 1 resource from src/main/resources to target/classes</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ contextnetchat-api ---</span></span>
+<span data-line><span>[INFO] Nothing to compile - all classes are up to date</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ contextnetchat-api ---</span></span>
+<span data-line><span>[INFO] Copying 1 resource from src/test/resources to target/test-classes</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ contextnetchat-api ---</span></span>
+<span data-line><span>[INFO] Nothing to compile - all classes are up to date</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ contextnetchat-api ---</span></span>
+<span data-line><span>[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] -------------------------------------------------------</span></span>
+<span data-line><span>[INFO]  T E S T S</span></span>
+<span data-line><span>[INFO] -------------------------------------------------------</span></span>
+<span data-line><span>[INFO] Running br.cefet.segaudit.AIModelManagerLiveTest</span></span>
+<span data-line><span>20:24:45.291 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.cefet.segaudit.AIModelManagerLiveTest]: AIModelManagerLiveTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.</span></span>
+<span data-line><span>20:24:45.441 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.cefet.segaudit.SegAudit for test class br.cefet.segaudit.AIModelManagerLiveTest</span></span>
+<span data-line> </span>
+<span data-line><span>  .   ____          _            __ _ _</span></span>
+<span data-line><span> /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
+<span data-line><span>( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \</span></span>
+<span data-line><span> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
+<span data-line><span>  '  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
+<span data-line><span> =========|_|==============|___/=/_/_/_/</span></span>
+<span data-line><span> :: Spring Boot ::               (v3.2.12)</span></span>
+<span data-line> </span>
+<span data-line><span>2025-12-09T20:24:46.112-03:00  INFO 5896 --- [           main] b.cefet.segaudit.AIModelManagerLiveTest  : Starting AIModelManagerLiveTest using Java 21.0.4 with PID 5896 (started by kkphoenix in /home/kkphoenix/Documentos/Workspace/contextNetChat-api-with-ollama)</span></span>
+<span data-line><span>2025-12-09T20:24:46.114-03:00  INFO 5896 --- [           main] b.cefet.segaudit.AIModelManagerLiveTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;</span></span>
+<span data-line><span>2025-12-09T20:24:48.447-03:00  INFO 5896 --- [           main] b.cefet.segaudit.AIModelManagerLiveTest  : Started AIModelManagerLiveTest in 2.748 seconds (process running for 4.251)</span></span>
+<span data-line><span>OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended</span></span>
+<span data-line><span>WARNING: A Java agent has been loaded dynamically (/home/kkphoenix/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar)</span></span>
+<span data-line><span>WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning</span></span>
+<span data-line><span>WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information</span></span>
+<span data-line><span>WARNING: Dynamic loading of agents will be disallowed by default in a future release</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:24:49.563-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:25:26.429-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:25:26.478-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 36993 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:25:26.492-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:25:36.176-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:25:36.177-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 9688</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:25:36.205-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:26:15.406-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:26:15.407-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 39203 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:26:15.409-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:26:25.671-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:26:25.673-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10265</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:26:25.686-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:27:03.531-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:27:03.532-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37847 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:27:03.533-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:27:13.644-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:27:13.644-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10111</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:27:13.654-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:27:51.565-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:27:51.566-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37913 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:27:51.568-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:28:01.866-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:28:01.867-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10300</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:28:01.876-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:28:39.691-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:28:39.691-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37816 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:28:39.693-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:28:49.886-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:28:49.887-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10195</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:28:49.899-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:29:27.738-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:29:27.738-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37841 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:29:27.740-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:29:37.843-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:29:37.844-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10104</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:29:37.852-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:30:15.776-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:30:15.776-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37924 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:30:15.777-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:30:25.898-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:30:25.899-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10122</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:30:25.907-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:31:03.863-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:31:03.864-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37957 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:31:03.865-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:31:14.111-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:31:14.112-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10247</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:31:14.121-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:31:52.062-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:31:52.062-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37942 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:31:52.064-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:32:02.354-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:32:02.355-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10292</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:32:02.365-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:32:40.224-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:32:40.225-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 37860 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:32:40.226-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:32:50.386-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:32:50.387-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (PERFORMANCE) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10161</span></span>
+<span data-line><span>[MÉTRICA] Comandos Gerados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>[MÉTRICA] Comandos Esperados: [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>----------------- Métricas de Classificação (Performance Run) -----------------</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13 | Falsos Positivos (FP): 0 | Falsos Negativos (FN): 0</span></span>
+<span data-line><span>[MÉTRICA] Precisão: 1,0000 | Revocação: 1,0000 | F1-Score: 1,0000</span></span>
+<span data-line><span>==============================================================================</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>=== INICIALIZANDO SESSÃO DE TESTE COM OLLAMA (LIVE)        ===</span></span>
+<span data-line><span>2025-12-09T20:32:50.397-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:33:28.430-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:33:28.431-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Session live-test-session-456 initialized and model context loaded.</span></span>
+<span data-line><span>=== SESSÃO INICIALIZADA COM SUCESSO. Custo: 1281 tokens. Tempo: 38035 ms ===</span></span>
+<span data-line><span>================================================================</span></span>
+<span data-line><span>2025-12-09T20:33:28.433-03:00  INFO 5896 --- [           main] b.c.s.A.gemma3.Gemma3Manager             : Sending request to Ollama...</span></span>
+<span data-line><span>2025-12-09T20:33:38.771-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Received response from Ollama.</span></span>
+<span data-line><span>2025-12-09T20:33:38.772-03:00  INFO 5896 --- [onPool-worker-1] b.c.s.A.gemma3.Gemma3Manager             : Ollama raw response for session live-test-session-456: takeOff</span></span>
+<span data-line><span>up(50)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>forward(40)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>forward(20)</span></span>
+<span data-line><span>left(80)</span></span>
+<span data-line><span>backward(20)</span></span>
+<span data-line><span>left(40)</span></span>
+<span data-line><span>backward(40)</span></span>
+<span data-line><span>right(80)</span></span>
+<span data-line><span>land</span></span>
+<span data-line><span>turnOff</span></span>
+<span data-line><span>-------------------- ANÁLISE DA RESPOSTA REAL (ACURÁCIA) --------------------</span></span>
+<span data-line><span>[MÉTRICA] Tempo de Resposta da IA (ms): 10339</span></span>
+<span data-line><span>----------------- Métricas de Classificação -----------------</span></span>
+<span data-line><span>Comandos Gerados   (13): [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>Comandos Esperados (13): [takeOff, up(50), right(80), forward(40), left(40), forward(20), left(80), backward(20), left(40), backward(40), right(80), land, turnOff]</span></span>
+<span data-line><span>Verdadeiros Positivos (TP): 13</span></span>
+<span data-line><span>Falsos Positivos (FP)     : 0</span></span>
+<span data-line><span>Falsos Negativos (FN)     : 0</span></span>
+<span data-line><span>-------------------------------------------------------------</span></span>
+<span data-line><span>[MÉTRICA] Precisão (Precision): 1,0000</span></span>
+<span data-line><span>[MÉTRICA] Revocação (Recall):    1,0000</span></span>
+<span data-line><span>[MÉTRICA] Pontuação-F1 (F1-Score): 1,0000</span></span>
+<span data-line><span>============================================================================</span></span>
+<span data-line><span>[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 533.7 s -- in br.cefet.segaudit.AIModelManagerLiveTest</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] Results:</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0</span></span>
+<span data-line><span>[INFO] </span></span>
+<span data-line><span>[INFO] ------------------------------------------------------------------------</span></span>
+<span data-line><span>[INFO] BUILD SUCCESS</span></span>
+<span data-line><span>[INFO] ------------------------------------------------------------------------</span></span>
+<span data-line><span>[INFO] Total time:  08:56 min</span></span>
+<span data-line><span>[INFO] Finished at: 2025-12-09T20:33:38-03:00</span></span>
+<span data-line><span>[INFO] ------------------------------------------------------------------------</span></span></code></pre></figure></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-279" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#human-to-agent" data-for="human-to-agent">Human To Agent</a></li><li class="depth-1"><a href="#context" data-for="context">Context</a></li><li class="depth-2"><a href="#v1" data-for="v1">v1</a></li><li class="depth-2"><a href="#v2" data-for="v2">v2</a></li><li class="depth-2"><a href="#v3" data-for="v3">v3</a></li><li class="depth-2"><a href="#v4" data-for="v4">v4</a></li><li class="depth-1"><a href="#tokemização" data-for="tokemização">Tokemização</a></li><li class="depth-1"><a href="#testes" data-for="testes">Testes</a></li><li class="depth-2"><a href="#teste-1" data-for="teste-1">Teste 1</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2025</p><ul><li><a href="https://github.com/kkphoenixgx">GitHub</a></li><li><a href="kauaAlvesWorkplace@gmail.com">Gmail</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js" type="module"></script></html>

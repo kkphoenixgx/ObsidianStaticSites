@@ -6,6 +6,30 @@
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Drawing 2025-12-03 16.44.02.excalidraw</title>
+    <link>https://quartz.jzhao.xyz/-Excalidraw/Drawing-2025-12-03-16.44.02.excalidraw</link>
+    <guid>https://quartz.jzhao.xyz/-Excalidraw/Drawing-2025-12-03-16.44.02.excalidraw</guid>
+    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
+    <pubDate>Wed, 03 Dec 2025 19:45:17 GMT</pubDate>
+  </item><item>
+    <title>Projeto e arquitetura de software</title>
+    <link>https://quartz.jzhao.xyz/Conceitos/Software/Projeto-e-arquitetura-de-software</link>
+    <guid>https://quartz.jzhao.xyz/Conceitos/Software/Projeto-e-arquitetura-de-software</guid>
+    <description><![CDATA[ Projeto e arquitetura de software 2025-09-10 tags: -Software e sua metalinguagem Projetos de software É a fase que objetiva definir e especificar uma solução implementada. ]]></description>
+    <pubDate>Mon, 20 Oct 2025 23:09:36 GMT</pubDate>
+  </item><item>
+    <title>Administração de Redes</title>
+    <link>https://quartz.jzhao.xyz/Conceitos/Software/Administra%C3%A7%C3%A3o-de-Redes</link>
+    <guid>https://quartz.jzhao.xyz/Conceitos/Software/Administra%C3%A7%C3%A3o-de-Redes</guid>
+    <description><![CDATA[ Administração de Redes 2025-09-13 tags: -Software e sua metalinguagem Sistemas Operacionais Redes de computadores Aula 1 - instalando debian Instala o debian, valeu? 01 - Instalação e Configuração do Debian.pdf Depois: nano /etc/network/interfaces troca o ens18 para auto e a interface vai ficar stat... ]]></description>
+    <pubDate>Tue, 16 Sep 2025 13:31:16 GMT</pubDate>
+  </item><item>
+    <title>Modelagem de Dados</title>
+    <link>https://quartz.jzhao.xyz/Conceitos/Software/Modelagem-de-Dados</link>
+    <guid>https://quartz.jzhao.xyz/Conceitos/Software/Modelagem-de-Dados</guid>
+    <description><![CDATA[ - Modelagem de Dados 2024-02-28 tags: -Software e sua metalinguagem Desenvolvimento Entidades Uma entidade é um objeto do universo necessidade oferecido pelo cliente. ]]></description>
+    <pubDate>Sat, 13 Sep 2025 22:02:16 GMT</pubDate>
+  </item><item>
     <title>mapa-processos.excalidraw</title>
     <link>https://quartz.jzhao.xyz/Conceitos/Business/Gest%C3%A3o-de-Processos-de-Neg%C3%B3cio/mapa-processos.excalidraw</link>
     <guid>https://quartz.jzhao.xyz/Conceitos/Business/Gest%C3%A3o-de-Processos-de-Neg%C3%B3cio/mapa-processos.excalidraw</guid>
@@ -41,30 +65,6 @@
     <guid>https://quartz.jzhao.xyz/Conceitos/Hardware/img/Soma-com-v%C3%A1rias-colunas.excalidraw</guid>
     <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠ Excalidraw Data Text Elements. ]]></description>
     <pubDate>Tue, 09 Sep 2025 23:34:19 GMT</pubDate>
-  </item><item>
-    <title>Soma Binária.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Conceitos/Hardware/img/Soma-Bin%C3%A1ria.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Conceitos/Hardware/img/Soma-Bin%C3%A1ria.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠ Excalidraw Data Text Elements 0 sobe 1 . ]]></description>
-    <pubDate>Tue, 09 Sep 2025 23:32:21 GMT</pubDate>
-  </item><item>
-    <title>SimplefunctionWithTwosentences.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/img/SimplefunctionWithTwosentences.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/img/SimplefunctionWithTwosentences.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠ Excalidraw Data Text Elements x y . ]]></description>
-    <pubDate>Tue, 09 Sep 2025 23:32:00 GMT</pubDate>
-  </item><item>
-    <title>Fluxograma com horários Organização.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Excalidraw/Fluxograma-com-hor%C3%A1rios-Organiza%C3%A7%C3%A3o.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Excalidraw/Fluxograma-com-hor%C3%A1rios-Organiza%C3%A7%C3%A3o.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 23:28:55 GMT</pubDate>
-  </item><item>
-    <title>Multiplicações sucessivas.excalidraw</title>
-    <link>https://quartz.jzhao.xyz/Conceitos/Hardware/img/Multiplica%C3%A7%C3%B5es-sucessivas.excalidraw</link>
-    <guid>https://quartz.jzhao.xyz/Conceitos/Hardware/img/Multiplica%C3%A7%C3%B5es-sucessivas.excalidraw</guid>
-    <description><![CDATA[ ⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ]]></description>
-    <pubDate>Tue, 09 Sep 2025 23:27:09 GMT</pubDate>
   </item>
     </channel>
   </rss>

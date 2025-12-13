@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Projeto e arquitetura de software</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="KKPHOENIX"/><meta property="og:title" content="Projeto e arquitetura de software"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Projeto e arquitetura de software"/><meta name="twitter:description" content="Projeto e arquitetura de software 2025-09-10 tags: -Software e sua metalinguagem Projetos de software É a fase que objetiva definir e especificar uma solução implementada."/><meta property="og:description" content="Projeto e arquitetura de software 2025-09-10 tags: -Software e sua metalinguagem Projetos de software É a fase que objetiva definir e especificar uma solução implementada."/><meta property="og:image:alt" content="Projeto e arquitetura de software 2025-09-10 tags: -Software e sua metalinguagem Projetos de software É a fase que objetiva definir e especificar uma solução implementada."/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Conceitos/Software/Projeto-e-arquitetura-de-software"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Conceitos/Software/Projeto-e-arquitetura-de-software"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="Projeto e arquitetura de software 2025-09-10 tags: -Software e sua metalinguagem Projetos de software É a fase que objetiva definir e especificar uma solução implementada."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUva2twaG9lbml4L0RvY3VtZW50b3MvV29ya3NwYWNlL1F1YXJ0ei9xdWFydHpFc3R1ZG9zL3F1YXJ0ei9jb21wb25lbnRzL3N0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/></head><body data-slug="Conceitos/Software/Projeto-e-arquitetura-de-software"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">KKPHOENIX</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-542"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-542" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Conceitos/">Conceitos</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Conceitos/Software/">Software</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Projeto e arquitetura de software</a></div></nav><h1 class="article-title">Projeto e arquitetura de software</h1><p show-comma="true" class="content-meta"><time datetime="2025-10-20T23:09:36.492Z">Oct 20, 2025</time><span>10 min read</span></p></div></div><article class="popover-hint"><h1 id="projeto-e-arquitetura-de-software">Projeto e arquitetura de software<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#projeto-e-arquitetura-de-software" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>2025-09-10
+tags: <a href="../../Conceitos/Software/-Software-e-sua-metalinguagem" class="internal alias" data-slug="Conceitos/Software/-Software-e-sua-metalinguagem">-Software e sua metalinguagem</a></p>
+<h2 id="projetos-de-software">Projetos de software<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#projetos-de-software" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>É a fase que objetiva definir e especificar uma solução implementada. É onde ocorre as tomadas de decisão relativas até estratégias e tecnologias. E é onde ocorre um refinamento dos modelos conceituais obtidos na fase de análise e especificação.</p>
+<p>Aumentam a dificuldade do desenvolvimento:</p>
+<ul>
+<li>Escopo e complexidade do software</li>
+<li>Entrosamento e tamanho da equipe</li>
+<li>Mudança de requisitos</li>
+<li>Mudança de tecnologias envolvidas</li>
+</ul>
+<p>Projetos informais:</p>
+<ul>
+<li>Os requisitos, modelos e projetos residem apenas na mente dos desenvolvedores.</li>
+<li>Projeto é uma ideia superficialmente definida que está na cabeça da equipe.</li>
+</ul>
+<p>Então, só funciona para sites pequenos…</p>
+<p><strong>Análise e especificação</strong>: Geralmente software que tem certo nível de organização, tem: <em>elicitação,  análise e especificação de requisitos</em>. A análise e especificação criam o <strong>domínio do problema</strong> e não fornece detalhes e estratégias de implementação. E definir esses e outros detalhes é o <strong>projeto de software</strong></p>
+<p>Projeto de software:</p>
+<ul>
+<li>Possuem <strong>diferentes soluções</strong>.</li>
+<li>Quer transformar a <strong>especificação de um requisito em especificação de solução</strong></li>
+<li>Querem propor uma <strong>solução</strong>.</li>
+<li>Nessa fase temos <strong>tomada de decisão</strong> sobre o software.
+<ul>
+<li>Detalhes de implementação</li>
+<li>Tecnologias</li>
+<li>Como lidar com limitações de hardware</li>
+<li>A interface</li>
+<li>Determinar recursos necessários</li>
+</ul>
+</li>
+</ul>
+<p>As decisões <em><strong>vão de maior abstração para menor abstração</strong></em>.</p>
+<ul>
+<li>Independem do ciclo de vida.</li>
+<li>Se inicia depois da análise e especificação.</li>
+<li>Última atividade do processo de modelagem e primeira atividade tecnológica</li>
+</ul>
+<p><img src="../.././../img/Screenshot_20250910_193353_Teams.jpg" width="auto" height="auto" alt/></p>
+<h3 id="etapas-da-fase-de-projeto">Etapas da fase de projeto<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#etapas-da-fase-de-projeto" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Projeto Arquitetônico</strong> - definição da macro organização e suas relações, organização e suas divisões.</li>
+<li><strong>Projeto elementar</strong> - Definição dos módulos, seus módulos interiores e seus relacionamentos.</li>
+<li><strong>Projeto detalhado</strong> - Detalhamento dos elementos especificados no projeto elementar.</li>
+</ol>
+<h3 id="principios-de-projeto">Principios de projeto<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#principios-de-projeto" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Projetos mal construídos provocam <strong>consequências graves</strong>:</p>
+<ul>
+<li>Baixa produtividade</li>
+<li>Baixa qualidade</li>
+<li>Requisitos não atendidos</li>
+<li>Atrasos no cronograma</li>
+<li>Aumento de trabalho</li>
+</ul>
+<p><strong>Princípios gerais de projeto</strong>:</p>
+<ul>
+<li>Projeto sem qualidade = software sem qualidade</li>
+<li>Possuem princípios fundamentais de um projeto:
+<ul>
+<li>Considerar abordagens alternativas</li>
+<li>Deve ser rastreável</li>
+<li>Reutilizar soluções eficientes conhecidas</li>
+<li>Uniformidade</li>
+<li>Deve ser aberto a mudanças</li>
+<li>Apto a ser avaliado quanto a qualidade</li>
+<li>Revisado</li>
+<li>Possibilitar uma visão do todo</li>
+<li>O todo deve ser decomposto em partes</li>
+<li>Refinamento das partes</li>
+</ul>
+</li>
+<li>Minimizar a distância conceitual entre domínio da solução e do problema</li>
+<li>Suportar circunstâncias não usuais</li>
+<li>Nível de abstração deve ser mais alto que a codificação. Não deve falar como fazer e sin o que fazer.</li>
+</ul>
+<p><strong>Princípios da engenharia de software</strong>:</p>
+<ul>
+<li>Software existe para agregar valor aos stakeholders</li>
+<li>O projeto deve ser o mais simples possível</li>
+<li>Visão arquitetural é fundamental</li>
+<li>Modelos devem ser simples</li>
+<li>Projeto deve poder acomodar alterações</li>
+<li>Deve Reutilizar soluções existentes.</li>
+<li>Decisões devem ser bem pensadas.</li>
+</ul>
+<p><strong>Princípios da modelagem ágil para projetos</strong>:</p>
+<ul>
+<li>Crie apenas modelos necessários</li>
+<li>Desenvolva modelos simples</li>
+<li>Devem ser passíveis de alteração</li>
+<li>Valide os módulos construídos</li>
+</ul>
+<h2 id="os-sistemas-da-informação">Os sistemas da Informação<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#os-sistemas-da-informação" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><strong>Sistema de transformação ou processamento</strong>: Sistema que dada uma entrada, dá uma saída.</p>
+<p><strong>Sistema de transformação contínua</strong>: Sistemas que fazem transformação (processamento) de forma ininterrupta.</p>
+<p>Fowler diz <strong>características</strong> sobre sistemas da Informação:</p>
+<ul>
+<li>gerenciam grandes massas de dados</li>
+<li>possuem geralmente banco de dados</li>
+<li>podem armazenar dados por longos períodos de tempo</li>
+<li>constantemente podem mudar por requisitos ou expansões</li>
+<li>permitem acesso simultâneo e conxorrente</li>
+<li>possuem interfaces</li>
+<li>lidam com usuários que não dominam a utilização do sistema</li>
+<li>apresentam dados de distintas formas</li>
+<li>podem estar integrados a outros sistemas e ter problemas de integração</li>
+<li>possuem regras de negócio e atendes condições que mudam</li>
+<li>as condições podem tornar o sistema muito complexo</li>
+</ul>
+<p>Dessa forma, um si é um sistema de interface interativa e gerenciador de transações.</p>
+<p>Desse modo, podemos definir <strong>padrões de qualidade</strong>:</p>
+<ul>
+<li>Usabilidade</li>
+<li>Segurança</li>
+</ul>
+<ul>
+<li>Confiabilidade</li>
+<li>Eficiência</li>
+<li>Compatibilidade</li>
+<li>Manutenabilidade</li>
+</ul>
+<p><strong>Categorias de sistema</strong> por plataforma:</p>
+<ul>
+<li>Desktop</li>
+<li>Mobile</li>
+<li>Web
+<ul>
+<li><em>Informativa</em> - que informa</li>
+<li><em>Interativa</em> - grande interação com o usuário</li>
+<li><em>Transacional</em> - Realiza transações (Banco)</li>
+<li><em>Orientadas a fluxo de trabalho</em> - Facilita atividades de trabalho, controle de estoque…</li>
+<li><em>Ambiente de trabalho colaborativo</em> - Vários usuários usam ao mesmo tempo</li>
+<li><em>Comunidades e mercados online</em> - Sistemas de recomendação, fóruns</li>
+</ul>
+</li>
+</ul>
+<h2 id="estilos-arquiteturais">Estilos arquiteturais<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#estilos-arquiteturais" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Usar arquiteturas para:</p>
+<ul>
+<li>evitar testes</li>
+<li>evitar problemas que teria reinventando a roda</li>
+<li>Fornece vocabulario comum</li>
+<li>Melhor comunicação</li>
+</ul>
+<p>Um estilo arquitetural trás um arquétipo generico para uma solução.</p>
+<p>Um estilo arquitetural é um conjunto de principios e padrões para uma organização estrutural de um projeto.</p>
+<p>Se definem por <strong>componentes</strong> e <strong>conectores</strong>. Podem usar conjuntamente os estilos. Taxonomia clássica:</p>
+<ul>
+<li>Estrutura</li>
+<li>Domínio</li>
+<li>Distribuição</li>
+<li>Comunicação</li>
+</ul>
+<h3 id="orientado-a-objetos">Orientado a objetos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#orientado-a-objetos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Modelar sistemas usando conceitos do mundo real.
+Interação entre objetos são mensagens.</p>
+<p><strong>Princípios do estilo</strong>:</p>
+<ul>
+<li>Abstração</li>
+<li>Composição</li>
+<li>Herança</li>
+<li>Realização</li>
+<li>Encapsulamento</li>
+<li>Polimorfismo</li>
+<li>Desacoplamento</li>
+</ul>
+<p><strong>Vantagens</strong>:</p>
+<ul>
+<li>Simplicidade de compreensão</li>
+<li>Facilidade de uso</li>
+<li>Facilidade de reuso</li>
+<li>Facilidade de manutenção e extensão</li>
+<li>Maior simplicidade de testes</li>
+</ul>
+<p><strong>Desvantagem</strong>:</p>
+<ul>
+<li><strong>Qualidade depende do desenvolvimento</strong> : Usar o estilo orientado a objetos sem boas práticas não garante os benefícios citados.</li>
+<li><strong>Modelagem complexa</strong>  embora a codificação seja facilitada.</li>
+</ul>
+<h3 id="baseado-em-componentes">Baseado em componentes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#baseado-em-componentes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Modela um sistema baseado em componentes funcionais e lógico.</p>
+<ul>
+<li>Deve ter interface definida pata comunicação com outros componentes</li>
+<li>Componentes se comunicam por mensagem</li>
+<li>Componentes tem um nível de abstração maior que uma classe</li>
+<li>Componentes pode ser constituídos por diversos módulos que se relacionam</li>
+<li>Apenas as interfaces são conhecidas por outros módulos/componentes</li>
+<li>Apenas interfaces podem se comunicar com outros módulos</li>
+</ul>
+<p>A vantagem disso é a manutenção</p>
+<p><strong>Princípios</strong>:</p>
+<ul>
+<li>Reusabilidade</li>
+<li>Substituibilidade</li>
+<li>Encapsulamento</li>
+<li>Independência</li>
+</ul>
+<p>Vantagens:</p>
+<ul>
+<li>Facilidade de implantação</li>
+<li>barateamento de produto</li>
+<li>Facilidade de desenvolvimento</li>
+<li>Reutilização.</li>
+</ul>
+<p>Desvantagens:</p>
+<ul>
+<li>Menor flexibilidade</li>
+<li>Exige planejamento rigoroso</li>
+</ul>
+<h3 id="dutos-e-filtros">Dutos e filtros<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#dutos-e-filtros" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>O estilo Dutos e Filtros modela um fluxo direcionado de dados. Uma rede pela qual dados fluem de uma extremidade (origem) até a outra (destino). Os dados fluem através dos dutos e são transformados nos filtros.</p>
+<p>Os dutos consistem em:   <strong>Canais unidirecionais (simplex) de fluxo de dados.</strong> Transportam dados entre filtros.</p>
+<p>Os <strong>filtros</strong> consistem em:</p>
+<ul>
+<li>Conversores de dados. Transformam o fluxo de entrada em fluxo de saída. Cada filtro possui um conjunto de entradas e um conjunto de saídas.  Os filtros:
+<ol>
+<li>Leem os dados de entrada;</li>
+<li>Realizam uma transformação;</li>
+<li>Geram os dados de saída.</li>
+</ol>
+</li>
+<li>Os filtros são entidades <strong>independentes entre si</strong>. Não compartilham estados (informações internas) uns com os outros.</li>
+</ul>
+<p>Neste estilo:<br/>
+Os componentes são:  Os filtros.<br/>
+Os conectores são:  Os dutos.</p>
+<p><img src="../../img/ProjetoearquiteturadesoftwareDutosEFiltros.png" width="auto" height="auto" alt/></p>
+<p><img src="../../img/ProjetoearquiteturadesoftwareVisãoMacroDutosEFiltros.png" width="auto" height="auto" alt/></p>
+<p>Algumas vantagens do estilo são:</p>
+<ul>
+<li><strong>Simplicidade de compreensão e análise</strong>: Possibilita que o projetista compreenda o comportamento geral do sistema ou de parte dele como uma sucessão simples dos filtros envolvidos.</li>
+<li><strong>Facilidade de reuso</strong>: Qualquer filtro pode ser conectado em novas redes, desde que sejam compatíveis.</li>
+<li><strong>Facilidade de manutenção e expansão</strong>: Novos filtros podem ser adicionados ou substituídos em um sistema existente.</li>
+<li><strong>Suporte a execução concorrente</strong> : É possível existir filtros não sequenciais que podem ser executados em paralelo.</li>
+</ul>
+<p>Algumas desvantagens do estilo são:</p>
+<ul>
+<li><strong>Complexidade de implementação</strong>: Embora processem dados incrementalmente, cada filtro precisa ser projetado como uma unidade de transformação de entradas em saídas independente e autocontida .</li>
+<li><strong>Não atende bem aplicações interativas</strong>: Como o estilo prevê uma série de transformações a partir de uma entrada inicial, não é muito eficiente se no meio do processo forem necessárias operações de entrada de dados.</li>
+</ul>
+<h3 id="camadas">Camadas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#camadas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Cada camada acessa serviços providos pelas camadas inferiores e fornece serviços às  camadas superiores. A comunicação entre camadas ocorre por meio de protocolos de interação</p>
+<p><strong>Arquitetura em camadas fechada</strong>:
+Nesse modelo, cada camada se comunica apenas com a camada imediatamente abaixo,  não tendo conhecimento das demais camadas inferiores.Fornece isolamento e manutenibilidade, mas eleva a complexidade do projeto e engessa  mais seu modelo. Uma camada pode ter que agregar ou interfacear os recursos da camada inferior para  que a camada acima tenha acesso a eles.</p>
+<p><strong>Arquitetura em camadas aberta:</strong>
+Nesse modelo, cada camada pode usar recursos de quaisquer camadas inferiores.Confere maior coesão às camadas e simplifica o projeto, mas aumenta o acoplamento entre camadas, prejudicando a manutenibilidade.</p>
+<p><strong>O conhecimento de uma camada é unidirecional</strong>.  Uma camada conhece as camadas inferiores, mas não tem qualquer conhecimento  sobre as camadas superiores</p>
+<p>Vantagens:</p>
+<ul>
+<li><strong>Alta separação de responsabilidades</strong>: Cada camada possui recursos com responsabilidades bem definidas segundo a um determinado critério, conferindo elevada coesão às partes do sistema.</li>
+<li><strong>Nível de abstração incremental</strong>: O problema é dividido desde camadas que possuem responsabilidades mais específicas  até camadas com responsabilidades mais gerais.</li>
+<li><strong>Reutilização</strong>: Uma determinada camada pode ser usada com diferentes implementações, desde que provejam as mesmas interfaces para as camadas superiores.</li>
+<li><strong>Facilidade de manutenção e expansão</strong> : Alterações em uma camada podem impactar apenas as camadas superiores. Novas camadas podem ser acrescidas ao modelo com relativa simplicidade.</li>
+</ul>
+<p>Desvantagens:</p>
+<ul>
+<li><strong>Não atende bem a todos os tipos de aplicação</strong>: Nem todos os sistemas podem ser facilmente estruturados em camadas.</li>
+<li><strong>Desempenho reduzido</strong>: A divisão em camadas acaba impactando o desempenho, de modo que, aplicações que  priorizam desempenho podem não ser bem atendidas pelo estilo.</li>
+<li><strong>Nem sempre é simples estabelecer o número adequado de camadas</strong>: Um número muito <em>grande de camadas</em> pode <em>elevar</em> desnecessariamente a  <em>complexidade</em> de implementação e <em>impactar o desempenho</em>. Por outro lado, um número muito <em>reduzido</em> de camadas pode <em>não garantir a coesão</em> e <em>isolamento</em> adequados, descaracterizando o estilo.  O número de <em>camadas não depende apenas dos requisitos funcionais, mas também dos não funcionais.</em></li>
+</ul>
+<h3 id="hexagonal---portas-e-adaptadores">Hexagonal - Portas e Adaptadores<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#hexagonal---portas-e-adaptadores" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Regra de negócio no core. Infraestrutura em volta - adaptadores -. Sendo as portas, a forma que conecta o core com os adaptadores, as portas são interfaces. As portas podendo ser:</p>
+<ul>
+<li><strong>Portas de entradas</strong> - Entra informação para o núcleo.</li>
+<li><strong>Porta de saída</strong> - Sai informação do núcleo.</li>
+</ul>
+<p style="display:flex;justify-content:end;text-align:right;"> <i> Portas de Entrada (Driving/Primary Ports): São a API do seu core. São chamadas por adaptadores primários (como um Controller de uma API REST ou) para iniciar uma ação no domínio.
+Portas de Saída (Driven/Secondary Ports): São as dependências do seu core. O núcleo precisa que algo implemente essa interface para que ele possa obter dados ou enviar dados para o exterior (ex: buscar algo no banco de dados, salvar um arquivo).
+~Gemini</i></p>
+<p>Tanto a infraestrutura quanto o core usam as portas, as portas são contratos que estabelecem uma diplomacia entre o core e os adaptadores. Os adaptadores não estabelecem diplomacia com outros adaptadores através das portas do core, mas sim com o próprio core.</p>
+<p><img src="../../img/ProjetoearquiteturadesoftwareHexagonalRelacaoDependencias.png" width="auto" height="auto" alt/></p>
+<p>Por definição, as portas ficam dentro do core, já que o core define como são essas interfaces, contudo, o Octávio pelo menos não cobra dessa forma, então <em>para ele</em> as <em>portas ficam fora dos adaptadores</em> por causa do seu nível de abstração, isso é antigo e eu particularmente não concordo, mas <em>usa a forma que o professor falou</em>.</p>
+<p><img src="../../img/ProjetoEArquiteturaDeSoftwareArquitetura---Hexagonal.png" width="auto" height="auto" alt/></p>
+<p>Quem vai receber a responsabilidade de ter os objetos e coordenar o fluxo é a main. A main vai criar um adaptador e passar para dentro dele um core que implementa uma porta ou passar para dentro do core um adaptador que implementa uma porta, sendo essa porta uma porta de saída ou de entrada dependendo do domínio do core.</p>
+<h3 id="orientado-ao-domínio">Orientado ao domínio<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#orientado-ao-domínio" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A modelagem do sistema deve ser a mais próxima possível da dinâmica do mundo real.</p>
+<h3 id="camadas-físicas">Camadas físicas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#camadas-físicas" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Vai dividir em camadas físicas mesmo… Firmware,</p>
+<p>Essas camadas e os hardwares se comunicam via rede, por protocolos</p>
+<p>Um servidor para login, um para mensagem, um para o servidor do jogo…</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-270" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#projeto-e-arquitetura-de-software" data-for="projeto-e-arquitetura-de-software">Projeto e arquitetura de software</a></li><li class="depth-1"><a href="#projetos-de-software" data-for="projetos-de-software">Projetos de software</a></li><li class="depth-2"><a href="#etapas-da-fase-de-projeto" data-for="etapas-da-fase-de-projeto">Etapas da fase de projeto</a></li><li class="depth-2"><a href="#principios-de-projeto" data-for="principios-de-projeto">Principios de projeto</a></li><li class="depth-1"><a href="#os-sistemas-da-informação" data-for="os-sistemas-da-informação">Os sistemas da Informação</a></li><li class="depth-1"><a href="#estilos-arquiteturais" data-for="estilos-arquiteturais">Estilos arquiteturais</a></li><li class="depth-2"><a href="#orientado-a-objetos" data-for="orientado-a-objetos">Orientado a objetos</a></li><li class="depth-2"><a href="#baseado-em-componentes" data-for="baseado-em-componentes">Baseado em componentes</a></li><li class="depth-2"><a href="#dutos-e-filtros" data-for="dutos-e-filtros">Dutos e filtros</a></li><li class="depth-2"><a href="#camadas" data-for="camadas">Camadas</a></li><li class="depth-2"><a href="#hexagonal---portas-e-adaptadores" data-for="hexagonal---portas-e-adaptadores">Hexagonal - Portas e Adaptadores</a></li><li class="depth-2"><a href="#orientado-ao-domínio" data-for="orientado-ao-domínio">Orientado ao domínio</a></li><li class="depth-2"><a href="#camadas-físicas" data-for="camadas-físicas">Camadas físicas</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2025</p><ul><li><a href="https://github.com/kkphoenixgx">GitHub</a></li><li><a href="kauaAlvesWorkplace@gmail.com">Gmail</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>
