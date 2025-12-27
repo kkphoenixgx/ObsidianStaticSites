@@ -6,65 +6,65 @@
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Console app commands</title>
-    <link>https://quartz.jzhao.xyz/Linux/Console-app-commands</link>
-    <guid>https://quartz.jzhao.xyz/Linux/Console-app-commands</guid>
-    <description><![CDATA[ Console app commands 2025-12-13 tags: 💻 indexLinux ngrock → port forward para http You have to be logged in the site, it is really good, free plan is really ok. ]]></description>
-    <pubDate>Sat, 13 Dec 2025 20:59:09 GMT</pubDate>
+    <title>01-CONCEITOS BASICOS</title>
+    <link>https://quartz.jzhao.xyz/SQL/Pdf/01-CONCEITOS-BASICOS.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/Pdf/01-CONCEITOS-BASICOS.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>HumanToAgent</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/HumanToAgent</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/HumanToAgent</guid>
-    <description><![CDATA[ Human To Agent 2025-12-08 tags: project Context v1 Você é um tradutor de linguagem natural para comandos de agente em KQML com 300 de QI que faz constantemente **Semantic Parsing**. ]]></description>
-    <pubDate>Tue, 09 Dec 2025 23:34:35 GMT</pubDate>
+    <title>02-CONCEITOS INTERMEDIARIOS</title>
+    <link>https://quartz.jzhao.xyz/SQL/Pdf/02-CONCEITOS-INTERMEDIARIOS.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/Pdf/02-CONCEITOS-INTERMEDIARIOS.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>README</title>
-    <link>https://quartz.jzhao.xyz/Project-notes/temp/README</link>
-    <guid>https://quartz.jzhao.xyz/Project-notes/temp/README</guid>
-    <description><![CDATA[ AI Gateway para ContextNet Este projeto é um servidor Java construído com Spring Boot que atua na gerencia múltiplas conexões WebSocket, traduzindo comandos de usuários em linguagem natural para comandos KQML que podem ser executados por um determinado agente na ContextNet. ]]></description>
-    <pubDate>Mon, 08 Dec 2025 18:33:11 GMT</pubDate>
+    <title>BancoDeDadosCefetGraduacao</title>
+    <link>https://quartz.jzhao.xyz/SQL/Pdf/BancoDeDadosCefetGraduacao.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/Pdf/BancoDeDadosCefetGraduacao.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>update</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/%5Bold%5D-v16/update</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/%5Bold%5D-v16/update</guid>
-    <description><![CDATA[ Servicos-e-Injecao-de-Dependencia.md: Reforce o conceito de Injeção de Dependência. ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:42:59 GMT</pubDate>
+    <title>BancoDeDados2024V03</title>
+    <link>https://quartz.jzhao.xyz/SQL/aulas/Aula-4/BancoDeDados2024V03.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/aulas/Aula-4/BancoDeDados2024V03.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>Exercícios</title>
-    <link>https://quartz.jzhao.xyz/C/exercicios/Exerc%C3%ADcios</link>
-    <guid>https://quartz.jzhao.xyz/C/exercicios/Exerc%C3%ADcios</guid>
-    <description><![CDATA[ 🦖 index C #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; struct ObjetoNoCartesiano{ float x; float y; }; void calcularDistanciaMedia( struct ObjetoNoCartesiano a, struct ObjetoNoCartesiano b, struct ObjetoNoCartesiano *d){ printf(&quot;Valores do array A: [%f, %f] \n&quot;, a.x, a.y); printf(&q... ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>09-FUNCOES_DE_AGREGACAO</title>
+    <link>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/09-FUNCOES_DE_AGREGACAO.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/09-FUNCOES_DE_AGREGACAO.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>CLI</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/CLI</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/CLI</guid>
-    <description><![CDATA[ CLI 2024-08-19 tags: index Angular instalando o Angular [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 3/Aula1.md ] Npm básico de cria; npm install -g @angular/cli ← Baixar o cli do Angular] ng new folder-app → Seleciona y para o routing → Seleciona scss se q... ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>10-GROUP BY</title>
+    <link>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/Order-by/10-GROUP-BY.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/Order-by/10-GROUP-BY.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>Componentes</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Componentes</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Componentes</guid>
-    <description><![CDATA[ Componentes 2024-08-19 tags: index Angular como dar build no angular e como gerar componentes [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 3/Aula2.md ] // Arquivo: app.component.ts // Importando a API de componente do Angular import { Component } from &#039... ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>11-GROUP BY_HAVING_JOIN Parte 2</title>
+    <link>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/Order-by/11-GROUP-BY_HAVING_JOIN-Parte-2.pdf</link>
+    <guid>https://quartz.jzhao.xyz/SQL/aulas/Semana-10/Order-by/11-GROUP-BY_HAVING_JOIN-Parte-2.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>ComunicacaoEntreComponentes</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/ComunicacaoEntreComponentes</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/ComunicacaoEntreComponentes</guid>
-    <description><![CDATA[ Comunicação entre Componentes 2025-11-23 tags: index Angular Introdução a comunicação entre componentes [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 7/Aula13.md ] É bem simples como funciona a comunicação de pai para filho, deve-se criar um input. ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>20240305190759</title>
+    <link>https://quartz.jzhao.xyz/SQL/img/20240305_190759.jpg</link>
+    <guid>https://quartz.jzhao.xyz/SQL/img/20240305_190759.jpg</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>DataBinding</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/DataBinding</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/DataBinding</guid>
-    <description><![CDATA[ Data Binding 2025-11-23 tags: index Angular Data bindigs e two-way binding [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 4/Aula5.md ] O data binding nada mais é que uma forma de tratar dados. ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>20241008202925</title>
+    <link>https://quartz.jzhao.xyz/SQL/img/20241008_202925.jpg</link>
+    <guid>https://quartz.jzhao.xyz/SQL/img/20241008_202925.jpg</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item><item>
-    <title>Diretivas</title>
-    <link>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Diretivas</link>
-    <guid>https://quartz.jzhao.xyz/JavascriptTypescript/Angular/Diretivas</guid>
-    <description><![CDATA[ Diretivas 2025-11-23 tags: index Angular Diretivas e ngIf [ fonte: /home/kkphoenix/Documents/Programação/JavascriptTypescript/Angular/v16/Section 5/Aula7.md ] As diretivas säo classes que adicionam comportamentos adicionais aos elementos em aplicativos Angular. ]]></description>
-    <pubDate>Sun, 23 Nov 2025 20:31:36 GMT</pubDate>
+    <title>20241008205027</title>
+    <link>https://quartz.jzhao.xyz/SQL/img/20241008_205027.jpg</link>
+    <guid>https://quartz.jzhao.xyz/SQL/img/20241008_205027.jpg</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 27 Dec 2025 21:33:29 GMT</pubDate>
   </item>
     </channel>
   </rss>
