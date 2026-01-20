@@ -120,9 +120,9 @@ pre:hover > .expand-button {
           // console.log("MobileDebug: Iniciado");
           
           // Log de eventos para identificar conflitos
-          // document.addEventListener('touchstart', (e) => console.log('Touch Start:', e.target), {passive: true});
-          // document.addEventListener('touchend', (e) => console.log('Touch End:', e.target));
-          // document.addEventListener('click', (e) => console.log('Click:', e.target));
+          document.addEventListener('touchstart', (e) => console.log('Touch Start:', e.target), {passive: true});
+          document.addEventListener('touchend', (e) => console.log('Touch End:', e.target));
+          document.addEventListener('click', (e) => console.log('Click:', e.target));
 
           // Forçar z-index alto na sidebar móvel caso ela esteja sendo coberta
           // O Quartz v4 usa classes como .mobile-only ou .sidebar
