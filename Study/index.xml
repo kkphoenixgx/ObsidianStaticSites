@@ -2,69 +2,69 @@
 <rss version="2.0">
     <channel>
       <title>KKPHOENIX</title>
-      <link>https://quartz.jzhao.xyz</link>
+      <link>https://api-personalwebsite.kkphoenix.com.br</link>
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>SO_04-Escalonamento</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_04-Escalonamento.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_04-Escalonamento.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
-  </item><item>
-    <title>SO_05-GerenciaMemoria01</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
-  </item><item>
-    <title>SO_06-GerenciaMemoria02</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
-  </item><item>
-    <title>modelagemDeDados</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/modelagemDeDados.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/modelagemDeDados.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
-  </item><item>
-    <title>10.1 - Padrão Singleton</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
-  </item><item>
     <title>10.4 - Padrão Façade</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</guid>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
   </item><item>
     <title>7 - Padrões Arquiteturais</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</guid>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
   </item><item>
     <title>8 - Projeto Elementar</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</guid>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
   </item><item>
     <title>9 - Padrões de Projeto</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</guid>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
   </item><item>
     <title>Padroes de Projeto - 10.7 - Padrão Observer</title>
-    <link>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</link>
-    <guid>https://quartz.jzhao.xyz/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</guid>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 19 Jan 2026 14:56:01 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
+  </item><item>
+    <title>lab02</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/lab02.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/lab02.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
+  </item><item>
+    <title>trabalho2</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/trabalho2.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/trabalho2.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
+  </item><item>
+    <title>P1-RedesDeComputadoresAgo2021</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P1-RedesDeComputadoresAgo2021.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P1-RedesDeComputadoresAgo2021.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
+  </item><item>
+    <title>P2 grafos</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P2-grafos.jpg</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P2-grafos.jpg</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
+  </item><item>
+    <title>P2-Algoritmos em Grafos</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P2-Algoritmos-em-Grafos.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/provas/P2-Algoritmos-em-Grafos.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 17:22:47 GMT</pubDate>
   </item>
     </channel>
   </rss>
