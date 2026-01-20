@@ -2,69 +2,69 @@
 <rss version="2.0">
     <channel>
       <title>KKPHOENIX</title>
-      <link>https://api-personalwebsite.kkphoenix.com.br</link>
+      <link>https://https://api-personalwebsite.kkphoenix.com.br/Study</link>
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>SO_05-GerenciaMemoria01</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
-    <title>SO_06-GerenciaMemoria02</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
-    <title>modelagemDeDados</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/modelagemDeDados.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/modelagemDeDados.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
-    <title>10.1 - Padrão Singleton</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
-    <title>10.4 - Padrão Façade</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
-    <title>7 - Padrões Arquiteturais</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
-  </item><item>
     <title>8 - Projeto Elementar</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</guid>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
   </item><item>
     <title>9 - Padrões de Projeto</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</guid>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
   </item><item>
     <title>Padroes de Projeto - 10.7 - Padrão Observer</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</guid>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/Padroes-de-Projeto---10.7---Padr%C3%A3o-Observer.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
   </item><item>
     <title>lab02</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/lab02.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/pdfs/trabalhos/lab02.pdf</guid>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/trabalhos/lab02.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/trabalhos/lab02.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 18:16:59 GMT</pubDate>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>trabalho2</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/trabalhos/trabalho2.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/trabalhos/trabalho2.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>prova 1, SO 2023.2</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/provas/prova-1,-SO-2023.2.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/provas/prova-1,-SO-2023.2.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>Aula 1 – Introdução a Grafos</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/Aula-1-%E2%80%93-Introdu%C3%A7%C3%A3o-a-Grafos.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/Aula-1-%E2%80%93-Introdu%C3%A7%C3%A3o-a-Grafos.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>aula 2 - Representações de grafos</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-2---Representa%C3%A7%C3%B5es-de-grafos.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-2---Representa%C3%A7%C3%B5es-de-grafos.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>aula 3 - Algoritmos em grafos</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-3---Algoritmos-em-grafos.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-3---Algoritmos-em-grafos.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
+  </item><item>
+    <title>aula 4 - algoritmos de busca de caminho mínimo</title>
+    <link>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-4---algoritmos-de-busca-de-caminho-m%C3%ADnimo.pdf</link>
+    <guid>https://https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/Alg-em-Grafos/aula-4---algoritmos-de-busca-de-caminho-m%C3%ADnimo.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Tue, 20 Jan 2026 19:04:01 GMT</pubDate>
   </item>
     </channel>
   </rss>
