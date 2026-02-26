@@ -6,65 +6,65 @@
       <description>Last 10 notes on KKPHOENIX</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>PAC05</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC05.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC05.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
-  </item><item>
-    <title>PAC06</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC06.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC06.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
-  </item><item>
-    <title>PAC07</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC07.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/ProgAplicacoesCorporativas/PAC07.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
-  </item><item>
-    <title>SO_01-IntroducaoUNIX</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_01-IntroducaoUNIX.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_01-IntroducaoUNIX.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
-  </item><item>
-    <title>SO_02-ConceitosSISOP</title>
-    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_02-ConceitosSISOP.pdf</link>
-    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_02-ConceitosSISOP.pdf</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
-  </item><item>
     <title>SO_03-ProcessosThreads</title>
     <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_03-ProcessosThreads.pdf</link>
     <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_03-ProcessosThreads.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
   </item><item>
     <title>SO_04-Escalonamento</title>
     <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_04-Escalonamento.pdf</link>
     <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_04-Escalonamento.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
   </item><item>
     <title>SO_05-GerenciaMemoria01</title>
     <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</link>
     <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_05-GerenciaMemoria01.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
   </item><item>
     <title>SO_06-GerenciaMemoria02</title>
     <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</link>
     <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/SO/SO_06-GerenciaMemoria02.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
   </item><item>
     <title>modelagemDeDados</title>
     <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/modelagemDeDados.pdf</link>
     <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/modelagemDeDados.pdf</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 20 Jan 2026 21:11:56 GMT</pubDate>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
+  </item><item>
+    <title>10.1 - Padrão Singleton</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/10.1---Padr%C3%A3o-Singleton.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
+  </item><item>
+    <title>10.4 - Padrão Façade</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/10.4---Padr%C3%A3o-Fa%C3%A7ade.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
+  </item><item>
+    <title>7 - Padrões Arquiteturais</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/7---Padr%C3%B5es-Arquiteturais.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
+  </item><item>
+    <title>8 - Projeto Elementar</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/8---Projeto-Elementar.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
+  </item><item>
+    <title>9 - Padrões de Projeto</title>
+    <link>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</link>
+    <guid>https://api-personalwebsite.kkphoenix.com.br/Study/pdfs/slides/projetoarqdesoftware/9---Padr%C3%B5es-de-Projeto.pdf</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 26 Feb 2026 19:21:39 GMT</pubDate>
   </item>
     </channel>
   </rss>
