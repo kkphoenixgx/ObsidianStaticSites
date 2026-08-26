@@ -1,0 +1,143 @@
+{
+    "Norf" :{
+        "Rinoh":{
+            "Sommont": {},
+            "Vivoledo": {},
+            "Jefford": {},
+            "Raco": {}
+        },
+        "Lenoh":{
+            "Esteridge": {},
+            "Biatphis": {},
+            "Vrepgate": {},
+            "Gluoron": {},
+            "Dovhledo": {}, 
+            "pretmery": {},
+            "Qonf": {},
+            "Srale": {},
+            "Nento": {}
+        }
+    },
+    "Etera": {
+
+        "Canopty": {
+            "Rentov": {},
+            "Mentt": {},
+            "Kenton": {},
+            "Monton": {},
+            "Trdink": {},
+            "Har": {}
+        },
+        "Larar": {
+            "Brein": {},
+            "Halamar": {},
+            "Dinfon": {},
+            "Mint": {},
+            "Hucke": {},
+            "Averl": {}
+        },
+
+        "Pavera" : {
+            "Isan": {},
+            "Stone": {},
+            "Bent": {},
+            "Dannd": {},
+            "Marl": {},
+            "Corric": {},
+            "Shant": {}
+        },
+        "Povera":{
+            "Charri": {},
+            "Damayt": {},
+            "Trent": {},
+            "Gaoew": {},
+            "Lindene": {},
+            "Garinet": {}
+        },
+
+        "Terintu":{
+            "Celms": {},
+            "Dovine": {},
+            "Ezading": {},
+            "Eimby": {},
+            "Cosas": {},
+            "Phuphis": {},
+            "Lordenc": {},
+            "Zlorburgh": {}
+
+        },
+        "Planícies": {
+            "Ylard": {},
+            "Govis": {},
+            "Qronio": {}
+        },
+        "Dragon Tail":{
+            
+            "Dragon's base": {
+                "Vase": {},
+                "Werken": {}
+            },
+            
+            "Winwera": {},
+            "Ganent": {},
+            "Sthan": {},
+            "Arerin": {},
+            "Weicha": {},
+            "Wertty": {},
+            "Wasana": {},
+            "Hanicha": {},
+            "Arroni": {},
+            "Rannte": {},
+            "Dilleg": {},
+            "Avencha": {},
+            "Dame": {},
+            "Winele": {},
+            "Aricoon": {}
+        }
+    },
+    "Ritera": {
+
+        "Mavera" :{
+            "Andbridge": {},
+            "Machester": {},
+            "Xego": {},
+            "Ebleim": {},
+            "Yolis": {},
+            "Poicester": {},
+            "Yahfast": {},
+            "Clunhul": {},
+            "Heville": {},
+            "Claren": {},
+            "Chalck": {},
+            "Darrd": {},
+            "Divison": {},
+            "Mictol": {},
+            "Bryae": {},
+            "Conwine": {},
+            "Warme": {}
+        },
+        
+        "Charono":{
+            "Qvechesters": {},
+            "Vvstead": {},
+            "Daso": {},
+            "Akresa": {},
+            "Falrora": {},
+            "Zlico": {},
+            "Jeles": {},
+            "Vatol": {},
+            "Flvesa": {},
+            "Drearough": {},
+            "Citon": {},
+            "Bradena": {},
+            "Friclas": {},
+            "Idoshire": {},
+            "Ulving": {}    
+        },
+        "Fenaira": {},
+        "Continente negro" : {
+            "Tinari": {}
+        }
+    }
+    
+}

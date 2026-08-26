@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>chat_gemini_web</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="KKPHOENIX"/><meta property="og:title" content="chat_gemini_web"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="chat_gemini_web"/><meta name="twitter:description" content="analise a matéria da P1 da disciplina A estrutura do material avança da definição atômica de falhas para a padronização sistêmica de processos."/><meta property="og:description" content="analise a matéria da P1 da disciplina A estrutura do material avança da definição atômica de falhas para a padronização sistêmica de processos."/><meta property="og:image:alt" content="analise a matéria da P1 da disciplina A estrutura do material avança da definição atômica de falhas para a padronização sistêmica de processos."/><meta property="og:image" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta property="og:image:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta name="twitter:image" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="api-personalwebsite.kkphoenix.com.br/Study"/><meta property="og:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/Conceitos/Software/Teste-e-manutenção-de-software/chat_gemini_web"/><meta property="twitter:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/Conceitos/Software/Teste-e-manutenção-de-software/chat_gemini_web"/><link rel="icon" href="../../../static/icon.png"/><meta name="description" content="analise a matéria da P1 da disciplina A estrutura do material avança da definição atômica de falhas para a padronização sistêmica de processos."/><meta name="generator" content="Quartz"/><link href="../../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUva2twaG9lbml4L0RvY3VtZW50b3MvV29ya3NwYWNlL1F1YXJ0ei9xdWFydHpFc3R1ZG9zL3F1YXJ0ei9jb21wb25lbnRzL3N0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://api-personalwebsite.kkphoenix.com.br/Study/index.xml"/></head><body data-slug="Conceitos/Software/Teste-e-manutenção-de-software/chat_gemini_web"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="https://www.kkphoenix.com.br/">KKPHOENIX</a></h1><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-577"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-577" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><script>
+          // console.log("MobileDebug: Iniciado");
+          
+          // Log de eventos para identificar conflitos
+          document.addEventListener('touchstart', (e) => console.log('Touch Start:', e.target), {passive: true});
+          document.addEventListener('touchend', (e) => console.log('Touch End:', e.target));
+          document.addEventListener('click', (e) => console.log('Click:', e.target));
+
+          // Forçar z-index alto na sidebar móvel caso ela esteja sendo coberta
+          // O Quartz v4 usa classes como .mobile-only ou .sidebar
+        </script><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/">Conceitos</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/Software/">Software</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/Software/Teste-e-manutenção-de-software/">Teste e manutenção de software</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>chat_gemini_web</a></div></nav><p show-comma="true" class="content-meta"><time datetime="2026-06-30T20:49:49.248Z">Jun 30, 2026</time><span>27 min read</span></p></div></div><article class="popover-hint"><p>analise a matéria da P1 da disciplina</p>
+<p>A estrutura do material avança da definição atômica de falhas para a padronização sistêmica de processos.</p>
+<ol>
+<li>
+<p>Ontologia de Falhas e Depuração</p>
+<p>A separação entre Erro (ação humana), Defeito (manifestação estática) e Falha (desvio dinâmico) cria uma linha de causalidade clara.</p>
+</li>
+</ol>
+<p>A classificação de Shull (Omissão, Ambiguidade, Inconsistência, Fato Incorreto, Informação Estranha, Redundância, Não conformidade) atua na raiz do problema, focando na correção de artefatos antes da fase de execução.</p>
+<p>Avaliação: Bom. A lógica de isolar a causa e estruturar as hipóteses por indução ou dedução sustenta a resolução de desvios de forma metódica.</p>
+<ol start="2">
+<li>
+<p>Princípios e Psicologia</p>
+<p>Os princípios estabelecem premissas lógicas incontornáveis: testes provam a presença de defeitos, mas nunca garantem a sua ausência.</p>
+</li>
+</ol>
+<p>A impossibilidade matemática do teste exaustivo força o foco analítico nos componentes de maior risco e probabilidade de falha.</p>
+<p>A separação de conceitos (Garantia de Qualidade focada no processo versus Controle de Qualidade focado no produto; Verificação de especificações versus Validação de necessidades) isola funções de auditoria e inspeção.</p>
+<pre><code>Avaliação: Bom. Define limites operacionais absolutos e orienta o comportamento analítico sem ambiguidades.
+</code></pre>
+<p>3. Arquitetura do Processo (IEEE 829)</p>
+<pre><code>A hierarquia documental constrói um fluxo de rastreabilidade, desde as regras globais no Plano de Teste até os resultados empíricos no Relatório Sumário.  
+</code></pre>
+<p>A distinção entre Especificação de Caso de Teste (definição de variáveis de entrada e saída) e Procedimento de Teste (definição de passos ordenados e rotinas) separa a arquitetura dos dados da execução prática.</p>
+<p>O Modelo Tridimensional decompõe a estratégia em três eixos independentes: Nível, Tipo e Técnica.</p>
+<pre><code>Avaliação: Bom. A decomposição das atividades garante que as variáveis do processo sejam controladas, registradas e totalmente repetíveis.
+</code></pre>
+<p>4. Ciclo de Vida e Integração</p>
+<pre><code>O Modelo V impõe uma correspondência simétrica entre as etapas de decomposição do problema e os níveis de validação da solução (Ex: validação de Requisitos com Teste de Aceitação, validação de Arquitetura com Teste de Integração). O planejamento das validações ocorre em paralelo à especificação técnica.  
+</code></pre>
+<p>A estratégia de Integração Top-Down resolve a dependência hierárquica inferior utilizando Simuladores (Stubs) para gerar valores fixos.</p>
+<p>A estratégia Bottom-Up resolve a dependência de disparo utilizando Controladores (Drivers) para emular as chamadas de níveis superiores.</p>
+<pre><code>Avaliação: Bom. As estratégias lidam com a assincronia na construção das partes de maneira estruturada.
+</code></pre>
+<p>5. Conceitos Complementares (Métricas e Análise)</p>
+<pre><code>A seção final lista mecanismos de avaliação quantitativa e arquitetural, como Complexidade Ciclomática, Cobertura de Teste e Estrutura de Dependências.  
+
+Avaliação: Ruim. Os tópicos estão apresentados de forma isolada, desprovidos de conexão estrutural com o corpo do material. Elementos como Complexidade Ciclomática e Cobertura deveriam ser integrados como balizadores lógicos dos Critérios de Saída dentro do Plano de Teste (IEEE 829), ou mapeados nas Técnicas de Caixa Branca do Modelo Tridimensional. Falta a organização que insira estas métricas na arquitetura do processo apresentado.
+</code></pre>
+<p>Analisa a primeira prova e meus erros</p>
+<p>A análise da sua prova revela uma compreensão adequada dos princípios gerais de teste (Questão 1) e da classificação de anomalias (Questão 3). A perda substancial de pontos (4,8 em 10,0) ocorreu nas questões que exigiam a distinção rigorosa de conceitos taxonômicos (tipos vs. técnicas) e na modelagem de processos dinâmicos (ciclo de teste-depuração).</p>
+<p>Abaixo está a decomposição lógica dos seus erros.
+Questão 2 - Erros Conceituais (Perda: 1,2 pontos)</p>
+<pre><code>Alternativa A (Você marcou V; o correto é F):
+O erro reside na confusão estrutural entre Verificação e Validação. A atividade de Verificação (&quot;Estamos construindo o produto corretamente?&quot;) foca em garantir que o artefato obedece às especificações e normas técnicas. O texto da questão afirma que o objetivo é confirmar se o artefato &quot;atenderá seu uso pretendido quando implantado no ambiente de produção&quot;. Garantir que o sistema atende à necessidade real do usuário final é a definição exata de Validação (&quot;Estamos construindo o produto correto?&quot;).
+
+Alternativa E (Você marcou V; o correto é F):
+Um teste que não encontra defeitos não reduz automaticamente o risco. Baseando-se nos princípios de que &quot;o teste demonstra a presença de defeitos&quot; e &quot;a ilusão da ausência de erros&quot;, a não identificação de falhas pode apenas indicar que a suíte de testes projetada é ineficaz ou possui baixa cobertura. O risco de o defeito estar presente em um fluxo não testado permanece inalterado.
+</code></pre>
+<p>Questão 4 - Dimensões da Estratégia e Normatização (Perda: 3,3 pontos)</p>
+<p>Esta questão penalizou a confusão entre as três dimensões ortogonais do processo de teste (Nível, Tipo e Técnica) e a ausência de aderência estrita ao que foi solicitado.</p>
+<pre><code>Item A (Tipo de Teste):
+Você respondeu &quot;Caixa preta&quot;. Caixa preta é uma Técnica (como o teste é executado, sem ver o código). A questão exigia o Tipo de teste não-funcional (o que está sendo validado). O sistema exige um tempo máximo de 1 segundo. Logo, o tipo lógico a ser aplicado é o Teste de Desempenho (ou Teste de Performance/Carga).
+
+Item B (Nível de Teste):
+Você respondeu &quot;Teste de Integração&quot;. Embora o sistema possua seis módulos, o enunciado especifica a medição do tempo &quot;entre seu envio pelo remetente e seu recebimento pelo destinatário&quot; envolvendo o &quot;uso conjunto&quot; desses módulos. Validar um requisito não-funcional que perpassa o fluxo de ponta a ponta do software finalizado caracteriza um Teste de Sistema. A integração testa as interfaces isoladas entre módulos (A fala com B), e não a latência de uma transação global do usuário.
+
+Item C (Atributo de Qualidade):
+Você respondeu &quot;Latência&quot; e não apresentou justificativa. A questão ordenou especificamente o uso do vocabulário da norma ISO/IEC 25010 e exigiu as devidas razões. Na árvore da ISO 25010, o atributo primário correto é Eficiência de Desempenho (Performance Efficiency), especificamente a subcaracterística de &quot;Comportamento em relação ao tempo&quot;. A falta do termo padronizado e a omissão total da justificativa lógica zeraram o item.
+</code></pre>
+<p>Questão 5 - Ciclo Conjunto (Perda: 2,3 pontos)</p>
+<p>O enunciado afirma que o processo de depuração falhou em encontrar a causa das falhas já detectadas e pede os próximos passos do ciclo conjunto (Testes + Depuração).</p>
+<pre><code>O Erro na Resposta:
+Você descreveu a ação de &quot;formular uma nova hipótese e testar novamente&quot;, o que é apenas a definição clássica do método de Depuração por indução/dedução. Você limitou sua resposta ao escopo da depuração isolada do desenvolvedor.
+
+A Lógica Correta (Arquitetura do Processo):
+Se a depuração falhou, significa que a falha reproduzida em testes possui variáveis amplas demais ou os dados/sintomas gerados são insuficientes para traçar a causalidade. O próximo passo sistêmico exige o retorno à fase de Teste. Deve-se planejar e projetar novos Casos de Teste, mais restritos e granulares, com o objetivo de isolar o comportamento do software. Após a execução destes novos testes (que gerarão logs mais precisos e escopos menores de erro), o ciclo avança novamente para a etapa de depuração munido de novas métricas.
+</code></pre>
+<p>identifique coisas que deveriam ficar mais claras, erros na metodologia dos meus estudos e coisas que deveriam ficar claras para essa PF de amanhã que terá a matéria da P1 e da P2</p>
+<p>A análise dos seus erros na P1, cruzada com o material de estudo, revela que o seu entendimento dos conceitos isolados é bom, mas a sua metodologia de estudo falha na integração dessas partes e no rigor formal. Você está confiando no bom senso onde a prova exige taxonomia estrita.</p>
+<p>Abaixo está a decomposição lógica das falhas na sua arquitetura de estudo e o que precisa ser corrigido para a Prova Final.</p>
+<ol>
+<li>
+<p>Erros na Metodologia de Estudo</p>
+<p>Substituição da Norma pela Semântica Intuitiva:
+Você estuda a ideia geral, mas ignora o dicionário oficial exigido. Na Questão 4, ao ser cobrado sobre a ISO/IEC 25010, você respondeu “Latência” ou “Tempo”. Embora semanticamente correto no mundo real, academicamente está errado. Você precisa decorar e utilizar o vocabulário exato da norma (“Eficiência de Desempenho”). O estudo precisa focar na taxonomia oficial, não em sinônimos.</p>
+<p>Visão Linear de Processos Cíclicos:
+Na Questão 5, você demonstrou uma compreensão linear. Se a depuração não encontra o erro, a sua resposta foi “continuar depurando” (formular nova hipótese). O estudo sistêmico exige entender que os processos são retroalimentados. Se a depuração falha, o processo volta para o Teste (criar casos de teste menores para isolar o componente). Você estudou depuração e teste como caixas separadas, e não como um sistema de engrenagens interconectadas.</p>
+<p>Achatamento de Eixos Ortogonais:
+Você tratou variáveis independentes como se fossem a mesma coisa. Na Questão 4, você colocou “Caixa Preta” (Técnica) no lugar de “Tipo”. No seu estudo, você deve criar matrizes mentais rígidas. Uma dimensão não anula a outra. Você precisa saber classificar qualquer teste sob três óticas simultâneas e independentes (Nível, Tipo e Técnica) sem misturá-las.</p>
+</li>
+<li>
+<p>Fundamentos Críticos para a Prova Final (PF)</p>
+</li>
+</ol>
+<p>Para conectar a P1 com a matéria da P2, as seguintes premissas devem estar absolutas e inegociáveis na sua mente para amanhã:</p>
+<pre><code>A Matriz Tridimensional (O Cubo da Estratégia):
+
+    Nível (Quando/Onde): Unidade, Integração, Sistema, Aceite.
+
+    Tipo (O quê): Funcional (regras de negócio) ou Não-Funcional (desempenho, segurança, usabilidade).
+
+    Técnica (Como): Caixa Branca (vê a estrutura lógica) ou Caixa Preta (vê apenas entradas e saídas).
+
+    Regra de Ouro: Nunca responda uma pergunta de &quot;Tipo&quot; com uma &quot;Técnica&quot;.
+
+A Fronteira entre Verificação e Validação (V&amp;V):
+
+    Verificação: O processo estático de garantir que o artefato obedece à regra (ex: o documento de requisitos está no padrão correto? O sistema atende à especificação técnica?).
+
+    Validação: O processo dinâmico de garantir que o sistema resolve o problema real do usuário. (ex: o sistema implantado atende ao uso pretendido?).
+
+A Hierarquia de Documentação (IEEE 829):
+
+    O Plano de Teste é gerencial (escopo, cronograma, riscos).
+
+    A Especificação de Caso de Teste é estrutural (valores exatos de entrada e saídas esperadas).
+
+    A Especificação de Procedimento é operacional (o passo a passo de como clicar e executar).
+
+    Regra de Ouro: Entenda quem consome qual documento. O testador usa o Procedimento. O gerente avalia o Relatório Sumário.
+
+A Cadeia de Causalidade de Anomalias:
+
+    Erro (ação humana) → Defeito (artefato estático) → Falha (comportamento dinâmico visível). Sem execução, não há falha, apenas defeito.
+</code></pre>
+<p>Para que possamos alinhar essa base da P1 com o restante da sua avaliação amanhã, qual é a estrutura lógica e os principais tópicos abordados na matéria da P2?</p>
+<p>Analisa agora as notas sobre a P2 da matéria</p>
+<p>A análise das suas anotações da P2 revela uma transição brusca de foco: enquanto o material da P1 era puramente abstrato, gerencial e taxonômico (processos, normas e hierarquias), suas anotações da P2 são estritamente sintáticas e operacionais (frameworks, anotações e métodos).</p>
+<p>O erro metodológico aqui é a ausência de acoplamento. Você está estudando as ferramentas (JUnit e Katalon) como entidades isoladas, sem conectá-las à arquitetura do processo de teste (IEEE 829, Modelo V e Estratégia 3D) que será cobrada em conjunto na Prova Final (PF).</p>
+<p>Abaixo está a decomposição da P2 e, mais criticamente, o mapeamento de como ela se integra às regras da P1.</p>
+<ol>
+<li>Desconstrução da P2 (Operacional)</li>
+</ol>
+<p>As suas anotações dividem-se logicamente em dois domínios de execução:</p>
+<p>Domínio 1: Testes de Unidade e Estruturais (JUnit 5 + Java)</p>
+<pre><code>Ciclo de Vida: O controle de estado antes e depois dos testes (@BeforeEach, @AfterAll). Isso garante o princípio de que um teste não deve poluir o ambiente do outro (Independência).
+
+Asserções (Assert): É o mecanismo lógico de Verificação. Comandos como assertEquals ou assertThrows são a implementação binária do critério &quot;passou/falhou&quot;.
+
+Testes Parametrizados (@ParameterizedTest): O uso de @ValueSource, @CsvSource e @MethodSource (com Stream&lt;Arguments>) serve para implementar abordagens de Data-Driven Testing. Permite injetar múltiplas combinações de entrada sem duplicar a lógica estrutural do teste.
+</code></pre>
+<p>Domínio 2: Testes de Interface e Integração Sistêmica (Katalon / WebUI)</p>
+<pre><code>Manipulação de DOM e Fluxo: Uso da classe WebUI para emular comportamento de usuário (openBrowser, setText, click).
+
+Ciclo de Vida Condicional: Anotações específicas de framework (@TearDownIfFailed, @TearDownIfError) para lidar com o estado do navegador caso a execução (o Log de Teste) registre uma anomalia.
+</code></pre>
+<p>2. A Ponte P1 + P2 (Onde a Prova Final vai te atacar)</p>
+<p>Na PF, o professor não vai apenas pedir para você escrever um método em Java. Ele vai cruzar a taxonomia da P1 com a implementação da P2. Você precisa ter a seguinte matriz de integração mental mapeada:</p>
+<pre><code>Implementação vs. IEEE 829:
+
+    O que você define no método assertEquals(esperado, atual) é exatamente a tradução do campo &quot;Resultado Esperado&quot; do documento de Especificação de Caso de Teste.
+
+    O script que você escreve no Katalon, usando WebUI.click() e WebUI.setText(), é a automação da Especificação de Procedimento de Teste (o passo a passo de execução).
+
+Ferramentas no Cubo da Estratégia (Dimensões):
+
+    JUnit: Atua primordialmente no nível de Unidade (e eventualmente Integração), sob a técnica de Caixa Branca (já que você testa métodos e classes diretamente no código) e abrange tipos Funcionais.
+
+    Katalon: Atua no nível de Sistema ou Aceite, sob a técnica de Caixa Preta (o framework não lê o back-end, apenas injeta dados na interface gráfica) e abrange tipos Funcionais e de Usabilidade.
+
+As Ferramentas no Modelo V:
+
+    Quando o Modelo V dita que o Projeto Detalhado (Codificação) deve ser validado por Testes de Unidade, o artefato de execução utilizado na base do &quot;V&quot; será o JUnit.
+
+    Quando a Análise de Requisitos do Sistema dita os Testes de Sistema no topo direito do &quot;V&quot;, as validações serão executadas por ferramentas como o Katalon.
+
+Drivers e Stubs (Integração):
+
+    Ao isolar uma classe no JUnit porque a camada de banco de dados ainda não está pronta (Bottom-Up falso ou Top-Down), você precisará injetar um Stub (ou Mock) dentro do método de teste para simular o retorno estático.
+</code></pre>
+<p>3. Ajuste de Rota Metodológica para a PF</p>
+<p>Para evitar o achatamento de conceitos visto na P1, sua revisão de véspera não deve focar apenas na memorização da sintaxe do Java.</p>
+<pre><code>Contextualize a Ferramenta: Sempre que olhar para uma anotação (@Test), pergunte-se: Qual nível do cubo da estratégia isso cobre? Qual documento do IEEE 829 esse script está automatizando?
+
+Diferencie Erro de Exceção: No JUnit, preste atenção à diferença entre fail() (o teste deliberadamente falha porque a lógica do Caso de Teste encontrou um Defeito no fluxo) e uma Exceção genérica de compilação (o teste quebra porque a infraestrutura ou o Procedimento está mal escrito).
+
+Trace a Falha: Se um script do Katalon falha na execução (TearDownIfFailed), isso gera um Relatório de Incidente (P1) apontando uma anomalia em nível de Sistema, não de Unidade.
+</code></pre>
+<p>Considerando essa arquitetura onde o código do JUnit apenas executa o que o Plano de Teste (IEEE) determinou, como você modelaria mentalmente um processo completo de depuração (que você errou na P1) caso o seu teste parametrizado via @CsvSource indicasse múltiplas falhas no cálculo de uma regra de negócio?</p>
+<p>Analisa a P2 de testes</p>
+<p>Os arquivos fornecidos para a avaliação da P2 foram inseridos no sistema como código binário bruto (strings começando com JFIF), o que impossibilita a leitura e a extração do conteúdo das questões e das suas respostas originais.</p>
+<p>Para que seja possível realizar a decomposição lógica dos seus erros e mapear as falhas estruturais entre a sintaxe das ferramentas (JUnit, Katalon) e a taxonomia teórica (IEEE 829, Modelo V, Dimensões da Estratégia), a entrada de dados precisa ser legível.</p>
+<p>Próximo passo:
+Transcreva o enunciado das questões da P2 e exatamente o que você respondeu em cada uma delas, ou certifique-se de fazer o upload das imagens em um formato que o sistema consiga processar e ler visualmente.</p>
+<p>Assim que a informação real estiver disponível, a análise solicitada será executada.</p>
+<p>Analisa a P2 de testes</p>
+<p>A análise das imagens da sua P2 demonstra que você possui o entendimento do fluxo básico dos testes, mas falha no rigor sintático e na leitura precisa das regras de negócio dos frameworks.</p>
+<p>Abaixo está a decomposição lógica do seu desempenho e o porquê dos seus erros nas questões objetivas, além dos riscos estruturais apontados nos seus rascunhos das questões discursivas.
+Questão 1 (Acerto Total: 1,0 ponto)</p>
+<pre><code>Status: Bom.
+
+Análise: Você mapeou corretamente a lógica da anotação @CsvFileSource. Para iniciar a leitura na 5ª linha, o parâmetro lógico exato é pular as 4 primeiras usando numLinesToSkip=4.
+</code></pre>
+<p>Questão 2 (Erro Parcial: Perda de 0,8 pontos)</p>
+<pre><code>Status: Ruim. Você errou metade da questão ao confundir conceitos fundamentais nas alternativas C e D.
+
+Erro na Alternativa C (Katalon - TearDown): O item afirma que @TearDownIfError roda se uma verificação programada falhar. Isso é falso. No Katalon (e em QA em geral), &quot;Erro&quot; é diferente de &quot;Falha&quot;. Um Erro ocorre quando o script quebra (ex: o elemento HTML não foi encontrado ou a página não carregou). Uma Falha ocorre quando o teste executa perfeitamente, mas a asserção final não bate (ex: esperava 2 e retornou 3). Para falhas de verificação, a anotação correta seria @TearDownIfFailed.
+
+Erro na Alternativa D (JUnit 5 - ValueSource): O item afirma que @ValueSource permite passar um &quot;único par de valores&quot;. Isso é sintaticamente impossível. A anotação @ValueSource suporta apenas um único argumento unidimensional por execução (ex: uma String, um Int). Para injetar um &quot;par&quot; de valores simultaneamente (como um input e um output esperado), você seria obrigado a usar @CsvSource ou @MethodSource.
+</code></pre>
+<p>Questão 3 (Lógica de Código JUnit 5)</p>
+<pre><code>Status dos seus rascunhos: Ruim. Evidência de quebra de requisitos do escopo.
+
+Análise: O enunciado é taxativo: você deve usar um &quot;método de provimento de argumentos intitulado testJSONParaCoordenadaData&quot;. Isso é a exigência formal do uso da anotação @MethodSource(&quot;testJSONParaCoordenadaData&quot;). Contudo, nos seus rascunhos à direita (passo 3), você anotou @CsvFileSource. Utilizar um arquivo CSV externo para prover os dados quando a prova exige a construção de um método interno que forneça esses objetos resultará em perda grave de pontos na avaliação do código, pois ignora a arquitetura pedida.
+</code></pre>
+<p>Questão 4 (Automação Web com Katalon)</p>
+<pre><code>Status dos seus rascunhos: Inconsistências operacionais graves.
+
+Sintaxe Incorreta: Nas suas anotações à esquerda, você planejou usar WebUI.findText(...) para interagir com o formulário. Essa sintaxe não é adequada para inserir dados. Para interagir com os inputs da página (inp-x, inp-y), a instrução correta é WebUI.setText(findTestObject('...'), 'valor').
+
+Regra de Fechamento: O enunciado cria uma condicional estrita: &quot;o navegador deve ser fechado apenas se este tiver sido bem-sucedido&quot;. Você não pode simplesmente colocar um WebUI.closeBrowser() solto no final do script padrão. A solução técnica correta aqui é utilizar a anotação de ciclo de vida @TearDownIfPassed englobando o método de fechamento.
+</code></pre>
+<p>Síntese para a PF: Suas falhas não ocorrem na lógica geral, mas na taxonomia das ferramentas. Você precisa abandonar o “bom senso” e aplicar a definição rígida. Se a prova pede “método”, é @MethodSource. Se o teste quebra na validação, é “Fail”, não “Error”. Revisar a sintaxe isolada de cada ferramenta sem misturá-las é o seu único caminho para gabaritar a parte prática.</p>
+<p>Essas não foram minhas falhas, analise apenas a estrutura da prova
+Arquitetura e Modelagem da Prova</p>
+<p>A estrutura da avaliação foi projetada para medir a capacidade de transição entre o conhecimento sintático isolado e a modelagem de automação de testes orientada a dados (Data-Driven Testing).</p>
+<p>A prova totaliza 10,0 pontos, com uma distribuição de peso que penaliza severamente a falta de domínio prático na construção de scripts, concentrando 74% da nota nas questões discursivas de implementação.
+Distribuição de Peso por Framework</p>
+<pre><code>JUnit 5 (Testes de Unidade/Integração): 6,0 a 6,8 pontos (Questões 1, 3 e parte da 2). Foco em parametrização e injeção de dados.
+
+Katalon Studio (Testes de Interface/E2E): 3,2 a 4,0 pontos (Questão 4 e parte da 2). Foco em mapeamento de DOM e controle de ciclo de vida do navegador.
+</code></pre>
+<p>Decomposição Analítica das Questões
+Questão	Formato	Peso	Escopo Técnico	Competência Exigida
+1	Múltipla Escolha	1,0	JUnit 5 (@CsvFileSource)	Reconhecimento de sintaxe e domínio dos parâmetros de leitura de arquivos externos (numLinesToSkip, delimiter).
+2	Verdadeiro ou Falso	1,6	JUnit 5 e Katalon	Distinção taxonômica de anotações de ciclo de vida (@AfterAll, @TearDownIfError) e limitações de injeção de dados (@ValueSource).
+3	Implementação (Código)	5,0	JUnit 5 (@MethodSource)	Capacidade de arquitetar um teste parametrizado ponta a ponta. Exige a criação de um método provedor de dados, instigação de objetos a partir de strings JSON e asserção de atributos.
+4	Implementação (Script)	2,4	Katalon (WebUI)	Mapeamento estrutural: traduzir elementos HTML (id, name) para comandos de automação (setText, click), validar o output gerado e aplicar regras condicionais de fechamento de ambiente.
+Lógica de Avaliação e Padrões Estruturais</p>
+<p>A arquitetura da prova revela três pilares centrais de avaliação cobrados pelo elaborador:</p>
+<ol>
+<li>
+<p>Data-Driven Testing (DDT) Universal
+Nenhuma das questões práticas solicita um teste de execução única. A prova inteira é orientada a estruturar testes que consomem matrizes de dados. Na Questão 3, exige-se a injeção via método interno (@MethodSource). Na Questão 4, exige-se a iteração sobre uma tabela de dados para a interface web. O foco é a escalabilidade do teste.</p>
+</li>
+<li>
+<p>Controle de Ciclo de Vida e Estado (Lifecycle)
+A prova testa repetidamente se o aluno sabe quando e como o ambiente deve ser preparado ou destruído. Isso é cobrado teoricamente na Questão 2 (@AfterAll, @TearDownIfError) e exigido de forma prática na Questão 4 (fechar o navegador apenas em caso de sucesso).</p>
+</li>
+<li>
+<p>Isolamento de Responsabilidades (Parse vs. Interface)</p>
+<p>Na Questão 3, o backend é testado no nível de objeto e parse de dados (Conversão String <span>→</span> Objeto).</p>
+<p>Na Questão 4, o frontend é testado através da simulação de input de usuário e extração de texto do DOM (Formulário <span>→</span> Output).
+A prova separa claramente as ferramentas adequadas para a camada lógica (JUnit) e para a camada de apresentação (Katalon).</p>
+</li>
+</ol>
+<p>Agora analise a pf de testes.</p>
+<p>A estrutura da sua Prova Final (PF) reflete exatamente a proposta de integração da disciplina: a fusão da carga teórica e gerencial da P1 (Modelo V, Taxonomia, Processos) com a execução sintática da P2 (JUnit, Katalon). O resultado final (6,9) demonstra que houve uma correção de rota em conceitos críticos, embora deslizes taxonômicos ainda tenham custado pontos valiosos.</p>
+<p>Abaixo está a decomposição analítica do exame (com base nas imagens 1, 2 e 3, que correspondem à PF inédita).</p>
+<ol>
+<li>Evolução e Correção de Rota (Onde você acertou)</li>
+</ol>
+<p>A prova evidencia que você calibrou as falhas estruturais que haviam derrubado sua nota nas provas anteriores:</p>
+<pre><code>O Ciclo de Depuração (Questão 3 - Acerto Total): Na P1, você havia tratado a depuração como um processo linear e isolado. Aqui, ao assinalar &quot;Executar testes de regressão&quot; após a correção de uma falha, você demonstrou domínio sobre a retroalimentação do ciclo. Corrigiu-se o código, volta-se imediatamente para os testes para garantir que a correção não quebrou outras partes do sistema.
+
+Gestão de Estado no Katalon (Questão 5): Na P2, houve confusão entre falha de asserção e erro de execução. Nos rascunhos da PF, você anotou corretamente a divisão entre Failed e Error para a regra de fechamento do navegador em caso de teste malsucedido (@TearDownIfFailed e @TearDownIfError).
+
+Psicologia e Atributos de Qualidade (Questão 2): Acerto cirúrgico nas definições de Coexistência (ISO 25010), natureza não-funcional do teste de resiliência e no princípio destrutivo do teste (refutar a correção do produto).
+</code></pre>
+<p>2. Decomposição dos Erros Teóricos</p>
+<p>A perda de pontos na primeira página ocorreu por confusões estritas de taxonomia e mapeamento de processos.</p>
+<pre><code>Erro na Questão 1 (Modelo V):
+Você assinalou que, durante a análise de requisitos, planejam-se os testes de aceitação (Alternativa A).
+A lógica correta: No Modelo V rigoroso, a fase de Análise de Requisitos (ou Requisitos do Sistema) mapeia de forma simétrica para os Testes de Sistema (Alternativa E). Os Testes de Aceitação ficam no topo do &quot;V&quot; e são planejados paralelamente ao levantamento dos Requisitos de Usuário/Negócio, não na fase de análise técnica do sistema.
+
+Erro na Questão 2, Item B (Taxonomia de Shull):
+Você marcou (V) para a afirmação de que Shull classifica defeitos pelo impacto e probabilidade.
+A lógica correta: A afirmação é Falsa. A taxonomia de Shull é focada na inspeção estática de documentos e classifica os defeitos pela sua natureza informacional (Omissão, Ambiguidade, Inconsistência, Fato Incorreto, Informação Estranha, etc.), e não por métricas dinâmicas de risco (impacto/probabilidade).
+</code></pre>
+<p>3. Observações Práticas e Sintáticas (Questão 4)</p>
+<p>Embora a nota final da codificação não esteja detalhada linha a linha, seus rascunhos na Questão 4 indicam alguns riscos sintáticos na implementação do JUnit 5:</p>
+<pre><code>Instanciação Global (@BeforeAll): Você anotou corretamente a tag @BeforeAll para o Item A. No entanto, é fundamental lembrar que, no JUnit 5, métodos anotados com @BeforeAll exigem a assinatura static.
+
+Asserções de Exceção: No rascunho do Item B, você escreveu assertNotThrown. Esse método não existe nativamente na API do JUnit 5. A sintaxe exata e obrigatória para garantir que um bloco não lance exceções é assertDoesNotThrow(). Para o Item C, a anotação assertThrows() está conceitualmente correta, exigindo a passagem da classe da exceção esperada e a função lambda executável.
+</code></pre>
+<p>Novamente, os erros não são meus, eu quero que você me prepare para essa nova pf de amanhã.
+Arquitetura de Estudo para a Prova Final</p>
+<p>A avaliação exige a fusão da carga taxonômica (P1) com a execução sintática (P2). A prova medirá a capacidade de transitar entre a regra de negócio do processo e a sua automação.
+Eixo 1: Fundamentos e Processos (Carga da P1)</p>
+<pre><code>Modelo V: Exige simetria rigorosa.
+
+    Requisitos de Usuário ↔ Teste de Aceitação.
+
+    Análise de Requisitos (Sistema) ↔ Teste de Sistema.
+
+    Projeto de Arquitetura ↔ Teste de Integração.
+
+    Projeto Detalhado (Código) ↔ Teste de Unidade.
+
+Taxonomia de Shull: Aplica-se exclusivamente à inspeção estática de documentos (Omissão, Ambiguidade, Inconsistência, Redundância). Não possui relação com métricas dinâmicas como impacto ou probabilidade.
+
+Gestão de Anomalias:
+
+    A taxonomia exata dita a cadeia: Erro (humano) gera Defeito (estático) que resulta em Falha (dinâmico).
+
+    O ciclo de depuração não é terminal. Se um defeito é corrigido, a próxima etapa obrigatória é a execução de Testes de Regressão para garantir a estabilidade do artefato.
+
+Normatização ISO/IEC 25010 e IEEE 829:
+
+    ISO 25010: Fixação de atributos primários e secundários (ex: Coexistência, Eficiência de Desempenho).
+
+    IEEE 829: Separação de responsabilidades documentais. Caso de Teste foca em entradas e saídas esperadas; Procedimento de Teste foca no roteiro de cliques e ações.
+</code></pre>
+<p>Eixo 2: Automação Orientada a Dados (Carga da P2)</p>
+<pre><code>JUnit 5 (Domínio Funcional/Unidade):
+
+    Ciclo de Vida: Anotações globais como @BeforeAll e @AfterAll exigem que a assinatura do método seja obrigatoriamente static.
+
+    Parametrização (DDT):
+
+        @ValueSource: Limitado a arrays unidimensionais simples (ex: apenas uma String por vez).
+
+        @CsvFileSource: Domínio dos parâmetros de formatação (delimiter, numLinesToSkip) para contornar cabeçalhos de arquivos físicos.
+
+        @MethodSource: Obrigatório quando o provedor de dados precisa instanciar e injetar objetos complexos no teste.
+
+    Asserções de Exceção: A validação de que uma exceção não ocorreu utiliza assertDoesNotThrow(). A validação de que ocorreu utiliza assertThrows(ClasseDaExcecao.class, () -> { ... }).
+
+Katalon Studio (Domínio E2E/Interface):
+
+    Manipulação do DOM: Uso estrito da API do WebUI. Inserção de dados exige setText, interações exigem click.
+
+    Gestão de Estado Condicional: Distinção absoluta entre anomalias.
+
+        @TearDownIfFailed: Executado quando a asserção da regra de negócio não confere (o teste rodou, mas o resultado matemático está errado).
+
+        @TearDownIfError: Executado quando o script quebra (o elemento HTML não foi encontrado na tela).
+</code></pre>
+<p>Qual seria a anotação e a assinatura do método no JUnit 5 se o requisito da prova exigir a leitura de um arquivo CSV local contendo parâmetros numéricos de entrada e os respectivos resultados booleanos esperados para validar uma função matemática?</p>
+<p>Estava pensando em estudar assim: Já tem na minha anotação uma parte: ”## Prova? Estuda aqui” da matéria da P1, preciso agora de uma transcrição para a P2 das fotos das minhas notas sobre a P2, dividir em blocos e adicionar tudo o que podemos aprender com as provas antigas. E aí depois que eu tiver esse material, dividimos em blocos e vamos estudando em blocos toda a matéria. E como teste final de preparo, faço essa PF antiga que te mandei.</p>
+<p>Excelente estratégia. Dividir para conquistar é o melhor caminho, e usar a prova final antiga como simulado no final vai te dar a confiança exata do que você sabe e do que precisa de ajuste fino.</p>
+<p>Aqui está a transcrição estruturada das suas notas da P2, já combinada com as armadilhas (pegadinhas) e correções que tiramos das provas antigas. Eu montei isso como a continuação natural do seu material da P1.
+Prova? Estuda aqui - Parte 2 (Sintaxe e Automação)</p>
+<p>A P2 é puramente operacional. Aqui você não foca no “por que” testar, mas no “como” testar e automatizar, usando as ferramentas certas para cada nível.
+Bloco 1: JUnit 5 - Ciclo de Vida e Asserções (Caixa Branca / Unidade)</p>
+<p>Este bloco define o comportamento básico do teste no código.</p>
+<pre><code>Anotações de Ciclo de Vida (Setup &amp; Teardown):
+
+    @Test: Define que o método é um teste padrão.
+
+    @BeforeEach: Roda antes de cada método de teste.
+
+    @AfterEach: Roda depois de cada método de teste.
+
+    @BeforeAll: Roda uma única vez antes de todos os testes da classe. CUIDADO (Lição de Prova): No JUnit 5, métodos com @BeforeAll (e @AfterAll) obrigatoriamente precisam ter a assinatura static.
+
+    @AfterAll: Roda uma única vez após todos os testes.
+
+    @Disabled: Pula (desabilita) o teste.
+
+Asserções (A Verificação do Resultado):
+
+    fail(&quot;mensagem&quot;): Força a falha do teste imediatamente.
+
+    assertEquals(esperado, obtido): Verifica se os valores são iguais.
+
+    assertNotEquals(esperado, obtido): Verifica se são diferentes.
+
+    assertTrue(condicao) / assertFalse(condicao): Verifica lógicas booleanas.
+
+    assertNull(objeto) / assertNotNull(objeto): Verifica a existência (ou não) de instâncias em memória.
+
+    assertSame(esp, obt) / assertNotSame(esp, obt): Verifica se apontam para o mesmo endereço de memória (não apenas se os valores são iguais).
+
+Asserções de Exceções (Pegadinha Clássica de Prova):
+
+    assertThrows(Exception.class, () -> { metodo(); }): Verifica se o método lança a exceção esperada.
+
+    assertDoesNotThrow(() -> { metodo(); }): Verifica se o método NÃO lança exceção. (Atenção: Na sua prova você escreveu assertNotThrown, a sintaxe correta é assertDoesNotThrow).
+</code></pre>
+<p>Bloco 2: JUnit 5 - Testes Parametrizados (Data-Driven Testing)</p>
+<p>Aqui é onde a prova te ataca com força. Testes parametrizados rodam o mesmo teste várias vezes com dados diferentes. Usa-se @ParameterizedTest no lugar de @Test.</p>
+<pre><code>Fontes de Dados (Sources):
+
+    @ValueSource(ints = {1, 2, 3}): Passa valores estáticos simples. Limitado a um único argumento por vez (1D). Não serve se a prova pedir para testar um &quot;input&quot; e verificar um &quot;output&quot; simultaneamente.
+
+    @CsvSource({&quot;21, 100&quot;, &quot;42, 200&quot;}): Passa pares/conjuntos de valores diretamente no código, separados por vírgula.
+
+    @CsvFileSource(files = &quot;caminho/arquivo.csv&quot;, numLinesToSkip = 1, delimiter = ';'): Lê dados de um arquivo externo.
+
+        Lição de Prova: Se o arquivo tem cabeçalho ou dados inúteis nas primeiras linhas, use numLinesToSkip (Ex: Para ler a partir da linha 5, pule 4 linhas: numLinesToSkip=4).
+
+    @MethodSource(&quot;nomeDoMetodo&quot;): Busca os dados em um método Java.
+
+        Lição de Prova: Se o enunciado disser &quot;fornecidos por meio de um método de provimento de argumentos&quot;, você tem que usar @MethodSource. Esse método deve retornar uma Stream&lt;Arguments> (Ex: return Stream.of(Arguments.of(obj1, obj2));).
+</code></pre>
+<p>Bloco 3: Katalon Studio - Automação Web (Caixa Preta / E2E)</p>
+<p>Aqui o teste simula um usuário real clicando na tela. É o topo do Modelo V (Testes de Sistema).</p>
+<pre><code>Interação com o DOM (API WebUI):
+
+    WebUI.openBrowser(&quot;url&quot;): Abre o navegador no site.
+
+    WebUI.closeBrowser(): Fecha o navegador.
+
+    WebUI.click(findTestObject(&quot;botao&quot;)): Clica em um elemento.
+
+    WebUI.setText(findTestObject(&quot;input&quot;), &quot;valor&quot;): Escreve num campo de texto. (Erro comum: tentar usar findText para isso).
+
+    WebUI.verifyElementText(findTestObject(&quot;obj&quot;), &quot;texto&quot;): Valida se o texto dentro do elemento bate com o esperado.
+
+    WebUI.verifyElementAttributeValue(findTestObject(&quot;obj&quot;), &quot;atributo&quot;, &quot;valor&quot;, timeout): Verifica propriedades específicas (ex: se um botão está &quot;disabled&quot;).
+
+Ciclo de Vida Condicional (Hooks de Finalização):
+O Katalon permite fechar ou limpar o ambiente dependendo do resultado do teste. Esta é a maior pegadinha da P2:
+
+    @SetUp: Roda antes de tudo (bom para openBrowser).
+
+    @TearDown: Roda no final, não importa o que aconteça.
+
+    @TearDownIfPassed: Roda APENAS se o teste foi um sucesso. (Ex: &quot;fechar navegador apenas se bem-sucedido&quot;).
+
+    A diferença crucial:
+
+        @TearDownIfFailed: Roda se a asserção falhou (Ex: você esperava que o resultado fosse 10, mas o site mostrou 5. O teste rodou perfeitamente, mas a regra de negócio falhou).
+
+        @TearDownIfError: Roda se o script quebrou (Ex: o site caiu, a internet desconectou, ou o Katalon não achou o botão HTML para clicar. É um erro de infraestrutura/código, não de regra de negócio).
+</code></pre>
+<p>Pronto! Com esse material consolidado, você tem a arquitetura teórica (P1) e o arsenal sintático (P2) mapeados.</p>
+<p>Por qual bloco você quer começar o nosso estudo ativo e simulação de questões: Fundamentos/Processos (P1), JUnit/Parametrização, ou Katalon/Automação Web?</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2026</p><ul><li><a href="https://github.com/kkphoenixgx">GitHub</a></li><li><a href="kauaAlvesWorkplace@gmail.com">Gmail</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../../postscript.js" type="module"></script></html>

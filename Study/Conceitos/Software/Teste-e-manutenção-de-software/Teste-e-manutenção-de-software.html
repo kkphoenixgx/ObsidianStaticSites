@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Teste e manutenção de software</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="KKPHOENIX"/><meta property="og:title" content="Teste e manutenção de software"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Teste e manutenção de software"/><meta name="twitter:description" content="Teste e manutenção de software 2026-04-22 tags: -Software e sua metalinguagem Defeitos de software Desenvolvimento de software é o processo de aquisição e detalhamento de informações Erro = engano cometido por um humano, tornando um artefado incorreto."/><meta property="og:description" content="Teste e manutenção de software 2026-04-22 tags: -Software e sua metalinguagem Defeitos de software Desenvolvimento de software é o processo de aquisição e detalhamento de informações Erro = engano cometido por um humano, tornando um artefado incorreto."/><meta property="og:image:alt" content="Teste e manutenção de software 2026-04-22 tags: -Software e sua metalinguagem Defeitos de software Desenvolvimento de software é o processo de aquisição e detalhamento de informações Erro = engano cometido por um humano, tornando um artefado incorreto."/><meta property="og:image" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta property="og:image:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta name="twitter:image" content="https://api-personalwebsite.kkphoenix.com.br/Study/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="api-personalwebsite.kkphoenix.com.br/Study"/><meta property="og:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/Conceitos/Software/Teste-e-manutenção-de-software/Teste-e-manutenção-de-software"/><meta property="twitter:url" content="https://api-personalwebsite.kkphoenix.com.br/Study/Conceitos/Software/Teste-e-manutenção-de-software/Teste-e-manutenção-de-software"/><link rel="icon" href="../../../static/icon.png"/><meta name="description" content="Teste e manutenção de software 2026-04-22 tags: -Software e sua metalinguagem Defeitos de software Desenvolvimento de software é o processo de aquisição e detalhamento de informações Erro = engano cometido por um humano, tornando um artefado incorreto."/><meta name="generator" content="Quartz"/><link href="../../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUva2twaG9lbml4L0RvY3VtZW50b3MvV29ya3NwYWNlL1F1YXJ0ei9xdWFydHpFc3R1ZG9zL3F1YXJ0ei9jb21wb25lbnRzL3N0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://api-personalwebsite.kkphoenix.com.br/Study/index.xml"/></head><body data-slug="Conceitos/Software/Teste-e-manutenção-de-software/Teste-e-manutenção-de-software"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="https://www.kkphoenix.com.br/">KKPHOENIX</a></h1><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-576"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-576" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><script>
+          // console.log("MobileDebug: Iniciado");
+          
+          // Log de eventos para identificar conflitos
+          document.addEventListener('touchstart', (e) => console.log('Touch Start:', e.target), {passive: true});
+          document.addEventListener('touchend', (e) => console.log('Touch End:', e.target));
+          document.addEventListener('click', (e) => console.log('Click:', e.target));
+
+          // Forçar z-index alto na sidebar móvel caso ela esteja sendo coberta
+          // O Quartz v4 usa classes como .mobile-only ou .sidebar
+        </script><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/">Conceitos</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/Software/">Software</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Conceitos/Software/Teste-e-manutenção-de-software/">Teste e manutenção de software</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Teste e manutenção de software</a></div></nav><p show-comma="true" class="content-meta"><time datetime="2026-07-01T14:53:33.134Z">Jul 01, 2026</time><span>32 min read</span></p></div></div><article class="popover-hint"><h1 id="teste-e-manutenção-de-software">Teste e manutenção de software<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#teste-e-manutenção-de-software" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>2026-04-22
+tags: <a href="../../../Conceitos/Software/-Software-e-sua-metalinguagem" class="internal alias" data-slug="Conceitos/Software/-Software-e-sua-metalinguagem">-Software e sua metalinguagem</a></p>
+<h2 id="defeitos-de-software">Defeitos de software<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#defeitos-de-software" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>
+<p><strong>Desenvolvimento de software</strong> é o processo de aquisição e detalhamento de informações</p>
+</li>
+<li>
+<p><strong>Erro</strong> = engano cometido por um humano, tornando um artefado incorreto.</p>
+</li>
+<li>
+<p><strong>Defeito</strong> = consequência do erro, bug. Causa uma não conformidade com as especificações. Esses defeitos podem estar também em requisitos, ma arquitetura, no projeto, na proposta ou nos próprios testes.</p>
+</li>
+<li>
+<p><strong>Falha</strong> = Execução inesperada.</p>
+</li>
+<li>
+<p><strong>Vulnerabilidade</strong>: Uma entrada ou condição peculiar que ocasiona um comportamento indesejado. Também são defeitos.</p>
+</li>
+</ul>
+<p>Não existe software perfeito e mesmo que seja, ainda podem existir falhas por vários motivos. Não tem como saber nem ter certeza disso.<br/>
+Para saber se um módulo contém defeitos, existem os testes.</p>
+<p>Toleramento de falhas. Caso aconteça, não é um software de qualidade:</p>
+<ul>
+<li>fecha;</li>
+<li>corrompe dados;</li>
+<li>causa prejuízos;</li>
+</ul>
+<p>Defeitos em artefatos antecedentes causam problemas nos passos seguintes.</p>
+<p>Classificação de defeitos: IEEE 830</p>
+<p>Classificação de Shull:</p>
+<ol>
+<li>Omissão</li>
+<li>Ambiguidade;</li>
+<li>Inconssistencia;</li>
+<li>Fato incorreto;</li>
+<li>Informação estranha;</li>
+</ol>
+<p>Documentação de testes:<br/>
+Tipo de defeito<br/>
+Descrição de defeito, em qual fase foi introduzido<br/>
+Quando foi detectado<br/>
+Módulo localizado<br/>
+Gatilho que dispala<br/>
+Impacto<br/>
+Severidade<br/>
+Dificuldade de correção
+Indicação de defeito
+versão</p>
+<p>Existe o modelo de registro de defeito</p>
+<p>Atividade:</p>
+<ol>
+<li>O erro é humano, o ato do humano fazer algo, defeito é o bug, o artefato produzido errado. Falta de atenção, gente enchendo saco…</li>
+<li>No requisito, pois desencadeia possivelmente muitos mais erros.</li>
+<li>Ambiguidade.</li>
+<li>Sim. Pode haver um erro no hardware, no servidor, inconsistência no banco de dados.</li>
+</ol>
+<h2 id="depuração">Depuração<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#depuração" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Busca por falhas. Identificar causa da falha, o defeito.</p>
+<p>Depuração não é teste. Teste para ao achar.</p>
+<h3 id="tecnicas-de-depuração">Tecnicas de depuração<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tecnicas-de-depuração" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Força Bruta. 3 métodos de força bruta:
+<ul>
+<li>Análise e despejo de memória = Análise de valores de variáveis através de um arquivo que contém os valores das variáveis, o estado do sistema.</li>
+<li>Uso de saída de dados = Famosos prints que modificam o código, que as vezes mascaram defeitos ou podem causar mais defeitos, embora seja muito bom.</li>
+<li>Ferramentas de depuração = Marca os breakpoints e mostra os valores das variáveis.</li>
+</ul>
+</li>
+<li>Backtracking: Puramente analítica.
+<ul>
+<li>Analiza as chamadas das funções e vendo onde tá o defeito.</li>
+<li>Eliminação de causa. Pensa nas causas que podem acontecer, testa a hipótese, se for corrige, se não pensa em outra hipotese. Que pode ser feita por dedução ou por indução.</li>
+</ul>
+</li>
+<li>Depuração por indução
+<ol>
+<li>Coleta dados</li>
+<li>Estrutura os dados</li>
+<li>Identificação das relações</li>
+<li>Formular hipotese</li>
+<li>Prova da hipotese</li>
+<li><strong>Correção do defeito</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="testes-e-depuração">Testes e Depuração<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#testes-e-depuração" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>De fato há uma relação simbiótica entre eles. De que adianta testar e não depurar?</p>
+<p>Correções podem gerar defeitos: Eis as oerguntas de Van Vleck.</p>
+<ol>
+<li>O mesmo defeito acontece em outras partes do código?</li>
+<li>Quais novos defeitos podem ser gerados?</li>
+<li>O que deveria ter feito para evitar esse erro?</li>
+</ol>
+<ol start="4">
+<li>Exercício: Força bruta, uso de saída de dados.</li>
+<li>Indução tem um passo a passo, uma análise deve ser feita para chegar uma hipotese, de fato debuggar, dedução é pensar na causa e testar a hipotese.</li>
+<li>Refazer o processo e tentar em outros lugares ou em um lugar mais específico até encontrar os defeitos.</li>
+<li>Formular uma nova hipotese e tentar prova-la novamente.</li>
+<li>Você injeta em um arquivo ou algo do tipo os valores das variáveis conforme o código roda e assim pode identificar onde está acontecendo a falha, em que momento do runtime e o que ocasionou aquela falha.</li>
+</ol>
+<h2 id="princípios-do-teste-de-software">Princípios do teste de Software<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#princípios-do-teste-de-software" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Um bom teste se pauta em princípios fundamentais:</p>
+<ol>
+<li>Teste demonstra a presença de defeitos. Ele não afirma que não há defeitos, ele mostra que os defeitos existem quando encontrados</li>
+<li>Reduzem a probabilidade dos defeitos continuarem. Contudo, não afirma que o sistema está perfeito</li>
+<li>Teste exaustivo é impossível. Se cresce o programa, as vezes já adiciona infinitas entradas. Foco no maior risco e nas maiores possibilidades.</li>
+<li>Teste antecipado. Quanto mais rápido começa a testar, melhor.</li>
+<li>Os defeitos geralmente ficam em uma parte específicas do software</li>
+<li>Paradoxo do pesticida. O mesmo teste uma hora para de apontar novos defeitos. E para evitar isso, os testes devem ser atualizados.</li>
+<li>Teste depende do contexto.</li>
+<li>Ilusão da ausência de erros. Os testes não serão úteis se não atendem as espectativas do usuário.</li>
+</ol>
+<h3 id="princípios-complementares">Princípios complementares<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#princípios-complementares" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Testes devem ser planejados antes do início de sua execução.</li>
+<li>Um processo de teste deve incluir uma revisão detalhada dos resultados dos testes</li>
+<li>Os testes devem ser rastreáveis aos requisitos do usuário.</li>
+<li>Testes devem sempre abranjir o máximo mas partindo das partes mais importantes</li>
+<li>Testes devem ser feitos por uma equipe independente do programa.</li>
+<li>É desejável que a execução dos testes deva ser outros de quem planejou os testes.</li>
+<li>Recursos e cronogramas não devem ser definidos partindo que não terá erros.</li>
+<li>Metade do esforço é definir se o programa faz o que se espera. A outra metade é se ele faz o que não se espera.</li>
+<li>80% das falhas estarão em 20% dos componentes do software. Princípio de Pareto.</li>
+</ol>
+<h3 id="características-de-um-bom-teste">Características de um bom teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#características-de-um-bom-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Deve conter alta probabilidade de revelar falhas.</li>
+<li>Não cria testes redundantes.</li>
+<li>Deve cobrir o mínimo de funcionalidades possível.</li>
+<li>Deve ser o mais simples possível.</li>
+</ul>
+<h3 id="mitos-sobre-testes">Mitos sobre testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#mitos-sobre-testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Dev e tester não são inimigos. O cliente falar é muito pior.</li>
+<li>A equipe de test não é de devs menos qualificados.</li>
+<li>Software pronto</li>
+</ul>
+<h3 id="exercícos">Exercícos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#exercícos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Quanto mais rápido começa a fazer os testes, mais rápido começa a encontrar bugs, menor o custo. Se os testes começam antes, dificílmente deixará de faze-los.</li>
+<li>Não. Se ele não consegue nem codificar, quem dirá identificar erros em softwares complexos e muito acima do nível do mesmo.</li>
+<li>Há de avaliar se o alvo da abranjência é idôneo para a definição se é ou não uma falha. Ademais, se pouco o cobre, pouco é capaz de não estar cobrindo o busílis.</li>
+</ol>
+<p>prova dia 22/04/23</p>
+<h2 id="testes-e-qualidade">Testes e qualidade<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#testes-e-qualidade" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Papel dos testes na qualidade = Medir a qualidade. Os testes medem a confiança sobre o teste, aumenta a qualidade.</p>
+<p>Um teste bem planejado, quando não encontra defeitos, reduz o nível do software e encontra defeitos.</p>
+<p>A mera execução não agrega qualidade, só quando encontra as falhas, corrige os defeitos, somente aí agrega qualidade. Embora as correções agreguem o software, elas os degradam na medida que adicionam mais problemas.</p>
+<p>Relação: Qualidade X Falhas = (Q = quadrante)</p>
+<p>Q1 = Poucas falhas<br/>
+Q2 = Muitas faljas<br/>
+Q3 = Poucas falhas<br/>
+Q4 = Poucas falhas</p>
+<p>Se tem muitas falhas, se testes for bons, se a qualidade for ruim, encontrará muitas falhas e se for bom, encontrará poucas falhas.</p>
+<h3 id="atividade">Atividade<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#atividade" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Se você encontra falhas, sim, a qualidade do software será baixa.</li>
+<li>Ou que ele não contempla o que deve e, portanto, tem baixa qualidade no teste ou que o software de fato tem alta qualidade.</li>
+<li>Não, dependerá se erros são encontrados e se são corrigidos, somente a correção dos erros pode agregar qualidade ao software.</li>
+</ol>
+<h2 id="processo-de-teste">Processo de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#processo-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Teste não é só testar, envolve muito mais coisa que só testar.</p>
+<p>Ser devidamente:</p>
+<ul>
+<li>Planejados</li>
+<li>Modelados</li>
+<li>Especificados</li>
+</ul>
+<p>E além de teres sua exucação:</p>
+<ul>
+<li>Preparada</li>
+<li>Realizada</li>
+<li>Seus rezultados avaliados</li>
+</ul>
+<p>O processo de teste tem o objetivo de definir e organizar atividades que devem ser realizadas durante os testes</p>
+<p>Esse processo permite:</p>
+<ul>
+<li>Alocar equipe</li>
+<li>Gerenciar equipe</li>
+<li>Estimar o tempo</li>
+<li>Criar testes de maior qualidade</li>
+</ul>
+<p>Principais atores:</p>
+<ul>
+<li>Gestor da qualidade = Garante qualidade</li>
+<li>Gerente de teste = Planeja e controla os testes</li>
+<li>Arquiteto = Prepara o ambiente</li>
+<li>Projetista = Projeta os testes, escolha dos testes, identifica e elabora</li>
+<li>Testador = Executa os testes</li>
+<li>Usuário = Avalia, valida e aceita o sistema.</li>
+</ul>
+<p>IEEE 829 padroniza as etapas e os documentos do processo de teste. Ele divide em duas grandes partes</p>
+<p>Planejamento e Execução</p>
+<p><a href="https://excalidraw.com/#json=aE0DR5sm80dohufE93y3D,tQr91srwvW8rmf76YYBLpQ" class="external">https://excalidraw.com/#json=aE0DR5sm80dohufE93y3D,tQr91srwvW8rmf76YYBLpQ<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<h2 id="elementos-do-processo---plano-de-teste">Elementos do processo - Plano de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#elementos-do-processo---plano-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Para que os testes sejam eficientes, eles devem ser planejados, modelados, específicados e terem sua execução preparada, realizada e seus resultados avaliados.</p>
+<p>Dessa forma, essa etapa estabelece e organiza as atividades que devem ser realizadas durante a fase de testes pelos seguintes atores:</p>
+<ul>
+<li>Gestor da qualidade</li>
+<li>Gerente de teste</li>
+<li>Arquiteto de teste</li>
+<li>Projetista de teste</li>
+<li>Testador</li>
+<li>Usuário</li>
+</ul>
+<p>Assim, A IEEE 829 padroniza o <strong>processo de teste</strong> em etapas e documentos documentos inerentes a esse processo de teste definindo-a em duas partes, planejamento e execução. Tendo cada parte envolvendo <strong>atores, etapas e artefatos</strong></p>
+<h2 id="planejar-testess">Planejar testess<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#planejar-testess" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Definição das finalidades do teste. Seus objetivos e como alcança-los.</p>
+<h3 id="planejar-testes">Planejar testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#planejar-testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>O planejamento dos testes define-se pelos processos de:</p>
+<ul>
+<li>
+<p>Caracterização</p>
+</li>
+<li>
+<p>Estabelecimento dos itens e critérios de aprovação</p>
+</li>
+<li>
+<p>Planejar estratégia</p>
+</li>
+<li>
+<p>Determinar os recursos necessários</p>
+</li>
+<li>
+<p>Definir cronograma</p>
+</li>
+<li>
+<p>Estimar custos</p>
+</li>
+<li>
+<p>Identificar risco</p>
+<h4 id="artefato-plano-de-teste">Artefato: Plano de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#artefato-plano-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Escopo e objetivo</li>
+<li>Funcionalidades e itens a serem testados</li>
+<li>Abordagem a ser utlizada</li>
+<li>Tarefas e artefatos</li>
+<li>Cronograma</li>
+<li>Pessoal resposável</li>
+<li>Risco associado</li>
+</ul>
+</li>
+</ul>
+<h3 id="projetar-testes">Projetar testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#projetar-testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Definição de um documento para cada característica.
+Para cada item de teste, refinamento da abordagem de teste e critérios de aprovação ou rejeição.</p>
+<h4 id="artefato-especificação-de-projeto-de-teste">Artefato: Especificação de projeto de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#artefato-especificação-de-projeto-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Especificar um caso de teste.</li>
+<li>Especificar entradas e saídas</li>
+<li>Definir recursos para caso de teste</li>
+<li>especificar restrições de uso</li>
+<li>definir dependências entre casos de teste</li>
+</ul>
+<h3 id="especificar-casos-de-teste">Especificar casos de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#especificar-casos-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p>Especificar a característica do produto</p>
+</li>
+<li>
+<p>Quais itens de teste a característica está associada</p>
+</li>
+<li>
+<p>O refinamento da abordagem</p>
+</li>
+<li>
+<p>Critérios para a aprovação ou rejeição</p>
+<h4 id="artefato-especificação-de-caso-de-teste">Artefato: Especificação de caso de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#artefato-especificação-de-caso-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Item de teste ao qual o caso de teste está associado. Rastreabilidade.</li>
+<li>Valores de entrada</li>
+<li>Resultado ou comportamentos esperados</li>
+<li>Necessidade do ambiente</li>
+<li>Restrições para a execução</li>
+<li>Dependência entre casos de teste.</li>
+</ul>
+</li>
+</ul>
+<h3 id="defnir-procedimentos-de-teste">Defnir procedimentos de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#defnir-procedimentos-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>é o passo a passo para o teste fucionar. Vá até interface tal e faça tal coisa</p>
+<h4 id="artefato-especificação-de-procedimento-de-teste">Artefato: Especificação de procedimento de teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#artefato-especificação-de-procedimento-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Descrição dos passos necessários, é o documento do procedimento.</p>
+<ul>
+<li>definir objetivos</li>
+<li>definir requisitos para a execução do procedimento</li>
+<li>descrever os passos de execução</li>
+<li>construir o procedimento do teste.</li>
+</ul>
+<h2 id="execução-de-testes">Execução de testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#execução-de-testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p>Executar os testes.</p>
+</blockquote>
+<p>registrar o que fugir dos procedimentos e registrar tudo de forma que outras pessoas consigam replicar os resultados.</p>
+<p>Dessa forma, tem o log dos registros do teste, onde há as entradas, os momentos, os resultados, o ambiente, suas versões, Descrição da atividade e referência ao relatório.</p>
+<p>E isso deve ser documentado formalmente justamente no relatório de insidente de teste.</p>
+<p>Posteriormente, isso deve ser analizado pelo gerente, ele irá inferir as métricas, resumir os testes e registrar os dados.</p>
+<p>Esse resumo estará no relatório de teste, que basicamente registra o que ficou de fora, os detalhes, o resumo dos resultados, quantas vezes você rodou, tempo de recorrência… E uma avaliação individual de cada parte.</p>
+<h3 id="recomendação-para-o-processo-dos-testes">Recomendação para o processo dos testes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#recomendação-para-o-processo-dos-testes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Sugestões:</p>
+<ul>
+<li>Convidar os profissionais de teste para a participarem das revisções de inspeções de requisitos</li>
+<li>Começa o planejamento de teste em paralelo com a análise de requisitos</li>
+<li>Incluir sujestões de condições de testes e casos de teste durante a especificação dos requisitos.</li>
+<li>Incluir no documento de requisitos casos específicos que viêrem a mente.</li>
+<li>Usar cenário de negócio e casos de uso sobre como o sistema deve funcionar</li>
+<li>Identificar critérios mensuráveis para avaliar requisitos do teste.</li>
+</ul>
+<h3 id="exercícios">Exercícios<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#exercícios" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Por que define os processos e tem o controle sobre os testes.</li>
+<li>Tendo um processo bem estruturado, gerencar melhor a equipe, documentação mais robusta, mais rastreabilidade, teste fica mais estruturado…</li>
+<li>A etapa quer definir itens de teste e documentos para cada um desses itens. O documento é Especificação de projeto de teste, que especifica os casos de teste com mais detalhe.</li>
+<li>O escopo, o objetivo, as funcionalidades, as tarefas e artefatos e o pessoal necessário.</li>
+<li>Os logs do resultado, os documentos dos registros dos testes, dados gerados…</li>
+</ol>
+<h2 id="teste-no-processo-de-desenvolvimento">Teste no processo de desenvolvimento<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#teste-no-processo-de-desenvolvimento" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>O teste está intrincicamente ligado ao processo de desenvolvimento e deve ocorrer paralelamente ao processo de desenvolvimento, a famosa testagem simultâea.</p>
+<ul>
+<li><strong>Modelo V</strong>= Modelo de ciclo de vida de software para modelo simultâneo com testagem, cada fase de desenolvimento fica alinhado com as fases de teste. Proposta por the Rock, opa, Rock,</li>
+</ul>
+<p>Especificação → Teste de aceitação<br/>
+Analise → Teste de sustena<br/>
+projeto → teste de integração<br/>
+implementação → teste de unidade</p>
+<ol>
+<li>É um modelo que propoem que o ciclo de vida de um software deve estar de acordo com as etapas testes.</li>
+<li>Deve estar acontecendo o planejamento dos testes de integração</li>
+<li>Pois erros se acumulam durante o desenvolvimento e tornam-se possíveis pontas soltas no software. Se feitas durante o desenvolvimento, agregam qualidade na medida em que os bugs são corrigidos e se mantém estabilidade em suas partes desenvolvidas.</li>
+</ol>
+<h2 id="prova-estuda-aqui">Prova? Estuda aqui<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prova-estuda-aqui" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="bloco-1-fundamentos-qualidade-e-psicologia">Bloco 1: Fundamentos, Qualidade e Psicologia<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-1-fundamentos-qualidade-e-psicologia" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="1-o-conceito-e-o-objetivo-do-teste">1. O Conceito e o Objetivo do Teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-o-conceito-e-o-objetivo-do-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p><strong>Definição:</strong> O teste é o processo de execução de um programa com a intenção de encontrar erros.</p>
+</li>
+<li>
+<p><strong>O “Sucesso” do Teste (Pegadinha Clássica):</strong> * Um teste <strong>NÃO</strong> é bem-sucedido quando o sistema não apresenta falhas.</p>
+<ul>
+<li>Um teste é <strong>BEM-SUCEDIDO</strong> quando ele encontra um erro ainda não descoberto.</li>
+</ul>
+</li>
+<li>
+<p><strong>Atividade Destrutiva:</strong> Psicologicamente, testar é tentar “quebrar” o software. É um erro pensar que testar serve para mostrar que o programa funciona.</p>
+</li>
+</ul>
+<h4 id="2-garantia-qa-vs-controle-qc">2. Garantia (QA) vs. Controle (QC)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-garantia-qa-vs-controle-qc" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O professor costuma trocar as definições nestas duas. Guarde as palavras-chave:</p>
+<ul>
+<li><strong>QA (Garantia da Qualidade):</strong> Foco no <strong>PROCESSO</strong>. É preventiva. Serve para melhorar a forma como o software é feito para que erros não sejam criados. (Ex: Auditorias, padrões de código).</li>
+<li><strong>QC (Controle da Qualidade):</strong> Foco no <strong>PRODUTO</strong>. É reativa/detetiva. São as atividades técnicas (como o teste em si) para encontrar defeitos no que já foi produzido.</li>
+</ul>
+<h4 id="3-verificação-vs-validação-vv">3. Verificação vs. Validação (V&amp;V)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-verificação-vs-validação-vv" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Outro ponto de obsessão nas provas:</p>
+<ul>
+<li><strong>Verificação:</strong> “Estamos construindo o produto <strong>corretamente</strong>?“. Avalia se o software segue as especificações, requisitos técnicos e normas. (Foco no papel/especificação).</li>
+<li><strong>Validação:</strong> “Estamos construindo o <strong>produto correto</strong>?“. Avalia se o software atende às necessidades reais do usuário final. (Foco no uso/cliente).</li>
+</ul>
+<h4 id="4-psicologia-dos-testes-ficheiro-15">4. Psicologia dos Testes (Ficheiro 15)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-psicologia-dos-testes-ficheiro-15" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Independência:</strong> O desenvolvedor tem um “viés construtivo” e pontos cegos sobre a própria obra. O teste deve ser feito por alguém independente para garantir objetividade.</li>
+<li><strong>Níveis de Independência:</strong> O material cita que a eficácia aumenta conforme a independência cresce (do próprio autor <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> outro colega <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> equipe interna de QA <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> consultoria externa).</li>
+<li><strong>Comunicação:</strong> O testador deve ser neutro e focar no sistema, nunca criticar a pessoa do desenvolvedor, para evitar conflitos de ego.</li>
+</ul>
+<h4 id="5-os-7-princípios-gerais-ficheiro-6">5. Os 7 Princípios Gerais (Ficheiro 6)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-os-7-princípios-gerais-ficheiro-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Estes aqui você deve saber de cor para as questões de V/F:</p>
+<ol>
+<li><strong>Teste demonstra a presença de defeitos:</strong> Testar prova que há bugs, mas não prova que o sistema é perfeito (ausência de defeitos é impossível de provar).</li>
+<li><strong>Teste exaustivo é impossível:</strong> Exceto para casos triviais, não dá para testar todas as combinações. Usamos análise de <strong>risco</strong> para priorizar.</li>
+<li><strong>Teste Antecipado (Early Testing):</strong> O teste deve começar assim que houver requisitos.
+<ul>
+<li><strong>Curva de Custo de Boehm:</strong> Corrigir um erro nos requisitos custa <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mord mathnormal">x</span></span></span></span>. Corrigir o mesmo erro em produção custa <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span><span class="mord mathnormal">x</span></span></span></span>.</li>
+</ul>
+</li>
+<li><strong>Agrupamento de Defeitos (Pareto):</strong> 80% dos erros estão em 20% dos módulos. Se achar muitos bugs num lugar, continue cavando ali.</li>
+<li><strong>Paradoxo do Pesticida:</strong> Se você repetir os mesmos testes sempre, o sistema fica “imune” e você não acha bugs novos. É preciso revisar e atualizar os casos de teste.</li>
+<li><strong>Teste depende do contexto:</strong> Um software de avião é testado diferente de um site de notícias.</li>
+<li><strong>Falácia da ausência de erros:</strong> De nada serve um software sem bugs se ele for inútil ou não atender ao cliente.</li>
+</ol>
+<h4 id="6-princípios-adicionais-de-myers">6. Princípios Adicionais de Myers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-princípios-adicionais-de-myers" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O teu material traz extras do Myers que também caem:</p>
+<ul>
+<li><strong>Rastreabilidade:</strong> Cada teste deve estar ligado a um requisito de usuário.</li>
+<li><strong>O Lado do “Não”:</strong> Testar se o programa faz o que deve é só 50% do trabalho. A outra metade é testar se ele <strong>não faz o que não deve fazer</strong>.</li>
+<li><strong>Planejamento:</strong> Testes devem ser planejados muito antes da execução (conforme o Modelo V).</li>
+<li><strong>Independência de Execução:</strong> Idealmente, quem executa o teste não deve ser quem o planejou, para evitar o olhar viciado.</li>
+</ul>
+<h3 id="bloco-2-erro-defeito-falha-e-taxonomia-de-shull">Bloco 2 (Erro, Defeito, Falha e Taxonomia de Shull)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-2-erro-defeito-falha-e-taxonomia-de-shull" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Este bloco é o preferido do professor Octávio para questões de “relacione as colunas” ou cenários onde tu precisas de identificar o momento exato em que a “merda” aconteceu.</p>
+<h4 id="1-a-cadeia-de-causalidade-a-linha-do-tempo">1. A Cadeia de Causalidade (A Linha do Tempo)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-a-cadeia-de-causalidade-a-linha-do-tempo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Não podes confundir estes três termos. Existe uma ordem lógica e temporal:</p>
+<ol>
+<li><strong>ERRO (Engano):</strong> É uma ação <strong>humana</strong> (mental ou física). Ocorre na cabeça do desenvolvedor ou analista.
+<ul>
+<li><em>Exemplo:</em> O programador entende que o desconto é de 10%, mas o requisito dizia 15%.</li>
+</ul>
+</li>
+<li><strong>DEFEITO (Bug/Falta):</strong> É a manifestação física do erro num <strong>artefato</strong> (documento de requisito, diagrama ou código). O defeito fica “adormecido” lá.
+<ul>
+<li><em>Exemplo:</em> A linha de código escrita como <code>valor * 0.10</code> em vez de <code>valor * 0.15</code>.</li>
+</ul>
+</li>
+<li><strong>FALHA:</strong> É o desvio <strong>visível</strong> do comportamento esperado durante a <strong>execução</strong>. É quando o utilizador (ou o testador) percebe que algo deu errado.
+<ul>
+<li><em>Exemplo:</em> O cliente final vê que o total da compra está mais caro do que deveria.</li>
+</ul>
+</li>
+</ol>
+<p><strong>A Pergunta “Filha da Puta”:</strong> * <em>Pergunta:</em> “Todo defeito gera uma falha?”</p>
+<ul>
+<li><em>Resposta:</em> <strong>NÃO.</strong> Um defeito pode estar num trecho de código que nunca é executado (código morto) ou sob condições que nunca ocorrem. Para haver falha, o código defeituoso precisa de ser <strong>executado</strong>.</li>
+</ul>
+<h4 id="2-vulnerabilidade">2. Vulnerabilidade<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-vulnerabilidade" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O teu material introduz este conceito aqui:</p>
+<ul>
+<li><strong>Vulnerabilidade</strong> é um <strong>defeito</strong> que pode ser explorado por uma ameaça externa para comprometer a segurança (confidencialidade, integridade ou disponibilidade).</li>
+<li><em>Resumo:</em> Todo defeito de segurança é uma vulnerabilidade, mas nem todo defeito (ex: cor errada de um botão) é uma vulnerabilidade.</li>
+</ul>
+<h4 id="3-propagação-de-defeitos">3. Propagação de Defeitos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-propagação-de-defeitos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O material enfatiza que o software é construído em camadas.</p>
+<ul>
+<li>Se o <strong>Erro</strong> acontece no Requisito <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> gera um <strong>Defeito</strong> no documento de Análise <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> que gera um <strong>Defeito</strong> no Design <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> que gera um <strong>Defeito</strong> no Código <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> que explode numa <strong>Falha</strong> em produção.</li>
+<li><strong>Conclusão:</strong> Quanto mais cedo o erro ocorre, mais “filhos” (defeitos derivados) ele deixa pelo caminho.</li>
+</ul>
+<h4 id="4-taxonomia-de-shull-o-coração-do-bloco-2">4. Taxonomia de Shull (O Coração do Bloco 2)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-taxonomia-de-shull-o-coração-do-bloco-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Esta é a parte que os alunos costumam negligenciar e onde o professor Octávio cobra os detalhes. Shull classifica os defeitos encontrados em <strong>artefatos de software</strong> (especialmente em inspeções de documentos). São 7 categorias:</p>
+<ul>
+<li><strong>Omissão:</strong> Quando uma informação necessária para o desenvolvimento do software não foi incluída no artefato (ex: esquecer de especificar o que acontece quando o estoque chega a zero).</li>
+<li><strong>Ambiguidade:</strong> Quando a informação presente permite duas ou mais interpretações distintas, gerando dúvida no desenvolvedor (ex: “o sistema deve ser rápido” — rápido quanto?).</li>
+<li><strong>Inconsistência:</strong> Quando duas ou mais partes de um documento (ou documentos diferentes) fornecem informações que se contradizem (ex: a página 5 diz que o botão é azul e a página 20 diz que é verde).</li>
+<li><strong>Fato Incorreto:</strong> Quando a informação está presente e é clara, mas está errada em relação ao domínio do problema ou à realidade externa (ex: dizer que um CPF tem 12 dígitos).</li>
+<li><strong>Informação Estranha:</strong> Quando se inclui informação que não pertence ao domínio do problema ou que é totalmente desnecessária para o software (o famoso “encher linguiça”).</li>
+<li><strong>Redundância:</strong> Ocorre quando a mesma informação é repetida desnecessariamente em diferentes partes do artefato, o que pode dificultar a manutenção futura (se mudar num lado, tem de mudar em todos).</li>
+<li><strong>Não conformidade com padrões:</strong> Quando o documento viola os padrões de qualidade, modelos (templates) ou normas estabelecidas pela organização ou pelo projeto.</li>
+</ul>
+<h4 id="5-teste-vs-depuração-debugging">5. Teste vs. Depuração (Debugging)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-teste-vs-depuração-debugging" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Cuidado para não achar que são a mesma coisa! O arquivo <code>3 - Depuração.pdf</code> é curto mas perigoso:</p>
+<ul>
+<li><strong>Teste:</strong> Atividade de <strong>encontrar</strong> a falha (viés destrutivo).</li>
+<li><strong>Depuração (Debugging):</strong> Atividade de <strong>localizar a causa</strong> do defeito e <strong>corrigi-lo</strong> (viés construtivo, feita pelo desenvolvedor).</li>
+</ul>
+<h4 id="técnicas-de-depuração-citadas-no-material">Técnicas de Depuração citadas no material:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#técnicas-de-depuração-citadas-no-material" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li><strong>Força Bruta:</strong> Encher o código de “prints” ou carregar despejos de memória (dump) para ver onde ele morre. É a mais comum, mas a menos eficiente.</li>
+<li><strong>Backtracking:</strong> Começa onde a falha ocorreu e vai voltando no código manualmente para ver onde a lógica se perdeu.</li>
+<li><strong>Eliminação de Causa:</strong> Lista todas as causas possíveis e vai testando uma a uma até sobrar a real.</li>
+</ol>
+<h4 id="metodologias-de-depuração">Metodologias de Depuração:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#metodologias-de-depuração" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Indução:</strong> Partes dos dados particulares (os sintomas) para criar uma hipótese geral.</li>
+<li><strong>Dedução:</strong> Partes de causas gerais possíveis e vai eliminando até chegar ao caso específico.</li>
+</ul>
+<h4 id="6-considerações-finais-do-material">6. Considerações Finais do Material<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-considerações-finais-do-material" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Não existe software perfeito:</strong> O processo de desenvolvimento é humano, logo, o erro é intrínseco.</li>
+<li><strong>O custo da correção:</strong> Reafirma que corrigir em produção é até 100x mais caro.</li>
+</ul>
+<h3 id="bloco-3-ieee-829-modelo-v-e-o-modelo-tridimensional-da-estratégia">Bloco 3 (IEEE 829, Modelo V e o Modelo Tridimensional da Estratégia)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-3-ieee-829-modelo-v-e-o-modelo-tridimensional-da-estratégia" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="o-modelo-tridimensional-da-estratégia-o-cubo">O Modelo Tridimensional da Estratégia (O Cubo)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#o-modelo-tridimensional-da-estratégia-o-cubo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Imagine um cubo. Para definir “como vamos testar”, você precisa tomar decisões em três eixos independentes. O erro comum (a rasteira) é achar que uma decisão trava a outra.</p>
+<ul>
+<li><strong>Eixo 1: Nível de Teste (QUANDO):</strong> É a fase do desenvolvimento. (Unidade, Integração, Sistema, Aceite).</li>
+<li><strong>Eixo 2: Tipo de Teste (O QUÊ):</strong> É o atributo de qualidade.
+<ul>
+<li><strong>Funcional:</strong> O sistema faz o que deve? (Regras de negócio).</li>
+<li><strong>Não-Funcional:</strong> O sistema é rápido? Seguro? Fácil de usar? (Performance, Segurança, Usabilidade).</li>
+</ul>
+</li>
+<li><strong>Eixo 3: Técnica de Teste (COMO):</strong> É a metodologia.
+<ul>
+<li><strong>Caixa Branca:</strong> Vejo o código.</li>
+<li><strong>Caixa Preta:</strong> Não vejo o código, foco nos requisitos.</li>
+<li><strong>Caixa Cinza:</strong> Vejo a arquitetura/banco de dados, mas testo as funções.</li>
+</ul>
+</li>
+</ul>
+<p><strong>A Maldade do Professor:</strong> Ele vai te perguntar se “Teste de Unidade é sempre Caixa Branca”. <strong>Resposta: FALSO.</strong> Você pode fazer um teste de unidade (Nível) funcional (Tipo) usando Caixa Preta (Técnica), apenas injetando entradas no método e vendo a saída. As dimensões são <strong>ortogonais</strong> (independentes).</p>
+<h4 id="ieee-829---o-processo-de-teste">IEEE 829 - O Processo de Teste<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ieee-829---o-processo-de-teste" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Primeiro entende as fases e depois os artefatos com as fases. O nome das frases tem que estar bem claro na sua cabeça, tem que ser um mantra.</p>
+<p>O material define que um processo estruturado não serve apenas para “organizar”, mas para garantir <strong>repetibilidade</strong> e <strong>objetividade</strong>. Aqui está o que tu precisas de saber sobre cada fase e <strong>exatamente o que tem dentro de cada documento</strong>:</p>
+<h5 id="a-planeamento-fase-1">A. Planeamento (Fase 1)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-planeamento-fase-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li><strong>Objetivo:</strong> Definir a “lei” do teste para aquele projeto.</li>
+<li><strong>O Artefato: Plano de Teste.</strong> (Cuidado: É um documento de gestão!).</li>
+<li><strong>O que tem dentro (O Octávio adora cobrar isto):</strong>
+<ol>
+<li><strong>Escopo:</strong> O que será testado e, muito importante, <strong>o que NÃO será testado</strong>.</li>
+<li><strong>Critérios de Passagem/Falha:</strong> O que define se o sistema passou no teste global.</li>
+<li><strong>Critérios de Entrada:</strong> Condições mínimas para começar (ex: código compilado).</li>
+<li><strong>Critérios de Saída:</strong> Quando paramos (ex: 100% de cobertura, zero bugs críticos).</li>
+<li><strong>Critérios de Suspensão e Retomada:</strong> Se o sistema estiver tão podre que não dá para testar, paramos tudo. O que nos faz voltar?</li>
+<li><strong>Recursos e Cronograma:</strong> Quem faz o quê e quando.</li>
+<li><strong>Riscos:</strong> Riscos de software e riscos do próprio processo de teste.</li>
+</ol>
+</li>
+</ul>
+<h5 id="b-preparação--projeto-fase-2">B. Preparação / Projeto (Fase 2)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#b-preparação--projeto-fase-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li><strong>Objetivo:</strong> Analisar os requisitos para saber <strong>onde</strong> o teste deve atacar.</li>
+<li><strong>O Artefato: Especificação do Projeto de Teste (Test Design Spec).</strong></li>
+<li><strong>O que se faz aqui:</strong> Identificam-se as <strong>Condições de Teste</strong>. É o momento de “modelar” o teste, antes de escrever o passo-a-passo.</li>
+</ul>
+<h5 id="c-especificação-fase-3--a-batalha-dos-artefatos">C. Especificação (Fase 3) <span>→</span> A Batalha dos Artefatos<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#c-especificação-fase-3--a-batalha-dos-artefatos" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>É aqui que a maioria dos alunos erra. Tu tens de saber a diferença exata entre estes dois:</p>
+<ol>
+<li>
+<p><strong>Caso de Teste (O QUÊ):</strong></p>
+<ul>
+<li><strong>Conteúdo:</strong> Identificador, item de teste (funcionalidade), <strong>entradas (valores exatos)</strong>, <strong>pré-condições</strong> e o <strong>resultado esperado</strong>.</li>
+<li><em>Dica de Ouro:</em> Falou em “valor de entrada” ou “comportamento esperado”, é Caso de Teste.</li>
+</ul>
+</li>
+<li>
+<p><strong>Procedimento de Teste / Roteiro (COMO):</strong></p>
+<ul>
+<li><strong>Conteúdo:</strong> A <strong>sequência de ações</strong>. Passo 1: Abra o browser. Passo 2: Digite a senha. Passo 3: Clique em enviar.</li>
+<li><em>Dica de Ouro:</em> É o manual que permite que qualquer pessoa execute o teste sem ter desenvolvido o sistema.</li>
+</ul>
+</li>
+</ol>
+<h5 id="d-execução-fase-4">D. Execução (Fase 4)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#d-execução-fase-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li><strong>O Artefato: Log de Teste.</strong></li>
+<li><strong>O que é:</strong> O registro cronológico da execução. Diz quem testou, quando testou, qual caso foi usado e se o resultado foi <strong>Pass</strong> ou <strong>Fail</strong>.</li>
+</ul>
+<h5 id="e-avaliação-fase-5">E. Avaliação (Fase 5)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e-avaliação-fase-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li><strong>O Artefato: Relatório Sumário de Teste.</strong></li>
+<li><strong>O que é:</strong> O resumo para os chefes. Contém métricas (quantos bugs achamos, quantos faltam corrigir) e a conclusão: “O software está apto para ir para produção?“.</li>
+</ul>
+<h5 id="1-a-vinculação-documental-hierarquia-ieee-829">1. A Vinculação Documental (Hierarquia IEEE 829)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-a-vinculação-documental-hierarquia-ieee-829" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Imagina isto como uma pirâmide. O que é decidido no topo (Plano) tem de chegar à base (Log) através de documentos intermediários.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Fase do Processo</strong></th><th><strong>Documento Gerado (Artefacto)</strong></th><th><strong>Vinculação / O que “herda” do anterior</strong></th></tr></thead><tbody><tr><td><strong>1. Planeamento</strong></td><td><strong>Plano de Teste (Test Plan)</strong></td><td>Herda os <strong>Requisitos de Utilizador</strong> e define o <strong>Escopo</strong> (o que testar e o que não testar).</td></tr><tr><td><strong>2. Preparação / Projeto</strong></td><td><strong>Especificação de Projeto de Teste (Test Design Spec)</strong></td><td>Lê o Plano e identifica as <strong>Condições de Teste</strong> (ex: “Testar login com campos vazios”).</td></tr><tr><td><strong>3. Especificação</strong></td><td><strong>Especificação de Caso de Teste (Test Case Spec)</strong></td><td>Pega na “Condição” e define as <strong>Entradas Reais</strong> e o <strong>Resultado Esperado</strong>.</td></tr><tr><td><strong>3. Especificação (cont.)</strong></td><td><strong>Especificação de Procedimento de Teste (Test Procedure Spec)</strong></td><td>Pega no Caso de Teste e cria o <strong>Passo-a-Passo (Roteiro)</strong> para o executor.</td></tr><tr><td><strong>4. Execução</strong></td><td><strong>Log de Teste (Test Log)</strong></td><td>Regista a execução cronológica do Procedimento.</td></tr><tr><td><strong>4. Execução (Erro detetado)</strong></td><td><strong>Relatório de Incidente (Incident Report)</strong></td><td>Vincula a <strong>Falha</strong> encontrada ao <strong>Caso de Teste</strong> que falhou.</td></tr><tr><td><strong>5. Avaliação</strong></td><td><strong>Relatório Sumário de Teste (Test Summary Report)</strong></td><td>Consolida todos os Logs e Incidentes para dar o veredito final.</td></tr></tbody></table></div>
+<p><strong>A Regra de Ouro da Vinculação:</strong></p>
+<ul>
+<li><strong>Caso de Teste</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> Foca no <strong>DADO</strong> (Entrada/Saída).</li>
+<li><strong>Procedimento de Teste</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> Foca na <strong>AÇÃO</strong> (Passos/Cliques).</li>
+<li><strong>Rastreabilidade:</strong> É a capacidade de olhar para um Log e saber qual Requisito ele está a validar.</li>
+</ul>
+<h5 id="2-as-três-dimensões-da-estratégia-o-modelo-3d">2. As Três Dimensões da Estratégia (O Modelo 3D)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-as-três-dimensões-da-estratégia-o-modelo-3d" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Para não te confundir: a Estratégia não é um documento isolado, ela é o <strong>“como”</strong> que preenche o Plano de Teste. Ela divide-se em 3 eixos independentes (<strong>Ortogonais</strong>).</p>
+<h6 id="eixo-a-níveis-de-teste-o-quando">Eixo A: Níveis de Teste (O “QUANDO”)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#eixo-a-níveis-de-teste-o-quando" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h6>
+<p>Define a maturidade do código.</p>
+<ol>
+<li><strong>Unidade:</strong> O mais pequeno (método/classe).</li>
+<li><strong>Integração:</strong> A interface entre dois módulos.</li>
+<li><strong>Sistema:</strong> O software completo (fim-a-fim).</li>
+<li><strong>Aceite:</strong> Validação final pelo cliente.</li>
+</ol>
+<h6 id="eixo-b-tipos-de-teste-o-o-quê">Eixo B: Tipos de Teste (O “O QUÊ”)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#eixo-b-tipos-de-teste-o-o-quê" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h6>
+<p>Define o objetivo da avaliação.</p>
+<ul>
+<li><strong>Funcionais:</strong> Regras de negócio (o que o sistema faz).</li>
+<li><strong>Não-Funcionais:</strong> Atributos de qualidade (Performance, Segurança, Usabilidade, Resiliência, Carga, Estresse).
+<ul>
+<li><em>Dica:</em> O Ficheiro 12 detalha estes tipos, mas eles “moram” aqui nesta dimensão da estratégia.</li>
+</ul>
+</li>
+</ul>
+<h6 id="eixo-c-técnicas-de-teste-o-como">Eixo C: Técnicas de Teste (O “COMO”)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#eixo-c-técnicas-de-teste-o-como" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h6>
+<p>Define a metodologia de criação dos testes.</p>
+<ul>
+<li><strong>Caixa Branca (Estrutural):</strong> Conheço o código. Testo caminhos lógicos, ciclos e condições.</li>
+<li><strong>Caixa Preta (Funcional):</strong> Não vejo o código. Só me importo com Entradas e Saídas baseadas nos requisitos.</li>
+<li><strong>Caixa Cinza:</strong> Conheço um pouco da estrutura (ex: base de dados), mas testo as funcionalidades.</li>
+</ul>
+<h5 id="3-detalhes-cruciais-de-processo-onde-o-octávio-te-apanha">3. Detalhes Cruciais de Processo (Onde o Octávio te apanha)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-detalhes-cruciais-de-processo-onde-o-octávio-te-apanha" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Existem três estados especiais no processo estruturado que tens de saber:</p>
+<ol>
+<li><strong>Critérios de Suspensão:</strong> Não é um erro qualquer. É quando algo bloqueia a continuidade. Se o servidor de teste cai, eu <strong>suspendo</strong> o processo.</li>
+<li><strong>Critérios de Retomada:</strong> O que tem de acontecer para eu voltar a testar? (ex: “Servidor online e base de dados restaurada”).</li>
+<li><strong>Critérios de Saída:</strong> Nunca é “quando eu achar que está bom”. Tem de ser métrico (ex: “95% dos casos passados e 0 bugs críticos”).</li>
+</ol>
+<h5 id="4-resumo-da-lógica-de-vinculação-para-a-prova">4. Resumo da “Lógica de Vinculação” para a Prova:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-resumo-da-lógica-de-vinculação-para-a-prova" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Se o professor te der um componente de um documento e perguntar a qual ele pertence:</p>
+<ul>
+<li>“Conjunto de passos ordenados” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>Procedimento/Roteiro</strong>.</li>
+<li>“Lista de riscos e recursos financeiros” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>Plano</strong>.</li>
+<li>“Valor de entrada <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> e Resultado esperado <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span>” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>Caso de Teste</strong>.</li>
+<li>“Identificação das características a serem testadas” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>Projeto/Design</strong>.</li>
+<li>“Passo-a-passo para o desenvolvedor ver o erro” <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <strong>Incidente</strong>.</li>
+</ul>
+<h4 id="modelo-v">Modelo V<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modelo-v" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="1-o-conceito-do-modelo-v">1. O Conceito do Modelo V<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-o-conceito-do-modelo-v" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>O Modelo V não é apenas um desenho bonito; ele é uma representação do ciclo de vida que resolve o problema do “teste apenas no fim”.</p>
+<ul>
+<li><strong>Lado Esquerdo (Descida):</strong> Fases de Desenvolvimento (Decomposição e Definição).</li>
+<li><strong>Lado Direito (Subida):</strong> Fases de Teste (Integração e Validação).</li>
+<li><strong>O “Veredito”:</strong> Para cada fase de desenvolvimento no lado esquerdo, existe um nível de teste correspondente no lado direito.</li>
+</ul>
+<h5 id="2-as-correspondências-obrigatórias-decore-isto">2. As Correspondências Obrigatórias (Decore isto!)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-as-correspondências-obrigatórias-decore-isto" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>O Octávio adora colocar uma fase da esquerda e perguntar qual o teste da direita que a valida. A regra é a <strong>simetria</strong>:</p>
+<ol>
+<li><strong>Requisitos de Utilizador / Negócio</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">↔</span></span></span></span> <strong>Teste de Aceitação</strong>
+<ul>
+<li><em>Lógica:</em> O cliente disse o que queria no início; no final, ele testa se recebeu o que pediu.</li>
+</ul>
+</li>
+<li><strong>Requisitos do Sistema / Análise</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">↔</span></span></span></span> <strong>Teste de Sistema</strong>
+<ul>
+<li><em>Lógica:</em> Analisámos como o sistema deveria ser; agora testamos o software completo (fim-a-fim).</li>
+</ul>
+</li>
+<li><strong>Projeto de Arquitetura (Design de Alto Nível)</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">↔</span></span></span></span> <strong>Teste de Integração</strong>
+<ul>
+<li><em>Lógica:</em> Definimos como os módulos conversam entre si; agora testamos se essa conversa (interfaces) funciona.</li>
+</ul>
+</li>
+<li><strong>Projeto Detalhado / Codificação</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">↔</span></span></span></span> <strong>Teste de Unidade</strong>
+<ul>
+<li><em>Lógica:</em> Escrevemos o código do método/classe; agora testamos se aquele pedacinho funciona isolado.</li>
+</ul>
+</li>
+</ol>
+<p>Req. Cliente <span>→</span> Req. Sistêmico <span>→</span> Projeto arquitetura <span>→</span> Código</p>
+<p>Tsste aceite <span>←</span> Teste sistema <span>←</span> Teste integração <span>←</span> Teste unidade</p>
+<h5 id="3-a-regra-de-ouro-testagem-simultânea">3. A Regra de Ouro: Testagem Simultânea<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-a-regra-de-ouro-testagem-simultânea" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Esta é a maior “pegadinha” de V/F: <strong>“No Modelo V, o teste só começa quando a codificação termina.”</strong> <span>→</span> <strong>FALSO!</strong></p>
+<ul>
+<li>
+<p><strong>O Planeamento e a Modelação</strong> de cada nível de teste começam <strong>durante</strong> a fase de desenvolvimento correspondente.</p>
+</li>
+<li>
+<p><em>Exemplo:</em> Enquanto os analistas estão a escrever os <strong>Requisitos de Sistema</strong>, os testadores já estão a escrever o <strong>Plano de Teste de Sistema</strong>.</p>
+</li>
+<li>
+<p><strong>Objetivo:</strong> Detetar erros nos documentos antes mesmo do código existir (Verificação).</p>
+</li>
+</ul>
+<h5 id="4-características-de-um-bom-ciclo-de-testes-segundo-o-modelo-v">4. Características de um Bom Ciclo de Testes (Segundo o Modelo V)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-características-de-um-bom-ciclo-de-testes-segundo-o-modelo-v" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>O material destaca quatro pontos que costumam cair como questões de múltipla escolha:</p>
+<ol>
+<li>Para cada atividade de desenvolvimento, há uma atividade de teste correspondente.</li>
+<li>Cada nível de teste tem objetivos específicos para aquele nível.</li>
+<li>A análise e modelagem de testes começam durante a atividade de desenvolvimento.</li>
+<li>Testadores participam na revisão dos documentos assim que as primeiras versões estão disponíveis.</li>
+</ol>
+<h5 id="5-verificação-vs-validação-no-modelo-v">5. Verificação vs. Validação no Modelo V<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-verificação-vs-validação-no-modelo-v" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<ul>
+<li><strong>Verificação (Lado Esquerdo):</strong> Ocorre enquanto descemos. Avaliamos se os documentos e o código estão a ser feitos conforme as normas. “Estamos a construir o produto corretamente?“.</li>
+<li><strong>Validação (Lado Direito):</strong> Ocorre enquanto subimos. Executamos o software para ver se ele faz o que o utilizador quer. “Estamos a construir o produto correto?“.</li>
+</ul>
+<h3 id="bloco-4-teste-de-integração-o-encaixe">Bloco 4: Teste de Integração (O “Encaixe”)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-4-teste-de-integração-o-encaixe" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>O objetivo aqui não é saber se um módulo funciona sozinho (isso é Unidade), mas sim se a <strong>conversa</strong> entre dois ou mais módulos funciona corretamente.</p>
+<h4 id="1-dois-subníveis-de-integração-cuidado">1. Dois Subníveis de Integração (Cuidado!)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-dois-subníveis-de-integração-cuidado" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O material (<strong>Ficheiro 11</strong>) faz uma distinção que cai muito em questões de “V/F”:</p>
+<ul>
+<li>
+<p><strong>Integração de Componentes:</strong> Foca na interação entre módulos/classes dentro do mesmo sistema.</p>
+</li>
+<li>
+<p><strong>Integração de Sistemas:</strong> Foca na interação entre sistemas diferentes ou entre o sistema e a infraestrutura (ex: o teu software a falar com a API do Banco ou com o Sistema Operativo).</p>
+</li>
+</ul>
+<h4 id="2-a-abordagem-big-bang">2. A Abordagem “Big Bang”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-a-abordagem-big-bang" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p><strong>O que é:</strong> Desenvolvem-se todos os módulos e tenta-se integrar tudo de uma vez no final.</p>
+</li>
+<li>
+<p><strong>Vantagem:</strong> Parece mais rápido… no papel.</p>
+</li>
+<li>
+<p><strong>Desvantagem (A Rasteira):</strong> É um caos. Quando algo falha, é quase impossível isolar em qual interface está o erro. O material diz que esta abordagem deve ser evitada em sistemas complexos.</p>
+</li>
+</ul>
+<h4 id="3-integração-incremental-top-down-vs-bottom-up">3. Integração Incremental: Top-Down vs. Bottom-Up<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-integração-incremental-top-down-vs-bottom-up" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Aqui é onde o Octávio mais “brinca” com diagramas. Para saberes o que usar, olha para onde a seta aponta.</p>
+<h5 id="a-top-down-de-cima-para-baixo">A. Top-Down (De Cima para Baixo)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-top-down-de-cima-para-baixo" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Começamos pelo módulo principal (o “Cérebro”) e vamos descendo para os módulos de suporte.</p>
+<ul>
+<li>
+<p><strong>O Problema:</strong> Quando testamos o topo, os módulos de baixo (os “filhos”) ainda não estão prontos.</p>
+</li>
+<li>
+<p><strong>A Solução (STUBS):</strong> Usamos <strong>Simuladores (Stubs)</strong>. Um Stub é um “pedaço de código burro” que apenas recebe a chamada do pai e devolve um valor fixo para o teste não travar.</p>
+</li>
+<li>
+<p><strong>Ponto Chave:</strong> Testa as funções de controlo e o fluxo principal cedo.</p>
+</li>
+</ul>
+<h5 id="b-bottom-up-de-baixo-para-cima">B. Bottom-Up (De Baixo para Cima)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#b-bottom-up-de-baixo-para-cima" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>Começamos pelos módulos da base (os que não dependem de ninguém, ex: funções de BD) e vamos subindo.</p>
+<ul>
+<li>
+<p><strong>O Problema:</strong> Quando testamos a base, o módulo que deveria chamá-la (o “pai”) ainda não existe.</p>
+</li>
+<li>
+<p><strong>A Solução (DRIVERS):</strong> Usamos <strong>Controladores (Drivers)</strong>. Um Driver é um programa de teste que “finge” ser o pai para disparar os dados para o módulo inferior.</p>
+</li>
+<li>
+<p><strong>Ponto Chave:</strong> Bom para sistemas onde a base técnica é o mais crítico.</p>
+</li>
+</ul>
+<h4 id="4-a-tabela-da-salvação-memoriza-isto">4. A Tabela da Salvação (Memoriza isto!)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-a-tabela-da-salvação-memoriza-isto" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Estratégia</strong></th><th><strong>Começa por…</strong></th><th><strong>Se faltar o outro lado, usa…</strong></th><th><strong>Foco Principal</strong></th></tr></thead><tbody><tr><td><strong>Top-Down</strong></td><td>Módulo de Elite (Topo)</td><td><strong>STUBS</strong> (Simuladores)</td><td>Lógica de negócio e fluxo.</td></tr><tr><td><strong>Bottom-Up</strong></td><td>Módulos Atómicos (Base)</td><td><strong>DRIVERS</strong> (Controladores)</td><td>Desempenho e entrada de dados.</td></tr></tbody></table></div>
+<h4 id="5-integração-ad-hoc-ou-sanduíche">5. Integração Ad-Hoc ou “Sanduíche”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-integração-ad-hoc-ou-sanduíche" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O material também menciona a abordagem mista, onde se usa Top-Down para as camadas superiores e Bottom-Up para as inferiores, encontrando-se no meio. É complexa de gerir, mas aproveita o melhor dos dois mundos.</p>
+<h4 id="a-maldade-final-de-integração">A “Maldade Final” de Integração:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-maldade-final-de-integração" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>O professor pode dar-te um desenho com módulos A, B e C, onde A chama B e B chama C. Se ele perguntar: <strong>“Para testar o módulo B de forma isolada na abordagem Bottom-Up, o que é necessário?”</strong></p>
+<ul>
+<li><strong>Raciocínio:</strong> Bottom-Up sobe. Se estou em B, o de baixo (C) já existe, mas o de cima (A) não.</li>
+<li><strong>Resposta:</strong> Um <strong>Driver</strong> para substituir o A.</li>
+</ul>
+<h3 id="bloco-5-p2---junit-5-ciclo-de-vida-e-asserções">Bloco 5: P2 - JUnit 5 (Ciclo de Vida e Asserções)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-5-p2---junit-5-ciclo-de-vida-e-asserções" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Este bloco define o comportamento básico do teste no código, focado na técnica de Caixa Branca (Testes de Unidade/Integração).</p>
+<p><strong>Anotações de Ciclo de Vida (Setup &amp; Teardown):</strong></p>
+<ul>
+<li><code>@Test</code>: Define que o método é um teste padrão.</li>
+<li><code>@BeforeEach</code>: Roda antes de cada método de teste.</li>
+<li><code>@AfterEach</code>: Roda depois de cada método de teste.</li>
+<li><code>@BeforeAll</code>: Roda uma única vez antes de todos os testes da classe. <strong>CUIDADO (Lição de Prova):</strong> No JUnit 5, métodos com <code>@BeforeAll</code> (e <code>@AfterAll</code>) obrigatoriamente precisam ter a assinatura <code>static</code>.</li>
+<li><code>@AfterAll</code>: Roda uma única vez após todos os testes.</li>
+<li><code>@Disabled</code>: Pula (desabilita) o teste.</li>
+</ul>
+<p><strong>Asserções (A Verificação do Resultado):</strong></p>
+<ul>
+<li><code>fail(&quot;mensagem&quot;)</code>: Força a falha do teste imediatamente.</li>
+<li><code>assertEquals(esperado, obtido)</code>: Verifica se os valores são iguais.</li>
+<li><code>assertNotEquals(esperado, obtido)</code>: Verifica se são diferentes.</li>
+<li><code>assertTrue(condicao)</code> / <code>assertFalse(condicao)</code>: Verifica lógicas booleanas.</li>
+<li><code>assertNull(objeto)</code> / <code>assertNotNull(objeto)</code>: Verifica a existência (ou não) de instâncias em memória.</li>
+<li><code>assertSame(esp, obt)</code> / <code>assertNotSame(esp, obt)</code>: Verifica se apontam para o mesmo endereço de memória (não apenas se os valores são iguais).</li>
+</ul>
+<p><strong>Asserções de Exceções (Pegadinha Clássica de Prova):</strong></p>
+<ul>
+<li><code>assertThrows(Exception.class, () -> { metodo(); })</code>: Verifica se o método lança a exceção esperada.</li>
+<li><code>assertDoesNotThrow(() -> { metodo(); })</code>: Verifica se o método NÃO lança exceção. (Atenção: Na prova antiga (PF) houve a tentativa de escrever <code>assertNotThrown</code>, mas a sintaxe correta e exigida é <code>assertDoesNotThrow</code>).</li>
+</ul>
+<h3 id="bloco-6-p2---junit-5-testes-parametrizados-e-ddt">Bloco 6: P2 - JUnit 5 (Testes Parametrizados e DDT)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-6-p2---junit-5-testes-parametrizados-e-ddt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Testes parametrizados (Data-Driven Testing - DDT) rodam o mesmo teste várias vezes com dados diferentes. Usa-se <code>@ParameterizedTest</code> no lugar de <code>@Test</code>. A prova P2 cobrou pesado a transição de sintaxe e as restrições de cada anotação.</p>
+<p><strong>Fontes de Dados (Sources):</strong></p>
+<ul>
+<li><code>@ValueSource(ints = {1, 2, 3})</code>: Passa valores estáticos simples. <strong>Lição de Prova (P2):</strong> Limitado a um único argumento unidimensional por vez (ex: apenas uma String por vez). Não serve se a prova pedir para passar um “par” de valores simultaneamente (como um input e um output esperado).</li>
+<li><code>@CsvSource({&quot;21, 100&quot;, &quot;42, 200&quot;})</code>: Passa pares/conjuntos de valores diretamente no código, separados por vírgula.</li>
+<li><code>@CsvFileSource(files = &quot;caminho/arquivo.csv&quot;, numLinesToSkip = 1, delimiter = ';')</code>: Lê dados de um arquivo externo.
+<ul>
+<li><strong>Lição de Prova (P2):</strong> Se o arquivo tem cabeçalho ou dados inúteis nas primeiras linhas, use <code>numLinesToSkip</code>. Ex: Para começar a ler a partir da 5ª linha, o parâmetro exato é pular as 4 primeiras usando <code>numLinesToSkip = 4</code>.</li>
+</ul>
+</li>
+<li><code>@MethodSource(&quot;nomeDoMetodo&quot;)</code>: Busca os dados em um método Java.
+<ul>
+<li><strong>Lição de Prova (P2 e PF):</strong> Se o enunciado disser “fornecidos por meio de um método de provimento de argumentos intitulado testJSONParaCoordenadaData”, você <strong>tem</strong> que usar <code>@MethodSource(&quot;testJSONParaCoordenadaData&quot;)</code>. Esse método deve retornar uma <code>Stream&lt;Arguments></code>. Tentar usar um CSV ou arquivo externo quando o enunciado exige método resultará em perda grave de pontos na avaliação do código, pois quebra a arquitetura pedida.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bloco-7-p2---katalon-studio-automação-web">Bloco 7: P2 - Katalon Studio (Automação Web)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bloco-7-p2---katalon-studio-automação-web" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Aqui o teste simula um usuário real interagindo com a interface gráfica. É o topo do Modelo V (Testes de Sistema / E2E - Técnica de Caixa Preta).</p>
+<p><strong>Interação com o DOM (API WebUI):</strong></p>
+<ul>
+<li><code>WebUI.openBrowser(&quot;url&quot;)</code>: Abre o navegador no site.</li>
+<li><code>WebUI.closeBrowser()</code>: Fecha o navegador.</li>
+<li><code>WebUI.selectOptionByValue(testObject, &lt;value>)</code>: Seta o valor de um</li>
+<li><code>findTextObject('&lt;path/id>')</code> = Pega determinado objeto de teste, um <code>TestObject</code></li>
+<li><code>WebUI.click(findTestObject(&quot;botao&quot;))</code>: Clica em um elemento.</li>
+<li>`WebUI.setText(findTestObject(“input”), “valor”): Seta o texto de uma tag HTML.</li>
+<li><code>WebUI.verifyElementText(...)</code>: Valida se o texto dentro do elemento bate com o esperado.</li>
+<li><code>WebUI.verifyElementAttributeValue(...)</code>: Verifica propriedades específicas.</li>
+</ul>
+<p><strong>Ciclo de Vida Condicional (Hooks de Finalização):</strong>
+O Katalon permite fechar ou limpar o ambiente dependendo do resultado do teste. Esta é a maior pegadinha da P2 e PF:</p>
+<ul>
+<li><code>@SetUp</code>: Roda antes de tudo (bom para openBrowser).</li>
+<li><code>@TearDown</code>: Roda no final, não importa o que aconteça.</li>
+<li><code>@TearDownIfPassed</code>: Roda APENAS se o teste foi um sucesso. (Lição de Prova: “o navegador deve ser fechado apenas se este tiver sido bem-sucedido” = usar esta anotação englobando o <code>closeBrowser</code>).</li>
+</ul>
+<p><strong>A diferença crucial (Sempre cobrado):</strong></p>
+<ul>
+<li><code>@TearDownIfFailed</code>: Roda se a asserção <strong>falhou</strong> (Ex: você esperava que o resultado fosse 10, mas o site mostrou 5. O teste rodou perfeitamente, mas a regra de negócio/matemática falhou).</li>
+<li><code>@TearDownIfError</code>: Roda se o script <strong>quebrou</strong> (Ex: o site caiu, a internet desconectou, ou o Katalon não achou o elemento HTML para clicar. É um erro de infraestrutura/código, e não uma falha de regra de negócio).</li>
+</ul>
+<h2 id="não-tá-tudo-na-matéria-mas-é-muito-importante">Não tá tudo na matéria mas é muito importante<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#não-tá-tudo-na-matéria-mas-é-muito-importante" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Complexidade Ciclomática (CCN)</strong>: Mensuração da quantidade de caminhos lógicos independentes em uma função para evitar códigos excessivamente densos e de difícil manutenção.</li>
+<li><strong>Cobertura de Teste (Test Coverage)</strong>: Métrica que indica a porcentagem do código-fonte que é efetivamente executada pela suíte de testes.</li>
+<li><strong>Testes de Mutação (Mutation Testing)</strong>: Técnica de modificar deliberadamente a lógica do código (ex: trocar operadores) para verificar se os testes existentes são capazes de detectar a falha.</li>
+<li><strong>Tamanho de Módulos</strong>: Definição de limites de linhas de código por arquivo para prevenir a existência de “God Files”.</li>
+<li><strong>Estrutura de Dependências</strong>: Análise do acoplamento entre os componentes do sistema para garantir integridade arquitetural.</li>
+<li><strong>Injeção Circular</strong>: Identificação de dependências recíprocas entre módulos que impedem o desacoplamento.</li>
+<li><strong>Arquitetura de Camadas</strong>: Verificação de fluxos de chamada proibidos (ex: Controller chamando Model diretamente) e uso de módulos de API para isolar implementações.</li>
+<li><strong>Análise Estática</strong>: Auditoria automatizada do código-fonte realizada no pipeline de CI para garantir padrões de qualidade antes do merge.</li>
+<li><strong>Análise de Vulnerabilidade</strong>: Checagem de falhas de segurança conhecidas em bibliotecas e pacotes de terceiros.</li>
+<li><strong>Teste Unitário</strong>: Validação isolada da menor unidade lógica funcional.</li>
+<li><strong>Instrumentation Test</strong>: Testes que dependem da interação com o ambiente de execução.</li>
+<li><strong>Pen Test (Teste de Intrusão)</strong>: Avaliação ativa da segurança do sistema através de simulações de ataques.</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-270" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#teste-e-manutenção-de-software" data-for="teste-e-manutenção-de-software">Teste e manutenção de software</a></li><li class="depth-1"><a href="#defeitos-de-software" data-for="defeitos-de-software">Defeitos de software</a></li><li class="depth-1"><a href="#depuração" data-for="depuração">Depuração</a></li><li class="depth-2"><a href="#tecnicas-de-depuração" data-for="tecnicas-de-depuração">Tecnicas de depuração</a></li><li class="depth-1"><a href="#testes-e-depuração" data-for="testes-e-depuração">Testes e Depuração</a></li><li class="depth-1"><a href="#princípios-do-teste-de-software" data-for="princípios-do-teste-de-software">Princípios do teste de Software</a></li><li class="depth-2"><a href="#princípios-complementares" data-for="princípios-complementares">Princípios complementares</a></li><li class="depth-2"><a href="#características-de-um-bom-teste" data-for="características-de-um-bom-teste">Características de um bom teste</a></li><li class="depth-2"><a href="#mitos-sobre-testes" data-for="mitos-sobre-testes">Mitos sobre testes</a></li><li class="depth-2"><a href="#exercícos" data-for="exercícos">Exercícos</a></li><li class="depth-1"><a href="#testes-e-qualidade" data-for="testes-e-qualidade">Testes e qualidade</a></li><li class="depth-2"><a href="#atividade" data-for="atividade">Atividade</a></li><li class="depth-1"><a href="#processo-de-teste" data-for="processo-de-teste">Processo de teste</a></li><li class="depth-1"><a href="#elementos-do-processo---plano-de-teste" data-for="elementos-do-processo---plano-de-teste">Elementos do processo - Plano de teste</a></li><li class="depth-1"><a href="#planejar-testess" data-for="planejar-testess">Planejar testess</a></li><li class="depth-2"><a href="#planejar-testes" data-for="planejar-testes">Planejar testes</a></li><li class="depth-2"><a href="#projetar-testes" data-for="projetar-testes">Projetar testes</a></li><li class="depth-2"><a href="#especificar-casos-de-teste" data-for="especificar-casos-de-teste">Especificar casos de teste</a></li><li class="depth-2"><a href="#defnir-procedimentos-de-teste" data-for="defnir-procedimentos-de-teste">Defnir procedimentos de teste</a></li><li class="depth-1"><a href="#execução-de-testes" data-for="execução-de-testes">Execução de testes</a></li><li class="depth-2"><a href="#recomendação-para-o-processo-dos-testes" data-for="recomendação-para-o-processo-dos-testes">Recomendação para o processo dos testes</a></li><li class="depth-2"><a href="#exercícios" data-for="exercícios">Exercícios</a></li><li class="depth-1"><a href="#teste-no-processo-de-desenvolvimento" data-for="teste-no-processo-de-desenvolvimento">Teste no processo de desenvolvimento</a></li><li class="depth-1"><a href="#prova-estuda-aqui" data-for="prova-estuda-aqui">Prova? Estuda aqui</a></li><li class="depth-2"><a href="#bloco-1-fundamentos-qualidade-e-psicologia" data-for="bloco-1-fundamentos-qualidade-e-psicologia">Bloco 1: Fundamentos, Qualidade e Psicologia</a></li><li class="depth-2"><a href="#bloco-2-erro-defeito-falha-e-taxonomia-de-shull" data-for="bloco-2-erro-defeito-falha-e-taxonomia-de-shull">Bloco 2 (Erro, Defeito, Falha e Taxonomia de Shull)</a></li><li class="depth-2"><a href="#bloco-3-ieee-829-modelo-v-e-o-modelo-tridimensional-da-estratégia" data-for="bloco-3-ieee-829-modelo-v-e-o-modelo-tridimensional-da-estratégia">Bloco 3 (IEEE 829, Modelo V e o Modelo Tridimensional da Estratégia)</a></li><li class="depth-2"><a href="#bloco-4-teste-de-integração-o-encaixe" data-for="bloco-4-teste-de-integração-o-encaixe">Bloco 4: Teste de Integração (O “Encaixe”)</a></li><li class="depth-2"><a href="#bloco-5-p2---junit-5-ciclo-de-vida-e-asserções" data-for="bloco-5-p2---junit-5-ciclo-de-vida-e-asserções">Bloco 5: P2 - JUnit 5 (Ciclo de Vida e Asserções)</a></li><li class="depth-2"><a href="#bloco-6-p2---junit-5-testes-parametrizados-e-ddt" data-for="bloco-6-p2---junit-5-testes-parametrizados-e-ddt">Bloco 6: P2 - JUnit 5 (Testes Parametrizados e DDT)</a></li><li class="depth-2"><a href="#bloco-7-p2---katalon-studio-automação-web" data-for="bloco-7-p2---katalon-studio-automação-web">Bloco 7: P2 - Katalon Studio (Automação Web)</a></li><li class="depth-1"><a href="#não-tá-tudo-na-matéria-mas-é-muito-importante" data-for="não-tá-tudo-na-matéria-mas-é-muito-importante">Não tá tudo na matéria mas é muito importante</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2026</p><ul><li><a href="https://github.com/kkphoenixgx">GitHub</a></li><li><a href="kauaAlvesWorkplace@gmail.com">Gmail</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../../postscript.js" type="module"></script></html>
